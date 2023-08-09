@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.wrap_external {
+  width: 1280px;
+  margin: 0 auto;
+}
+.wrap_internal {
+  padding: 0 55px;
+}
+
+.main {
+  padding-top: 80px;
+}
+
+.main-header {
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  width: 1280px;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-color: white;
+  border-bottom: 1px solid #e8e2d6;
+}
+
+.header__item, .menu .options__item, .menu .settings__item, .menu .nav-list__item {
+  list-style: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: -0.01rem;
+  font-weight: 600;
+}
+.header__item:hover, .menu .options__item:hover, .menu .settings__item:hover, .menu .nav-list__item:hover {
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo__image {
+  width: 63px;
+  height: 65px;
+}
+.logo__name {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+.logo__name_abbreviation {
+  height: 33px;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #011847;
+}
+.logo__name_second {
+  height: 25px;
+  font-weight: 400px;
+  font-size: 18px;
+  color: #84bc22;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.menu .nav-list {
+  margin: 0;
+  padding: 0;
+  height: 80px;
+}
+.menu .nav-list .dropdown-menu::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  margin-left: 25px;
+}
+.menu .nav-list__item {
+  margin-top: 15px;
+  padding: 10px 10px 28px;
+  color: #45413e;
+}
+.menu .nav-list__item:hover {
+  background-color: #262a32;
+  border-bottom: 3px solid #85bc23;
+  color: #999999;
+}
+.menu .nav-list__item:hover .nav__link {
+  color: #999999;
+}
+.menu .nav-list__item.active {
+  background-color: #262a32;
+  border-bottom: 3px solid #85bc23;
+  color: #999999;
+}
+.menu .nav__link {
+  color: #45413e;
+  text-decoration: none;
+}
+.menu .settings {
+  margin-bottom: 5px;
+}
+.menu .settings__item {
+  padding: 0 15px 0 15px;
+  color: #999999;
+  border: none;
+}
+.menu .settings__item:hover {
+  color: #7f7f7f;
+}
+.menu .options {
+  margin-bottom: 0;
+}
+.menu .options__item {
+  padding: 0 15px 10px 15px;
+  color: #b2b2b2;
+  font-size: 1.4rem;
+  position: relative;
+}
+.menu .options__item:hover {
+  color: #7f7f7f;
+}
+.menu .options__item:visited {
+  color: #b2b2b2;
+}
+.menu .options__item a {
+  color: #b2b2b2;
+}
+.menu .options__item .material-symbols-outlined {
+  font-weight: bold;
+}
+
+.main {
+  height: 100vh;
+}
+
+.img {
+  background-image: url(../../images/header/logo.png);
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 27% 4fr 1fr;
+  font-size: 0.8125rem;
+  color: #45413e;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.footer__copyright {
+  padding-bottom: 25px;
+}
+.footer__contact {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+.footer__title {
+  color: #45413e;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  opacity: 0.95;
+  letter-spacing: 0.01rem;
+  font-weight: 600;
+}
+.footer__menu {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.footer__social-link {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.footer__link {
+  color: #45413e;
+  text-decoration: none;
+  color: #b2b2b2;
+  opacity: 0.7;
+  font-size: 18px;
+}
+.footer__link:hover {
+  color: inherit;
+  cursor: pointer;
+}
+.footer__link:hover {
+  color: darker(#b2b2b2, 20%);
+}
+
+.address-item {
+  padding-bottom: 18px;
+}
+
+.mail-to,
+.call-to {
+  text-decoration: none;
+  color: #45413e;
+}
+.mail-to:hover,
+.call-to:hover {
+  color: #85bc23;
+}
+
+.categoriest {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.categoriest__column {
+  display: flex;
+  flex-direction: column;
+}
+.categoriest__element {
+  color: #45413e;
+  text-decoration: none;
+  padding: 8px 0;
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+.categoriest__element:hover {
+  color: inherit;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=index.css.map */

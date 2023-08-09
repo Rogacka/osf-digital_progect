@@ -1,0 +1,74 @@
+.footer {
+  display: grid;
+  grid-template-columns: 27% 4fr 1fr;
+  font-size: 0.8125rem;
+  color: $text-color-main;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  &__copyright {
+    padding-bottom: 25px;
+  }
+
+  &__contact {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+  }
+
+  &__title {
+    @include title($text-color-main, 0.8rem);
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  &__social-link {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &__link {
+    @include for-link;
+    color: $color-icon;
+    opacity: 0.7;
+    font-size: 18px;
+    &:hover {
+      color: darker($color-icon, 20%);
+    }
+  }
+}
+
+.address-item {
+    padding-bottom: 18px;
+}
+
+.mail-to,
+.call-to {
+  text-decoration: none;
+  color: $text-color-main;
+
+  &:hover {
+    color: $first-color;
+  }
+}
+
+.categoriest {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__element {
+    @include for-link;
+    padding: 8px 0;
+    font-weight: 400;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+}

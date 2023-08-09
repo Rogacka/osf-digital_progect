@@ -1,0 +1,146 @@
+
+.main-header {
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  width: 1280px;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-color: white;
+  border-bottom: 1px solid #e8e2d6;
+}
+
+.header {
+  &__item {
+    list-style: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: -0.01rem;
+    font-weight: 600;
+
+    &:hover {
+        cursor: pointer;
+    }
+    }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__image {
+    width: 63px;
+    height: 65px;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+
+    &_abbreviation {
+      height: 33px;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #011847;
+    }
+
+    &_second {
+      height: 25px;
+      font-weight: 400px;
+      font-size: 18px;
+      color: #84bc22;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+
+  .nav-list {
+    margin: 0;
+    padding: 0;
+    height: 80px;
+
+    .dropdown-menu::after {
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+        margin-left: 25px;
+    }
+
+    &__item {
+      @extend .header__item;
+      margin-top: 15px;
+      padding: 10px 10px 28px;
+      color: $text-color-main;
+
+      &:hover {
+        background-color: $background-color;
+        border-bottom: 3px solid $first-color;
+        color: $text-color-hover;
+      }
+
+      &:hover .nav__link {
+        color: $text-color-hover;
+      }
+      
+      &.active{
+        background-color: $background-color;
+        border-bottom: 3px solid $first-color;
+        color: $text-color-hover;
+      }
+    }
+  }
+
+  .nav__link {
+    color: $text-color-main;
+    text-decoration: none;
+  }
+
+  .settings {
+    margin-bottom: 5px;
+
+    &__item {
+        @extend .header__item;
+        padding: 0 15px 0 15px;
+        color: $text-color-hover;
+        border: none;
+
+        &:hover {
+            color: darken($color-icon, 20%);
+        }
+    }
+  }
+
+  .options {
+    margin-bottom: 0;
+
+    &__item {
+        @extend .header__item;
+        @include icons(1.4rem);
+        position: relative;
+
+        a {
+            color: $color-icon;
+        }
+
+        .material-symbols-outlined {
+            font-weight: bold;
+        }
+    }
+  }
+}
