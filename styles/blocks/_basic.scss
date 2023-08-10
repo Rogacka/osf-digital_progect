@@ -23,6 +23,28 @@ body {
     }
 }
 
+@media (min-width: 320px) and (max-width: 1279px) {
+    .wrap {
+      &_external {
+        width: 100%;
+      }
+  
+      &_internal {
+        padding: 0 5%;
+      }
+    }
+  }
+
 .main {
     padding-top: 80px;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border-width: 2px;
+
 }

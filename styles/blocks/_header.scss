@@ -1,4 +1,3 @@
-
 .main-header {
   position: fixed;
   z-index: 5;
@@ -13,23 +12,27 @@
 
 .header {
   &__item {
-    list-style: none;
     display: inline-block;
+    list-style: none;
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: -0.01rem;
-    font-weight: 600;
 
     &:hover {
-        cursor: pointer;
+      cursor: pointer;
     }
-    }
+  }
 }
 
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   &__image {
     width: 63px;
@@ -61,7 +64,7 @@
 
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   height: 80px;
 
@@ -70,16 +73,16 @@
     padding: 0;
     height: 80px;
 
-    .dropdown-menu::after {
-        display: inline-block;
-        margin-left: 0.255em;
-        vertical-align: 0.255em;
-        content: "";
-        border-top: 0.3em solid;
-        border-right: 0.3em solid transparent;
-        border-bottom: 0;
-        border-left: 0.3em solid transparent;
-        margin-left: 25px;
+    .additional-menu::after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+      margin-left: 25px;
     }
 
     &__item {
@@ -97,8 +100,8 @@
       &:hover .nav__link {
         color: $text-color-hover;
       }
-      
-      &.active{
+
+      &.active {
         background-color: $background-color;
         border-bottom: 3px solid $first-color;
         color: $text-color-hover;
@@ -115,14 +118,14 @@
     margin-bottom: 5px;
 
     &__item {
-        @extend .header__item;
-        padding: 0 15px 0 15px;
-        color: $text-color-hover;
-        border: none;
+      @extend .header__item;
+      padding: 0 15px 0 15px;
+      color: $text-color-hover;
+      border: none;
 
-        &:hover {
-            color: darken($color-icon, 20%);
-        }
+      &:hover {
+        color: darken($color-icon, 20%);
+      }
     }
   }
 
@@ -130,17 +133,17 @@
     margin-bottom: 0;
 
     &__item {
-        @extend .header__item;
-        @include icons(1.4rem);
-        position: relative;
+      @extend .header__item;
+      @include icons(1.4rem);
+      position: relative;
 
-        a {
-            color: $color-icon;
-        }
+      a {
+        color: $color-icon;
+      }
 
-        .material-symbols-outlined {
-            font-weight: bold;
-        }
+      .material-symbols-outlined {
+        font-weight: bold;
+      }
     }
   }
 }
