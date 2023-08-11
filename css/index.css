@@ -45,11 +45,15 @@ body {
   z-index: 5;
   display: flex;
   width: 1280px;
+  height: 80px;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
   background-color: white;
   border-bottom: 1px solid #e8e2d6;
+}
+
+.mobile-header {
+  display: none;
 }
 
 .header__item, .menu .options__item, .menu .settings__item, .menu .nav-list__item {
@@ -62,6 +66,53 @@ body {
 }
 .header__item:hover, .menu .options__item:hover, .menu .settings__item:hover, .menu .nav-list__item:hover {
   cursor: pointer;
+}
+
+.hidden-menu {
+  position: fixed;
+  z-index: 6;
+  top: 79px;
+  display: flex;
+  padding: 50px 45px 40px 60px;
+  color: white;
+  background-color: #262a32;
+}
+.hidden-menu__title {
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  opacity: 0.95;
+  letter-spacing: 0.01rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.hidden-menu__list {
+  padding: 4px 0;
+  list-style: none;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  letter-spacing: 0.01rem;
+}
+.hidden-menu__item {
+  display: inline-block;
+  padding: 4px 0;
+  text-decoration: none;
+  color: white;
+}
+.hidden-menu__item:hover {
+  color: #999999;
+}
+.hidden-menu__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hidden-menu__image {
+  border-radius: 7px;
+}
+
+.hide {
+  display: none;
 }
 
 .logo {
@@ -173,6 +224,49 @@ body {
   font-weight: bold;
 }
 
+@media (max-width: 1279px) {
+  .main-header {
+    display: none;
+  }
+  .mobile-header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    background-color: #fff;
+    border-bottom: 1px solid #e8e2d6;
+  }
+  .mobile-header__position {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+  .mobile-header__menu {
+    position: absolute;
+    left: 0;
+    top: 5%;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  .mobile-header__img {
+    width: 45px;
+    height: 45px;
+  }
+  .mobile {
+    width: 100%;
+    top: 60px;
+  }
+  .mobile .hidden-menu__sub-title {
+    padding-left: 20px;
+  }
+  .mobile .hidden-menu__list {
+    padding-left: 40px;
+  }
+}
 .intro {
   display: flex;
   justify-content: space-between;
@@ -185,11 +279,7 @@ body {
   width: 75%;
 }
 
-.img-1 {
-  background-image: url(../../images/carousel/slide_1.jpg);
-}
-
-.carousel-indicators li {
+.carousel-indicators .indicator {
   width: 9px;
   height: 9px;
   border-radius: 50%;
