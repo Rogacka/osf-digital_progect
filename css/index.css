@@ -257,6 +257,7 @@ body {
     top: 5%;
     font-weight: 700;
     font-size: 2.5rem;
+    cursor: pointer;
   }
   .mobile-header__img {
     width: 45px;
@@ -657,6 +658,128 @@ body {
   }
   .footer .footer-options__item .material-symbols-outlined {
     font-weight: bold;
+  }
+}
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px 0;
+  background-color: #262a32;
+  color: white;
+}
+.popular .container-fluid {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.popular__wrap-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.popular__line {
+  margin: 10px 0 20px;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0.1;
+}
+.popular__title {
+  display: flex;
+  justify-content: center;
+}
+.popular__title--heading {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.popular .popular__item {
+  width: 1172px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-gap: 30px;
+}
+.popular .popular__item .card {
+  width: 268px;
+  height: 368px;
+  color: #45413e;
+  font-size: 1rem;
+  position: relative;
+  background-color: #262a32;
+}
+.popular .popular__item .card__main {
+  position: relative;
+}
+.popular .popular__item .card__overlay {
+  width: 268px;
+  height: 368px;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to top, #1cc167 0%, #2ed3a2 100%);
+  opacity: 0.9;
+  border-radius: 7px;
+  display: none;
+}
+.popular .popular__item .card__img {
+  height: 272px;
+  width: 100%;
+  border-radius: 7px 7px 0 0;
+}
+.popular .popular__item .card__info {
+  height: 96px;
+  background: #fff;
+  text-align: center;
+  color: #45413e;
+  border-radius: 0 0 7px 7px;
+}
+.popular .popular__item .card__buttons {
+  width: 268px;
+  height: 368px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.popular .popular__item .card__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.popular .popular__item .card__button:active {
+  background-color: darren(white, 5%);
+}
+.popular .popular__item .card .plus {
+  color: #23c46e;
+}
+.popular .popular__item .card .heart {
+  color: #e73c68;
+}
+.popular .popular__item .card__background {
+  border-radius: 7px;
+}
+.popular .popular__item .card__overlay--background {
+  background-image: linear-gradient(to top, rgba(103, 91, 153, 0.8), rgba(220, 89, 135, 0.8)), url("../img/main/message.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 7px;
+}
+.popular .popular__item .card:hover > .card__overlay {
+  display: block;
+}
+@media (max-width: 1279px) {
+  .popular .popular {
+    padding: 0;
+  }
+  .popular .popular__item {
+    width: 100%;
   }
 }
 

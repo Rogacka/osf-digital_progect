@@ -257,6 +257,7 @@ body {
     top: 5%;
     font-weight: 700;
     font-size: 2.5rem;
+    cursor: pointer;
   }
   .mobile-header__img {
     width: 45px;

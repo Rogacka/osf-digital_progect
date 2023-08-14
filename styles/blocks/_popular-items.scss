@@ -1,0 +1,143 @@
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px 0;
+  background-color: $background-color;
+  color: white;
+
+  .container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  &__wrap-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+  }
+  &__line {
+    margin: 10px 0 20px;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0.1;
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+
+    &--heading {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  }
+
+  .popular__item {
+    width: 1172px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    grid-gap: 30px;
+
+    .card {
+      width: 268px;
+      height: 368px;
+      color: $text-color-main;
+      font-size: 1rem;
+      position: relative;
+      background-color: $background-color;
+
+      &__main {
+        position: relative;
+      }
+
+      &__overlay {
+        width: 268px;
+        height: 368px;
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to top, #1cc167 0%, #2ed3a2 100%);
+        opacity: 0.9;
+        border-radius: $border-radius-px;
+        display: none;
+      }
+
+      &__img {
+        height: 272px;
+        width: 100%;
+        border-radius: $border-radius-px $border-radius-px 0 0;
+      }
+
+      &__info {
+        height: 96px;
+        background: #fff;
+        text-align: center;
+        color: $text-color-main;
+        border-radius: 0 0 $border-radius-px $border-radius-px;
+      }
+
+      &__buttons {
+        width: 268px;
+        height: 368px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 90px;
+        background-color: white;
+        border-radius: 50%;
+        font-size: 2.5rem;
+        font-weight: 900;
+
+        &:active {
+          background-color: darren(white, 5%);
+        }
+      }
+      .plus {
+        color: #23c46e;
+      }
+      .heart {
+        color: #e73c68;
+      }
+
+      &__background {
+        border-radius: $border-radius-px;
+      }
+
+      &__overlay--background {
+        background-image: linear-gradient(
+        to top,
+        rgba(103, 91, 153, 0.8),
+        rgba(220, 89, 135, 0.8)
+      ),
+      url('../img/main/message.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: $border-radius-px;
+
+      }
+    }
+
+    .card:hover > .card__overlay {
+      display: block;
+    }
+  }
+  @media (max-width: 1279px) {
+    .popular {
+      padding: 0;
+      &__item {
+        width: 100%;
+      }
+    }
+  }
+}
