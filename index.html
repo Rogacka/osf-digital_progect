@@ -57,12 +57,12 @@
             </li>
           </ul>
           <div class="settings">
-            <select class="settings__item" name="language">
+            <select class="settings__item form-select" name="language">
               <option value="value1" selected>EN</option>
               <option value="value2">UA</option>
               <option value="value3"></option>
             </select>
-            <select class="settings__item" name="currency">
+            <select class="settings__item form-select" name="currency">
               <option value="value1" selected>$US</option>
               <option value="value2">₴UA</option>
               <option value="value3">€eu</option>
@@ -683,11 +683,9 @@
               <div class="card__overlay">
                 <div class="card__buttons">
                   <div class="card__button">
-                    <!-- <span class="material-symbols-outlined plus"> add </span> -->
                     <i class="fa fa-plus plus"></i>
                   </div>
                   <div class="card__button">
-                    <!-- <span class="material-symbols-outlined heart"> favorite </span> -->
                     <i class="fa fa-heart heart"></i>
                   </div>
                 </div>
@@ -704,10 +702,21 @@
                 />
                 <div class="card__info">
                   <p>Hay - About A Lounge Chair AAL 93</p>
-                  <p>$ 410.99</p>
+                  <div
+                    class="btn-group"
+                    role="group"
+                    aria-label="Basic outlined example"
+                  >
+                    <button type="button" class="btn btn-outline-primary buy">
+                      <a class="price" href="">$ 659.55</a>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary buy">
+                      Buy now
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="card__overlay">
+              <!-- <div class="card__overlay">
                 <div class="card__buttons">
                   <div class="card__button">
                     <i class="fa fa-plus plus"></i>
@@ -716,7 +725,7 @@
                     <i class="fa fa-heart heart"></i>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="card">
@@ -801,7 +810,7 @@
                   alt="TORY DESK CALENDAR"
                 />
                 <div class="card__info">
-                  <p> <br />TORY DESK CALENDAR</p>
+                  <p><br />TORY DESK CALENDAR</p>
                   <p>$ 410.99</p>
                 </div>
               </div>
@@ -826,7 +835,7 @@
                   SUITE NY"
                 />
                 <div class="card__info">
-                  <p>CH445 Wing Chair on <br/>SUITE NY</p>
+                  <p>CH445 Wing Chair on <br />SUITE NY</p>
                   <p>$ 330.55</p>
                 </div>
               </div>
@@ -842,15 +851,260 @@
               </div>
             </div>
 
-            <div class="card">
-              <div class="card__main">
-                  <img class="card__background" src="./images/main/popular-item-8.jpg" alt="message">
+            <div class="card card__message">
+              <div class="message__main">
+                <p class="message__text">
+                  My dragons are misbehaving again. Unbelieveable!
+                </p>
+                <img
+                  class="message__logo"
+                  src="./images/main/card-logo.svg"
+                  alt="card-logo"
+                />
+                <span class="message__time">5h ago</span>
               </div>
-              <div class="card__overlay--background">
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline-primary btn__more">
+              Load more
+              <span class="btn__circle-arrow">&circlearrowright;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Banner OSF Theme -->
+        <div class="container-fluid wrap-internal">
+          <div class="row banner">
+            <h2 class="banner__title">Banner OSF Theme</h2>
+            <p class="banner__text">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium
+            </p>
+          </div>
+        </div>
+
+        <!-- Featured Products-->
+        <div class="container-fluid featured wrap-internal">
+          <div class="row featured__wrap">
+            <div class="col-4 featured__align align-self-center">
+              <h3 class="featured__title">Featured Products</h3>
+              <p class="featured__text">
+                Unde omnis iste natus error sit voluptatem
+              </p>
+            </div>
+          </div>
+
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="row featured__wrap--carousel">
+              <div class="col-6 align-self-center button-wrap">
+                <button
+                  class="carousel-button"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <div class="carousel-line"></div>
+                <span class="carousel-slesh">///</span>
+                <div class="carousel-line"></div>
+                <button
+                  class="carousel-button"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
             </div>
 
-            
+            <div class="carousel-inner">
+              <div class="carousel-item carousel-control-prev active">
+                <div class="carousel__card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="./images/featured/image-1.png"
+                      alt="Kristina Dam Oak Table 
+                      With White Marble"
+                    />
+                    <div class="card__info">
+                      <p>Kristina Dam Oak Table With White Marble</p>
+                      <p>Awesome</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="./images/featured/image-2.png"
+                      alt="Kristina Dam Oak Table 
+                      With White Marble"
+                    />
+                    <div class="card__info">
+                      <p class="card__description">
+                        Kristina Dam Oak Table With White Marble
+                      </p>
+                      <p class="card__text">Marketing</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="./images/featured/image-3.png"
+                      alt="Kristina Dam Oak Table 
+                      With White Marble"
+                    />
+                    <div class="card__info">
+                      <p>Kristina Dam Oak Table With White Marble</p>
+                      <p>Awesome</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="./images/featured/image-4.png"
+                      alt="Hezy Theme"
+                    />
+                    <div class="card__info">
+                      <p>Hezy Theme</p>
+                      <p>Marketing</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="carousel__card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="./images/featured/image-1.png"
+                      alt="Kristina Dam Oak Table 
+                      With White Marble"
+                    />
+                    <div class="card__info">
+                      <p class="card__info--description">
+                        Kristina Dam Oak Table With White Marble
+                      </p>
+                      <p class="card__info--text">Awesome</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="./images/featured/image-2.png"
+                      alt="Kristina Dam Oak Table 
+                      With White Marble"
+                    />
+                    <div class="card__info">
+                      <p class="card__info--description">
+                        Kristina Dam Oak Table With White Marble
+                      </p>
+                      <p class="card__info--text">Marketing</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="./images/featured/image-3.png"
+                      alt="Kristina Dam Oak Table 
+                      With White Marble"
+                    />
+                    <div class="card__info">
+                      <p class="card__info--description">
+                        Kristina Dam Oak Table With White Marble
+                      </p>
+                      <p class="card__info--text">Awesome</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="./images/featured/image-4.png"
+                      alt="Hezy Theme"
+                    />
+                    <div class="card__info">
+                      <p class="card__info--description">Hezy Theme</p>
+                      <p class="card__info--text">Marketing</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- advantages -->
+        <div class="container-fluid advantages wrap-internal">
+          <div class="advantages__wrap">
+            <div class="advantages__item">
+              <div class="col-4 advantages__img">
+                <img src="./images/main/packages.png" alt="packages" />
+              </div>
+              <div class="col-6">
+                <h5 class="advantages__title">Focus</h5>
+                <p class="advantages__text">
+                  Our unwavering focus on superior service delivery and building
+                  next generation competencies
+                </p>
+              </div>
+            </div>
+            <div  class="advantages__item reverse">
+              <div class="col-4 advantages__img">
+                <img src="./images/main/triangular.png" alt="triangular" />
+              </div>
+              <div class="col-6">
+                <h5 class="advantages__title">method</h5>
+                <p class="advantages__text">
+                  A standardized methodology designed to deliver measurable
+                  business results and predictable costs
+                </p>
+              </div>
+            </div>
+            <div class="advantages__item">
+              <div class="col-4 advantages__img">
+                <img src="./images/main/clipboard.png" alt="clipboard" />
+              </div>
+              <div class="col-6">
+                <h5 class="advantages__title">Knowledge</h5>
+                <p class="advantages__text">
+                  A highly skilled, proactive workforce that reliably improves
+                  each client’s ROI while mitigating their business risk
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -887,27 +1141,61 @@
             <h3 class="footer__title">Categoriest</h3>
             <div class="categoriest">
               <div class="categoriest__column">
-                <a class="categoriest__element" href="">Alcohol</a>
-                <a class="categoriest__element" href="">Art</a>
-                <a class="categoriest__element" href="">Books</a>
-                <a class="categoriest__element" href="">Drink</a>
-                <a class="categoriest__element" href="">Electronics</a>
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Alcohol</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Art</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Books</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Drink</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Electronics</a
+                >
               </div>
               <div class="categoriest__column">
-                <a class="categoriest__element" href="">Home</a>
-                <a class="categoriest__element" href="">Jewelry</a>
-                <a class="categoriest__element" href="">Kids & Baby</a>
-                <a class="categoriest__element" href="">Men's Fashion</a>
-                <a class="categoriest__element" href="">Mobile</a>
-                <a class="categoriest__element" href="">Motorcycles</a>
-                <a class="categoriest__element" href="">Movies</a>
-                <a class="categoriest__element" href="">Music</a>
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Home</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Jewelry</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Kids & Baby</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Men's Fashion</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Mobile</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Motorcycles</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Movies</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Music</a
+                >
               </div>
               <div class="categoriest__column">
-                <a class="categoriest__element" href="">Sport</a>
-                <a class="categoriest__element" href="">Toys</a>
-                <a class="categoriest__element" href="">Travel</a>
-                <a class="categoriest__element" href="">Women's Fashion</a>
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Sport</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Toys</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Travel</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Women's Fashion</a
+                >
               </div>
             </div>
           </div>
@@ -915,10 +1203,18 @@
             <h3 class="footer__title">About</h3>
             <div class="categoriest">
               <div class="categoriest__column">
-                <a class="categoriest__element" href="">About us</a>
-                <a class="categoriest__element" href="">Delivery</a>
-                <a class="categoriest__element" href="">Testimonials</a>
-                <a class="categoriest__element" href="">Contact</a>
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >About us</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Delivery</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Testimonials</a
+                >
+                <a class="categoriest__element" href="./not-found-page.html"
+                  >Contact</a
+                >
               </div>
             </div>
           </div>
@@ -966,26 +1262,90 @@
             </div>
             <div class="col-12">
               <ul class="hidden-menu__list hide" id="footer-categories-list">
-                <li><a href="" class="categoriest__element">Alcohol</a></li>
-                <li><a href="" class="categoriest__element">Art</a></li>
-                <li><a href="" class="categoriest__element">Books</a></li>
-                <li><a href="" class="categoriest__element">Drink</a></li>
-                <li><a href="" class="categoriest__element">Electronics</a></li>
-                <li><a href="" class="categoriest__element">Home</a></li>
-                <li><a href="" class="categoriest__element">Jewelry</a></li>
-                <li><a href="" class="categoriest__element">Kids & Baby</a></li>
                 <li>
-                  <a href="" class="categoriest__element">Men's Fashion</a>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Alcohol</a
+                  >
                 </li>
-                <li><a href="" class="categoriest__element">Mobile</a></li>
-                <li><a href="" class="categoriest__element">Motorcycles</a></li>
-                <li><a href="" class="categoriest__element">Movies</a></li>
-                <li><a href="" class="categoriest__element">Music</a></li>
-                <li><a href="" class="categoriest__element">Sport</a></li>
-                <li><a href="" class="categoriest__element">Toys</a></li>
-                <li><a href="" class="categoriest__element">Travel</a></li>
                 <li>
-                  <a href="" class="categoriest__element">Women's Fashion</a>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Art</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Books</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Drink</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Electronics</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Jewelry</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Kids & Baby</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Men's Fashion</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Mobile</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Motorcycles</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Movies</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Music</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Sport</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Toys</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Travel</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Women's Fashion</a
+                  >
                 </li>
               </ul>
             </div>
@@ -1000,10 +1360,26 @@
             </div>
             <div col-12>
               <ul class="hidden-menu__list hide" id="footer-about">
-                <li><a href="" class="categoriest__element">Alcohol</a></li>
-                <li><a href="" class="categoriest__element">Art</a></li>
-                <li><a href="" class="categoriest__element">Books</a></li>
-                <li><a href="" class="categoriest__element">Drink</a></li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Alcohol</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Art</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Books</a
+                  >
+                </li>
+                <li>
+                  <a href="./not-found-page.html" class="categoriest__element"
+                    >Drink</a
+                  >
+                </li>
               </ul>
             </div>
           </div>

@@ -77,6 +77,23 @@
         text-align: center;
         color: $text-color-main;
         border-radius: 0 0 $border-radius-px $border-radius-px;
+
+        .buy {
+          width: max-content;
+          border-color: #e5e5e5;
+          color: #000;
+          font-weight: 600;
+          &:hover {
+            cursor: pointer;
+            border-color: #e5e5e5;
+            background-color: white;
+            color: $first-color;
+          }
+        }
+        .price {
+          @include for-link;
+          color: #000;
+        }
       }
 
       &__buttons {
@@ -109,22 +126,34 @@
         color: #e73c68;
       }
 
-      &__background {
+      &__message {
+        background-image: linear-gradient(
+            to top,
+            rgba(103, 91, 153, 0.8),
+            rgba(220, 89, 135, 0.8)
+          ),
+          url("../../images/main/popular-item-8.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
         border-radius: $border-radius-px;
+        display: flex;
+        justify-content: flex-end;
       }
 
-      &__overlay--background {
-        background-image: linear-gradient(
-        to top,
-        rgba(103, 91, 153, 0.8),
-        rgba(220, 89, 135, 0.8)
-      ),
-      url('../img/main/message.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: $border-radius-px;
+      .message__main {
+        width: 80%;
+        padding: 30px;
+        color: white;
+      }
 
+      .message__text {
+        font-weight: normal;
+      }
+
+      .message__logo {
+        width: 24px;
+        height: 28px;
       }
     }
 
@@ -132,6 +161,25 @@
       display: block;
     }
   }
+
+  .btn__more {
+    margin-top: 50px;
+    width: 264px;
+    color: #e8e2d6;
+    border-color: #e8e2d6;
+    opacity: 0.8;
+
+    &:hover {
+      background-color: #e8e2d6;
+      border-color: #e8e2d6;
+      color: $text-color-main;
+    }
+  }
+
+  .btn__circle-arrow {
+    padding-left: 10px;
+  }
+
   @media (max-width: 1279px) {
     .popular {
       padding: 0;
