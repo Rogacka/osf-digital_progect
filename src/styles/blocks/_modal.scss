@@ -1,0 +1,52 @@
+@import "../utils/variables.scss";
+@import "../utils/variables";
+
+@import "../blocks/basic";
+
+.wrap-modal {
+  display: flex;
+  justify-content: center;
+
+  .sing-in {
+    border: 1px solid $text-color-hover;
+    border-radius: $border-radius-px;
+    padding: 50px;
+    width: 500px;
+    height: 468px;
+    color: $text-color-main;
+
+    &__title {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .form-control {
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+    &__forgot {
+        font-weight: 700;
+        color: $first-color;
+        font-size: 0.8rem;
+    }
+
+    &__password {
+        position: relative;
+
+        &--icon {
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            color: $color-icon;
+            font-weight: 900;
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+  }
+
+ 
+}
