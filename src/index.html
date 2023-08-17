@@ -62,7 +62,7 @@
             <select class="settings__item form-select" name="language">
               <option value="value1" selected>EN</option>
               <option value="value2">UA</option>
-              <option value="value3"></option>
+              <option value="value3">RO</option>
             </select>
             <select class="settings__item form-select" name="currency">
               <option value="value1" selected>$US</option>
@@ -75,13 +75,22 @@
               <span class="material-symbols-outlined">search</span>
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">person</span>
+              <span
+                class="material-symbols-outlined login"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                >person</span
+              >
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined heart-amount  heart-amount__header">
+                favorite
+              </span>
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">shopping_bag</span>
+              <a href="./shopping.html">
+                <span class="material-symbols-outlined">shopping_bag</span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -874,7 +883,7 @@
             </div>
           </div>
           <div>
-            <button class="btn btn-outline-primary btn__more">
+            <button class="btn btn-outline-light btn__more">
               Load more
               <span class="btn__circle-arrow">&circlearrowright;</span>
             </button>
@@ -1426,13 +1435,22 @@
               <span class="material-symbols-outlined">search</span>
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">person</span>
+              <span
+                class="material-symbols-outlined login"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                >person</span
+              >
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined  heart-amount  heart-amount__footer"
+                >favorite
+              </span>
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">shopping_bag</span>
+              <a href="./shopping.html" class="footer-options__item">
+                <span class="material-symbols-outlined">shopping_bag</span>
+              </a>
             </li>
           </ul>
         </div>
@@ -1440,34 +1458,61 @@
       <!-- end footer -->
 
       <!-- modal sing in -->
-      <div class="container-fluid wrap-modal">
-        <div class="row row-cols-1 sing-in">
-          <div class="col align-self-center">
-            <h2 class="sing-in__title">Sign in</h2>
-          </div>
-          <div class="col align-self-center">
-            <label for="exampleFormControlInput1" class="form-label"
-              >Email</label
-            >
-            <input
-              type="email"
-              class="form-control sing-in__input"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
-            />
-          </div>
-          <div class="col align-self-center">
-            <label for="inputPassword" class="col-sm-2 col-form-label"
-              >Lato</label
-            >
-            <span class="sing-in__forgot">forgot password</span>
-            <div class="sing-in__password">
-              <input type="password" class="form-control sing-in__password--input" id="inputPassword" />
-              <span class="material-symbols-outlined sing-in__password--icon"> visibility_off </span>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content sing-in">
+            <h2 class="sing-in__title" id="exampleModalLabel">Sign in</h2>
+
+            <div class="modal-body">
+              <div class="">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form-control sing-in__input"
+                  id="exampleFormControlInput1"
+                  placeholder="name@example.com"
+                />
+              </div>
+
+              <div class="">
+                <div class="sing-in__align">
+                  <label for="inputPassword" class="col-sm-2 col-form-label"
+                    >Lato</label
+                  >
+                  <span class="sing-in__forgot">forgot password</span>
+                </div>
+                <div class="sing-in__password">
+                  <input
+                    type="password"
+                    class="form-control sing-in__password--input"
+                    id="inputPassword"
+                  />
+                  <span
+                    class="material-symbols-outlined sing-in__password--icon"
+                  >
+                    visibility_off
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col align-self-center">
-            <input class="btn btn-primary" type="submit" value="Submit" />
+            <div class="modal-footer sing-in__align--submit">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                LOGIN
+              </button>
+              <span class="sing-in__forgot">I don’t have an account</span>
+            </div>
           </div>
         </div>
       </div>

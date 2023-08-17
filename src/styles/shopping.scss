@@ -1,0 +1,98 @@
+@import "utils/variables.scss";
+@import "utils/mixin.scss";
+
+@import "blocks/basic";
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/modal";
+
+.container {
+    background-color: #fff;
+    padding: 50px 0;
+    margin-top: 2px;
+}
+
+.row {
+    padding: 20px 0;
+}
+.shopping {
+    &__align {
+    display: flex;
+    justify-content: flex-start;
+
+        &--order {
+            align-items: center;
+        }
+    }
+    &__input {
+        width: 240px;
+        padding-left: 10px;
+        border: 2px solid $color-btn;
+        border-radius: 20px;
+        margin-right: 20px;
+        &:focus {
+            border: 2px solid $color-btn;
+            box-shadow: none;
+        }
+    }
+    &__subtotal {
+        text-transform: uppercase;
+        color: $text-color-main;
+    }
+
+    &__sum {
+        font-weight: 600;
+    }
+
+    &__title {
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__amount {
+        font-size: 3rem;
+        font-weight: 900;
+    }
+}
+.btn-outline-light {
+    border-color: $first-color;
+    color: $first-color;
+    &:hover {
+        border-color: $color-btn;
+        background-color: $color-btn;
+        color: $text-color-main;
+    }
+}
+.btn-light {
+    width: 260px;
+    background-color: $first-color;
+    color: white;
+    border: 2px solid $first-color;
+    margin-left: 20px;
+
+    &:hover {
+        background-color: darken($color: $first-color, $amount: 10%);
+        border-color: darken($color: $first-color, $amount: 10%);
+        color: white;
+    }
+    &:focus {
+        background-color: darken($color: $first-color, $amount: 10%);
+        border-color: darken($color: $first-color, $amount: 10%);
+        color: white;
+        box-shadow: none;
+    }
+}
+
+.form-check-input {
+    &:checked {
+        background-color: $first-color;
+        border-color: $first-color;
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 769px) {
+    
+}

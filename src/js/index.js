@@ -76,3 +76,13 @@ function footerToggle(num) {
       footerAbout.classList.toggle('hide');
   }
 }
+
+
+//increase the number of the wish list
+
+const heart = document.querySelectorAll('.heart');
+console.log(heart);
+const heartArray = [ ... heart];
+console.log(heartArray);
+
+const heartAmount = document.querySelectorAll('.heart-amount')

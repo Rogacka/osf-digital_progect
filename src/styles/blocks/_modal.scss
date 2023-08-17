@@ -3,32 +3,38 @@
 
 @import "../blocks/basic";
 
-.wrap-modal {
-  display: flex;
-  justify-content: center;
-
-  .sing-in {
+  .modal-content {
     border: 1px solid $text-color-hover;
     border-radius: $border-radius-px;
-    padding: 50px;
+    padding: 32px 36px;
     width: 500px;
     height: 468px;
+    background-color: white;
     color: $text-color-main;
 
+    .sing-in {
     &__title {
       text-align: center;
       font-weight: 600;
     }
 
-    .form-control {
-        border-radius: 20px;
-        margin-top: 10px;
+    &__align {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &--submit {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
 
     &__forgot {
-        font-weight: 700;
+        font-weight: 600;
         color: $first-color;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     &__password {
@@ -47,6 +53,39 @@
         }
     }
   }
-
- 
+  
+  .form-control {
+    border-radius: 20px;
+    margin-top: 10px;
 }
+    .btn-primary {
+      background-color:  $first-color;
+      border-color: $first-color;
+      margin-bottom: 24px;
+      &:hover {
+        cursor: pointer;
+        background: darken($first-color, 10%);
+        border-color: darken($color: $first-color, $amount: 10%);
+      }
+    }
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
+  .modal-footer {
+    border-top: none;
+  }
+
+  @media (max-width: 769px) {
+    .modal-dialog {
+      display: flex;
+      justify-content: center;
+    }
+    .modal-content {
+      width: 450px;
+    }
+  }

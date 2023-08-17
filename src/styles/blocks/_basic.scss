@@ -54,3 +54,59 @@ body {
     border-width: 2px;
 
 }
+
+.main {
+  background-color: $background-not-found;
+  padding-bottom: 45px;
+}
+
+.breadcrumb {
+  justify-content: center;
+  padding: 45px 0 25px;
+  margin-bottom: 0;
+}
+
+.link-home {
+  @include for-link;
+  color: $first-color;
+  &:hover {
+    color: darken($first-color, 10%);
+  }
+}
+
+.not-found {
+  &__wrap-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__line {
+    margin: 10px 0 20px;
+    height: 2px;
+    background-color: #e8e4e1;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    &--404 {
+      font-size: 3rem;
+      font-weight: 900;
+    }
+  }
+}
+
+.heart-amount::after {
+  display: inline-block;
+  vertical-align: text-top;
+  content: "";
+  font-size: x-small;
+  color: $first-color;
+  width: 16px;
+  height: 16px;
+  border: 2px solid $first-color;
+  border-radius: 50px;
+  margin-left: -32px;
+  background-color: white;
+}

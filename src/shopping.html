@@ -19,18 +19,18 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="styles/services.scss" /> -->
-    <link rel="stylesheet" href="css/services.css" />
-    <title>OSF Academy</title>
+    <!-- <link rel="stylesheet" href="styles/not-found-page.scss" /> -->
+    <link rel="stylesheet" href="css/shopping.css" />
+    <title>OSF | Shopping cart</title>
   </head>
   <body>
     <div class="wrap_external">
       <!-- start header -->
       <header class="wrap_internal main-header">
-        <a href="index.html" class="logo">
+        <a href="./index.html" class="logo">
           <img
             class="logo__image"
-            src="images/header/logo.png"
+            src="./images/header/logo.png"
             alt="OSF logo"
           />
           <div class="logo__name">
@@ -85,7 +85,7 @@
               <span class="material-symbols-outlined">favorite</span>
             </li>
             <li class="options__item">
-              <a href="./shopping.html">
+              <a href="./shopping.html" class="footer-options__item">
                 <span class="material-symbols-outlined">shopping_bag</span>
               </a>
             </li>
@@ -288,7 +288,7 @@
         <div class="hidden-menu__container">
           <img
             class="hidden-menu__image"
-            src="images/header/hidden-img.png"
+            src="./images/header/hidden-img.png"
             alt="hidden menu image"
           />
         </div>
@@ -314,7 +314,7 @@
             </span>
           </div>
           <div>
-            <a href="index.html" class="logo">
+            <a href="./index.html" class="logo">
               <img
                 class="mobile-header__img"
                 src="./images/header/logo.png"
@@ -533,7 +533,7 @@
             <div class="col-12">
               <img
                 class="hidden-menu__image"
-                src="images/header/hidden-img.png"
+                src="./images/header/hidden-img.png"
                 alt="hidden menu image"
               />
             </div>
@@ -546,689 +546,94 @@
       <!-- start main -->
       <main class="main wrap-internal">
         <div class="container-fluid">
-          <div class="row">
-            <ul class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="./index.html" class="link-home">Home</a>
-              </li>
-              <li class="breadcrumb-item active">Category</li>
-            </ul>
-          </div>
-          <div class="row">
-            <div class="services__wrap-title">
-              <div class="col-4 services__line"></div>
-              <div class="col-3 services__title">
-                <h1 class="services__title--name">Services</h1>
-              </div>
-              <div class="col-4 services__line"></div>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-3 hide-filter">
-              <span class="hide-filter--name">Hide Filter</span>
-            </div>
-          </div>
-        </div>
-        <!-- Settings -->
-        <div class="container-fluid wrap-settings">
-          <div class="row wrap-order">
-            <div class="col-4 settings">
-              <label class="settings__name" for="price">Price</label>
-              <select
-                class="form-select settings__select"
-                name="price"
-                id="price"
-              >
-                <option value="1">$0.00 - $100.00</option>
-              </select>
-            </div>
-            <div class="col-4 settings">
-              <label class="settings__name" for="brands">Brands</label>
-              <select
-                class="form-select settings__select"
-                name="brands"
-                id="brands"
-              >
-                <option value="1">Ukraine sport</option>
-              </select>
-            </div>
-            <div class="col-4 settings">
-              <label class="settings__name" for="size">Size</label>
-              <select
-                class="form-select settings__select"
-                name="size"
-                id="size"
-              >
-                <option value="1">Small</option>
-              </select>
-            </div>
-          </div>
-          <div class="row wrap-order">
-            <div class="col-4 settings">
-              <label class="settings__name" for="color">Color</label>
-              <div class="color__items">
-                <div class="color__item color__item--white"></div>
-                <div class="color__item color__item--lightblue"></div>
-                <div class="color__item color__item--black"></div>
-                <div class="color__item color__item--green"></div>
-                <div class="color__item color__item--blue"></div>
-                <div class="color__item color__item--orange"></div>
-                <div class="color__item color__item--red"></div>
-                <div class="color__item color__item--grey"></div>
-              </div>
-            </div>
-            <div class="col-4 settings">
-              <label class="settings__name" for="sort">Sort by</label>
-              <select
-                class="form-select settings__select"
-                name="sort"
-                id="sort"
-              >
-                <option value="1">Price</option>
-              </select>
-            </div>
-            <div class="col-4 settings">
-              <label class="settings__name" for="show">Show</label>
-              <select
-                class="form-select settings__select"
-                name="show"
-                id="show"
-              >
-                <option value="1">16 per page</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- 12,931 results in apparel -->
-        <div class="popular wrap-internal">
-          <div class="container-fluid">
             <div class="row">
-              <div class="apparel">
-                <p>12,931 results in apparel</p>
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="./index.html" class="link-home">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Shopping Cart</li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="not-found__wrap-title">
+                <div class="col-3 not-found__line"></div>
+                <div class="col-4 not-found__title">
+                  <h1 class="not-found__title--404">SHOPPING CART</h1>
+                </div>
+                <div class="col-3 not-found__line"></div>
               </div>
             </div>
-          </div>
-
-          <div class="popular__item">
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/popular-item-3.jpg"
-                  alt="Kristina Dam Oak Table With White Marble Top"
-                />
-                <div class="card__info">
-                  <p>Kristina Dam Oak Table With White Marble Top</p>
-                  <p>$ 799.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/popular-item-1.png"
-                  alt="EAMES x Cast + Crew - Custom Powder Coated "
-                />
-                <div class="card__info">
-                  <p>EAMES x Cast + Crew - Custom Powder Coated</p>
-                  <p>$ 799.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/featured/image-1.png"
-                  alt="Activate Facial Mask and Charcoal Soap "
-                />
-                <div class="card__info">
-                  <p>Activate Facial Mask and Charcoal Soap</p>
-                  <p>$ 129.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/featured/image-4.png"
-                  alt="Vitra Cork Stool B, Cork - Design Within Reach"
-                />
-                <div class="card__info">
-                  <p>Vitra Cork Stool B, Cork - Design Within Reach</p>
-                  <p>$ 299.99</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/popular-item-6.png"
-                  alt="Hay - About A Lounge 
-                    Chair AAL 93"
-                />
-                <div class="card__info">
-                  <p>Hay - About A Lounge<br />Chair AAL 93</p>
-                  <p>$ 659.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/popular-item-5.png"
-                  alt="TORY DESK CALENDAR"
-                />
-                <div class="card__info">
-                  <p><br />TORY DESK CALENDAR</p>
-                  <p>$ 410.99</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/no_image.jpg"
-                  alt="CH445 Wing Chair on 
-                    SUITE NY"
-                />
-                <div class="card__info">
-                  <p>CH445 Wing Chair on <br />SUITE NY</p>
-                  <p>$ 330.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/no_image.jpg"
-                  alt="CH445 Wing Chair on 
-                    SUITE NY"
-                />
-                <div class="card__info">
-                  <p>CH445 Wing Chair on <br />SUITE NY</p>
-                  <p>$ 330.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/no_image.jpg"
-                  alt="Kristina Dam Oak Table With White Marble Top"
-                />
-                <div class="card__info">
-                  <p>Kristina Dam Oak Table With White Marble Top</p>
-                  <p>$ 2195.00</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/no_image.jpg"
-                  alt="Kristina Dam Oak Table With White Marble Top"
-                />
-                <div class="card__info">
-                  <p>MONOQI | Ø55 Crossit Table - Wht/Grn</p>
-                  <p>$ 299.99</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/popular-item-6.png"
-                  alt="Hay - About A Lounge 
-                    Chair AAL 93"
-                />
-                <div class="card__info">
-                  <p>Vitra Cork Stool B, Cork - Design Within Reach</p>
-                  <p>$ 870.95</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/no_image.jpg"
-                  alt="Activate Facial Mask and Charcoal Soap "
-                />
-                <div class="card__info">
-                  <p>Activate Facial Mask and Charcoal Soap</p>
-                  <p>$ 129.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/no_image.jpg"
-                  alt="Hay - About A Lounge 
-                    Chair AAL 93"
-                />
-                <div class="card__info">
-                  <p>Hay - About A Lounge Chair AAL 93</p>
-                  <p>$ 659.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/popular-item-7.png"
-                  alt="CH445 Wing Chair on 
-                    SUITE NY"
-                />
-                <div class="card__info">
-                  <p>CH445 Wing Chair on <br />SUITE NY</p>
-                  <p>$ 330.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/header/hidden-img.png"
-                  alt="CH445 Wing Chair on 
-                    SUITE NY"
-                />
-                <div class="card__info">
-                  <p>EAMES x Cast + Crew - Custom Powder Coated</p>
-                  <p>$ 330.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/no_image.jpg"
-                  alt="CH445 Wing Chair on 
-                    SUITE NY"
-                />
-                <div class="card__info">
-                  <p>CH445 Wing Chair on <br />SUITE NY</p>
-                  <p>$ 330.55</p>
-                </div>
-              </div>
-              <div class="card__overlay">
-                <div class="card__buttons">
-                  <div class="card__button">
-                    <i class="fa fa-plus plus"></i>
-                  </div>
-                  <div class="card__button">
-                    <i class="fa fa-heart heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <button class="btn btn-outline-primary btn__more">Load more</button>
-          </div>
         </div>
-
-        <!-- Featured Products-->
-        <div class="container-fluid featured wrap-internal">
-          <div class="row featured__wrap">
-            <div class="col-4 featured__align align-self-center">
-              <h3 class="featured__title">Featured Products</h3>
-              <p class="featured__text">
-                Unde omnis iste natus error sit voluptatem
-              </p>
-            </div>
-          </div>
-
-          <div
-            id="carouselExampleControls"
-            class="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <div class="row featured__wrap--carousel">
-              <div class="col-6 align-self-center button-wrap">
-                <button
-                  class="carousel-button"
-                  type="button"
-                  data-bs-target="#carouselExampleControls"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <div class="carousel-line"></div>
-                <span class="carousel-slesh">///</span>
-                <div class="carousel-line"></div>
-                <button
-                  class="carousel-button"
-                  type="button"
-                  data-bs-target="#carouselExampleControls"
-                  data-bs-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+        <div class="container"></div>
+        <div class="container">
+            <div class="row justify-content-evenly">
+                <div class="col-4 shopping__align">
+                    <input type="text" value="Enter Coupon Code" class="form-control shopping__input">
+                    <button type="button" class="btn btn-outline-light">Apply</button>
+                </div>
+                <div class="col-5 shopping__align">
+                    <button type="button" class="btn btn-outline-light">Update cart</button>
+                    <button type="button" class="btn btn-light">Proceed To CHECKOUT</button>
+                </div>
             </div>
 
-            <div class="carousel-inner">
-              <div class="carousel-item carousel-control-prev active">
-                <div class="carousel__card">
-                  <div class="card__main">
-                    <img
-                      class="card__img"
-                      src="images/featured/image-1.png"
-                      alt="Kristina Dam Oak Table 
-                        With White Marble"
-                    />
-                    <div class="card__info">
-                      <p>Kristina Dam Oak Table With White Marble</p>
-                      <p>Awesome</p>
-                    </div>
-                  </div>
+            <div class="row justify-content-end">
+                <div class="col-3 shopping__align">
+                    <p class="shopping__subtotal">cart subtotal:</p>
                 </div>
-
-                <div class="carousel__card">
-                  <div class="card__main">
-                    <img
-                      class="card__img"
-                      src="images/featured/image-2.png"
-                      alt="Kristina Dam Oak Table 
-                        With White Marble"
-                    />
-                    <div class="card__info">
-                      <p class="card__description">
-                        Kristina Dam Oak Table With White Marble
-                      </p>
-                      <p class="card__text">Marketing</p>
-                    </div>
-                  </div>
+                <div class="col-4">
+                    <p class="shopping__sum">$<span>0</span></p>
                 </div>
-
-                <div class="carousel__card">
-                  <div class="card__main">
-                    <img
-                      class="card__img"
-                      src="images/featured/image-3.png"
-                      alt="Kristina Dam Oak Table 
-                        With White Marble"
-                    />
-                    <div class="card__info">
-                      <p>Kristina Dam Oak Table With White Marble</p>
-                      <p>Awesome</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="carousel__card">
-                  <div class="card__main">
-                    <img
-                      class="card__img"
-                      src="./images/featured/image-4.png"
-                      alt="Hezy Theme"
-                    />
-                    <div class="card__info">
-                      <p>Hezy Theme</p>
-                      <p>Marketing</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="carousel__card">
-                  <div class="card__main">
-                    <img
-                      class="card__img"
-                      src="images/featured/image-1.png"
-                      alt="Kristina Dam Oak Table 
-                        With White Marble"
-                    />
-                    <div class="card__info">
-                      <p class="card__info--description">
-                        Kristina Dam Oak Table With White Marble
-                      </p>
-                      <p class="card__info--text">Awesome</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="carousel__card">
-                  <div class="card__main">
-                    <img
-                      class="card__img"
-                      src="images/featured/image-2.png"
-                      alt="Kristina Dam Oak Table 
-                        With White Marble"
-                    />
-                    <div class="card__info">
-                      <p class="card__info--description">
-                        Kristina Dam Oak Table With White Marble
-                      </p>
-                      <p class="card__info--text">Marketing</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="carousel__card">
-                  <div class="card__main">
-                    <img
-                      class="card__img"
-                      src="images/featured/image-3.png"
-                      alt="Kristina Dam Oak Table 
-                        With White Marble"
-                    />
-                    <div class="card__info">
-                      <p class="card__info--description">
-                        Kristina Dam Oak Table With White Marble
-                      </p>
-                      <p class="card__info--text">Awesome</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="carousel__card">
-                  <div class="card__main">
-                    <img
-                      class="card__img"
-                      src="images/featured/image-4.png"
-                      alt="Hezy Theme"
-                    />
-                    <div class="card__info">
-                      <p class="card__info--description">Hezy Theme</p>
-                      <p class="card__info--text">Marketing</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
+
+            <div class="row justify-content-end">
+                <div class="col-3 shopping__align">
+                    <p class="shopping__title">SHIPPIING AND HANDLING:</p>
+                </div>
+                <div class="col-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Flat Rate: <span>$10.00</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Free Shipping
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            International: <span>$60.00</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Local Delivery: <span>$5.00</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Local Pickup (Free)
+                        </label>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-end">
+                <div class="col-3 shopping__align shopping__align--order">
+                    <p class="shopping__title">Order total:</p> 
+                </div>
+                <div class="col-4">
+                    <p class="shopping__amount">$<span>0</span></p>
+                </div>
+            </div>
+        </div>   
+          
       </main>
       <!-- end main -->
 
@@ -1622,18 +1027,12 @@
     </div>
 
     <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
 
     <!-- my script -->
-    <script src="js/index.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
