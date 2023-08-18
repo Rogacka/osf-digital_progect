@@ -42,7 +42,7 @@ body {
 }}
 
 .main {
-    padding-top: 80px;
+    padding-top: 110px;
 }
 
 .btn {
@@ -53,25 +53,6 @@ body {
     border-radius: 20px;
     border-width: 2px;
 
-}
-
-.main {
-  background-color: $background-not-found;
-  padding-bottom: 45px;
-}
-
-.breadcrumb {
-  justify-content: center;
-  padding: 45px 0 25px;
-  margin-bottom: 0;
-}
-
-.link-home {
-  @include for-link;
-  color: $first-color;
-  &:hover {
-    color: darken($first-color, 10%);
-  }
 }
 
 .not-found {
@@ -97,16 +78,3 @@ body {
   }
 }
 
-.heart-amount::after {
-  display: inline-block;
-  vertical-align: text-top;
-  content: "";
-  font-size: x-small;
-  color: $first-color;
-  width: 16px;
-  height: 16px;
-  border: 2px solid $first-color;
-  border-radius: 50px;
-  margin-left: -32px;
-  background-color: white;
-}

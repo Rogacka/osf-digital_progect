@@ -6,6 +6,29 @@
 @import "blocks/footer";
 @import "blocks/modal";
 
+main {
+    background-color: $background-not-found;
+    padding-bottom: 45px;
+  }
+  
+  .breadcrumb {
+    justify-content: center;
+    padding: 45px 0 25px;
+    margin-bottom: 0;
+  }
+  
+  .link-home {
+    @include for-link;
+    color: $first-color;
+    &:hover {
+      color: darken($first-color, 10%);
+    }
+  }
+
+.row-justify {
+    justify-content: space-evenly;
+}
+
 .container {
     background-color: #fff;
     padding: 50px 0;
@@ -93,6 +116,20 @@
     }
 }
 
+.shopping-prise {
+    font-weight: 700;
+}
+
 @media (max-width: 769px) {
-    
+    .row-justify {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .shopping {
+        &__align {
+        display: flex;
+        justify-content: space-around;
+        }
+    }
 }

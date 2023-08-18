@@ -34,7 +34,7 @@ body {
   }
 }
 .main {
-  padding-top: 80px;
+  padding-top: 110px;
 }
 
 .btn {
@@ -44,30 +44,6 @@ body {
   height: 40px;
   border-radius: 20px;
   border-width: 2px;
-}
-
-.main {
-  background-color: #f1edea;
-  padding-bottom: 45px;
-}
-
-.breadcrumb {
-  justify-content: center;
-  padding: 45px 0 25px;
-  margin-bottom: 0;
-}
-
-.link-home {
-  color: #45413e;
-  text-decoration: none;
-  color: #85bc23;
-}
-.link-home:hover {
-  color: inherit;
-  cursor: pointer;
-}
-.link-home:hover {
-  color: #67911b;
 }
 
 .not-found__wrap-title {
@@ -87,20 +63,6 @@ body {
 .not-found__title--404 {
   font-size: 3rem;
   font-weight: 900;
-}
-
-.heart-amount::after {
-  display: inline-block;
-  vertical-align: text-top;
-  content: "";
-  font-size: x-small;
-  color: #85bc23;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #85bc23;
-  border-radius: 50px;
-  margin-left: -32px;
-  background-color: white;
 }
 
 .main-header {
@@ -286,6 +248,41 @@ body {
 }
 .menu .options__item .material-symbols-outlined {
   font-weight: bold;
+}
+.menu .heart-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: white;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  display: none;
+}
+.menu .shopping-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: white;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  left: 28px;
+  display: none;
 }
 
 @media (max-width: 1279px) {
@@ -623,6 +620,53 @@ body {
   cursor: pointer;
 }
 
+.heart-position {
+  position: relative;
+}
+
+.heart-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: #262a32;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  top: -4px;
+  left: 16px;
+  display: none;
+}
+
+.bag-position {
+  position: relative;
+}
+
+.shopping-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: #262a32;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  left: 12px;
+  display: none;
+}
+
 @media (max-width: 1279px) {
   .footer {
     grid-template-columns: 27% 1fr 5%;
@@ -832,6 +876,9 @@ body {
   font-size: 2.5rem;
   font-weight: 900;
 }
+.popular .popular__item .card__button:hover {
+  cursor: pointer;
+}
 .popular .popular__item .card__button:active {
   background-color: darren(white, 5%);
 }
@@ -840,6 +887,9 @@ body {
 }
 .popular .popular__item .card .heart {
   color: #e73c68;
+}
+.popular .popular__item .card .addedToHeartsList {
+  color: gray;
 }
 .popular .popular__item .card__message {
   background-image: linear-gradient(to top, rgba(103, 91, 153, 0.8), rgba(220, 89, 135, 0.8)), url("../images/main/popular-item-8.jpg");
@@ -1105,7 +1155,7 @@ body {
   }
 }
 .main {
-  padding-top: 80px;
+  padding-top: 110px;
 }
 
 .btn {
@@ -1115,30 +1165,6 @@ body {
   height: 40px;
   border-radius: 20px;
   border-width: 2px;
-}
-
-.main {
-  background-color: #f1edea;
-  padding-bottom: 45px;
-}
-
-.breadcrumb {
-  justify-content: center;
-  padding: 45px 0 25px;
-  margin-bottom: 0;
-}
-
-.link-home {
-  color: #45413e;
-  text-decoration: none;
-  color: #85bc23;
-}
-.link-home:hover {
-  color: inherit;
-  cursor: pointer;
-}
-.link-home:hover {
-  color: #67911b;
 }
 
 .not-found__wrap-title {
@@ -1158,20 +1184,6 @@ body {
 .not-found__title--404 {
   font-size: 3rem;
   font-weight: 900;
-}
-
-.heart-amount::after {
-  display: inline-block;
-  vertical-align: text-top;
-  content: "";
-  font-size: x-small;
-  color: #85bc23;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #85bc23;
-  border-radius: 50px;
-  margin-left: -32px;
-  background-color: white;
 }
 
 .modal-content {

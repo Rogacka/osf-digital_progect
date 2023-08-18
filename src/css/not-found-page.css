@@ -46,7 +46,7 @@ body {
   border-width: 2px;
 }
 
-main {
+.main {
   background-color: #f1edea;
   padding-bottom: 45px;
 }
@@ -273,6 +273,41 @@ main {
 .menu .options__item .material-symbols-outlined {
   font-weight: bold;
 }
+.menu .heart-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: white;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  display: none;
+}
+.menu .shopping-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: white;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  left: 28px;
+  display: none;
+}
 
 @media (max-width: 1279px) {
   .main-header {
@@ -427,6 +462,53 @@ main {
   cursor: pointer;
 }
 
+.heart-position {
+  position: relative;
+}
+
+.heart-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: #262a32;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  top: -4px;
+  left: 16px;
+  display: none;
+}
+
+.bag-position {
+  position: relative;
+}
+
+.shopping-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: #262a32;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  left: 12px;
+  display: none;
+}
+
 @media (max-width: 1279px) {
   .footer {
     grid-template-columns: 27% 1fr 5%;
@@ -569,7 +651,7 @@ body {
   border-width: 2px;
 }
 
-main {
+.main {
   background-color: #f1edea;
   padding-bottom: 45px;
 }

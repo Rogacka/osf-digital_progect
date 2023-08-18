@@ -199,6 +199,17 @@
       }
     }
   }
+
+  .heart-container {
+    @include indicator-amount(white);
+    display: none;
+  }
+
+  .shopping-container {
+    @include indicator-amount(white);
+    left: 28px;
+    display: none;
+  }
 }
 
 @media (max-width: 1279px) {

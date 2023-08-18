@@ -79,6 +79,27 @@
   }
 }
 
+.heart-position {
+  position: relative;
+}
+
+.heart-container {
+  @include indicator-amount($background-color);
+  top: -4px;
+  left: 16px;
+  display: none;
+}
+
+.bag-position {
+  position: relative;
+}
+
+.shopping-container {
+  @include indicator-amount($background-color);
+  left: 12px;
+  display: none;
+}
+
 @media (max-width: 1279px) {
   .footer {
     grid-template-columns: 27% 1fr 5%;

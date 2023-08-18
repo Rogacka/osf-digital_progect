@@ -32,3 +32,20 @@
     cursor: pointer;
   }
 }
+
+@mixin indicator-amount($color) {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid $first-color;
+  border-radius: 50%;
+  background-color: $color;
+  color: $first-color;
+  font-size: 0.7rem;
+  font-family: 'Lato', sans-serif;
+}

@@ -114,6 +114,10 @@
         border-radius: 50%;
         font-size: 2.5rem;
         font-weight: 900;
+        
+        &:hover{
+          cursor: pointer;
+        }
 
         &:active {
           background-color: darren(white, 5%);
@@ -124,6 +128,10 @@
       }
       .heart {
         color: #e73c68;
+      }
+      
+      .addedToHeartsList {
+        color: gray;
       }
 
       &__message {

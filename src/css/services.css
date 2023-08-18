@@ -46,11 +46,6 @@ body {
   border-width: 2px;
 }
 
-main {
-  background-color: #f1edea;
-  padding-bottom: 45px;
-}
-
 .breadcrumb {
   justify-content: center;
   padding: 45px 0 25px;
@@ -273,6 +268,41 @@ main {
 .menu .options__item .material-symbols-outlined {
   font-weight: bold;
 }
+.menu .heart-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: white;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  display: none;
+}
+.menu .shopping-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: white;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  left: 28px;
+  display: none;
+}
 
 @media (max-width: 1279px) {
   .main-header {
@@ -425,6 +455,53 @@ main {
 .categoriest__element:hover {
   color: inherit;
   cursor: pointer;
+}
+
+.heart-position {
+  position: relative;
+}
+
+.heart-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: #262a32;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  top: -4px;
+  left: 16px;
+  display: none;
+}
+
+.bag-position {
+  position: relative;
+}
+
+.shopping-container {
+  position: absolute;
+  top: -4px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #85bc23;
+  border-radius: 50%;
+  background-color: #262a32;
+  color: #85bc23;
+  font-size: 0.7rem;
+  font-family: "Lato", sans-serif;
+  left: 12px;
+  display: none;
 }
 
 @media (max-width: 1279px) {
@@ -636,6 +713,9 @@ main {
   font-size: 2.5rem;
   font-weight: 900;
 }
+.popular .popular__item .card__button:hover {
+  cursor: pointer;
+}
 .popular .popular__item .card__button:active {
   background-color: darren(white, 5%);
 }
@@ -644,6 +724,9 @@ main {
 }
 .popular .popular__item .card .heart {
   color: #e73c68;
+}
+.popular .popular__item .card .addedToHeartsList {
+  color: gray;
 }
 .popular .popular__item .card__message {
   background-image: linear-gradient(to top, rgba(103, 91, 153, 0.8), rgba(220, 89, 135, 0.8)), url("../images/main/popular-item-8.jpg");
@@ -840,11 +923,6 @@ body {
   border-width: 2px;
 }
 
-main {
-  background-color: #f1edea;
-  padding-bottom: 45px;
-}
-
 .breadcrumb {
   justify-content: center;
   padding: 45px 0 25px;
@@ -959,6 +1037,30 @@ main {
     width: 450px;
   }
 }
+main {
+  background-color: #f1edea;
+  padding-bottom: 45px;
+}
+
+.breadcrumb {
+  justify-content: center;
+  padding: 45px 0 25px;
+  margin-bottom: 0;
+}
+
+.link-home {
+  color: #45413e;
+  text-decoration: none;
+  color: #85bc23;
+}
+.link-home:hover {
+  color: inherit;
+  cursor: pointer;
+}
+.link-home:hover {
+  color: #67911b;
+}
+
 .services__wrap-title {
   display: flex;
   justify-content: center;
