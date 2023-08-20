@@ -89,6 +89,9 @@
             background-color: white;
             color: $first-color;
           }
+          &:focus {
+            box-shadow: none;
+          }
         }
         .price {
           @include for-link;
@@ -114,8 +117,8 @@
         border-radius: 50%;
         font-size: 2.5rem;
         font-weight: 900;
-        
-        &:hover{
+
+        &:hover {
           cursor: pointer;
         }
 
@@ -129,7 +132,7 @@
       .heart {
         color: #e73c68;
       }
-      
+
       .addedToHeartsList {
         color: gray;
       }

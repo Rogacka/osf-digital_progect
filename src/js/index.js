@@ -5,10 +5,56 @@ const heartContainer = document.querySelectorAll(".heart-container");
 const heartContainerShow = [...heartContainer];
 
 window.addEventListener("load", function () {
-  addNumber("shopping", shoppingContainerShow);
+  if (this.localStorage.getItem("shopping") !== undefined) {
+    addNumber("shopping", shoppingContainerShow);
+    // const subtotalFromLocalStorage = JSON.parse(
+    //   localStorage.getItem("shopping")
+    // );
+    // calculateSubtotalAmount(subtotalFromLocalStorage);
+  }
 
-  addNumber("liked", heartContainerShow);
+  if (this.localStorage.getItem("liked") != undefined) {
+    addNumber("liked", heartContainerShow);
+  }
+
+  //check cookies
+  const cookies = JSON.parse(this.localStorage.getItem("cookies"));
+  console.log(cookies);
+  if (cookies === null) {
+    this.localStorage.setItem("cookies", false);
+  }
+  if (cookies === false) {
+    this.setTimeout(function () {
+      console.log(document.getElementById("openCookieModalButton"));
+      document.getElementById("openCookieModalButton").click();
+    }, 10000);
+  }
 });
+
+//function add cookies to local storage
+const acceptCookies = document.getElementById("accept-cookies");
+acceptCookies?.addEventListener("click", function () {
+  localStorage.setItem("cookies", true);
+
+  //cart subtotal
+  if (localStorage.getItem) {
+    const subtotalFromLocalStorage = JSON.parse(
+      localStorage.getItem("shopping")
+    );
+    calculateSubtotalAmount(subtotalFromLocalStorage);
+  }
+});
+
+function calculateSubtotalAmount(allProduct) {
+  let subtotal = 0;
+  console.log(subtotal);
+  allProduct.forEach((item) => {
+    subtotal += +(item.count * item.price.slice(1));
+  });
+  const shoppingSumAmount = document.querySelector(".shopping-sum-amount");
+  shoppingSumAmount.textContent = `${subtotal.toFixed(2)}`;
+}
+const shoppingSumAmount = document.querySelector(".shopping-sum-amount");
 
 //function shows and hides header hidden menu
 const servises = document.getElementById("servises"); //button services on header desctop
@@ -123,12 +169,13 @@ buttonsHeart.forEach((item) => {
 });
 
 //increse the number of the goods
-const buy = document.querySelectorAll(".button-buy");
+const buy = document.querySelectorAll(".button-buy"); //index.html plus button
 const buttonBuy = [...buy];
 
 buttonBuy.forEach((item) => {
   item.addEventListener("click", function () {
     let good = createPoductCard(item);
+    console.log("good", good);
     addToLocalStorage("shopping", good);
     addNumber("shopping", shoppingContainerShow);
   });
@@ -136,12 +183,14 @@ buttonBuy.forEach((item) => {
 
 //increse number likes ang shoppings
 function addNumber(storageKey, containers) {
-  const previousProductsList = JSON.parse(localStorage.getItem(storageKey));
+  let previousProductsList;
+  if (localStorage.getItem(storageKey) !== undefined) {
+    previousProductsList = JSON.parse(localStorage.getItem(storageKey));
+  }
   let previousProductsListCount = 0;
   if (previousProductsList && previousProductsList.length) {
     previousProductsList.forEach((item) => {
       previousProductsListCount += item.count;
-      console.log(item.count);
     });
     containers.forEach((el) => {
       el.style.display = "flex";
@@ -209,3 +258,180 @@ function addToLocalStorage(storageKey, storageProduct) {
     localStorage.setItem(storageKey, JSON.stringify([storageProduct]));
   }
 }
+
+/**
+ * shopping card
+ */
+
+const productToBuyList = JSON.parse(localStorage.getItem("shopping"));
+
+const productsWrapper = document.getElementById("products-wrapper");
+
+productToBuyList?.forEach((product) => {
+  productsWrapper?.insertAdjacentHTML(
+    "beforeend",
+    `
+  <div class="row align-product">
+    <div class="col col-lg-5 product">
+      <img src="${product.image}" class="product__image">
+      <div>
+        <p class="product__title">${product.name}</p>
+        <p class="product__price">${product.price}</p>
+      </div>
+    </div>
+    <div class="col col-lg-5 product__counter">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-white btn-minuse" type="button">-</button>
+        </span>
+
+        <input type="text" class="form-control product__count no-padding add-color text-center height-25" 
+        maxlength="3" value="${product.count}">
+        
+        <span class="input-group-btn">
+          <button class="btn btn-red btn-plus" type="button">+</button>
+        </span>
+      </div>
+      <div class="product__amount">
+        <span class="product-price">$${
+          +product.price.slice(1) * product.count
+        }</span>
+      </div>
+      <div>
+        <span class="material-symbols-outlined button-remove">
+          cancel
+        </span>
+      </div>
+    </div>
+  </div>
+ `
+  );
+});
+
+const buttonsPlus = document.querySelectorAll(".btn-plus"); //plus buttons shopping.html
+const increase = [...buttonsPlus];
+const buttonMinus = document.querySelectorAll(".btn-minuse"); //minus buttons shopping.html
+const decreese = [...buttonMinus];
+const innerCount = document.querySelectorAll(".product__count"); //increese number of goods
+const newInnerCount = [...innerCount];
+const innerPrice = document.querySelectorAll(".product-price"); //increese prise count
+const newInnerPrice = [...innerPrice];
+
+// increese product count
+increase.forEach((item) => {
+  item.addEventListener("click", function () {
+    const previousProducts = JSON.parse(localStorage.getItem("shopping"));
+    const productName =
+      item.closest(".product__counter").previousElementSibling.lastElementChild
+        .firstElementChild.textContent;
+    console.log(productName);
+
+    const newProducts = previousProducts.map((item, index) => {
+      if (item.name === productName) {
+        const newAmount = ++item.count;
+        const newPrice = (newAmount * item.price.slice(1)).toFixed(2);
+        newInnerPrice[index].textContent = `$${newPrice}`;
+        newInnerCount[index].value = `${newAmount}`;
+        console.log(newInnerCount[index].value);
+        return {
+          ...item,
+          count: newAmount,
+        };
+      }
+      return item;
+    });
+    localStorage.setItem("shopping", JSON.stringify(newProducts));
+    calculateSubtotalAmount(newProducts);
+  });
+});
+
+//decreese product count
+decreese.forEach((item) => {
+  item.addEventListener("click", function () {
+    const previousProducts = JSON.parse(localStorage.getItem("shopping"));
+    const productName =
+      item.closest(".product__counter").previousElementSibling.lastElementChild
+        .firstElementChild.textContent;
+
+    const newProducts = previousProducts.map((item, index) => {
+      if (item.name === productName && item.count > 1) {
+        const newAmount = --item.count;
+        const newPrice = (newAmount * item.price.slice(1)).toFixed(2);
+        newInnerPrice[index].textContent = `$${newPrice}`;
+        newInnerCount[index].value = `${newAmount}`;
+        return {
+          ...item,
+          count: newAmount,
+        };
+      }
+      return item;
+    });
+    localStorage.setItem("shopping", JSON.stringify(newProducts));
+    calculateSubtotalAmount(newProducts);
+  });
+});
+
+//input change
+newInnerCount.forEach((item) => {
+  item.addEventListener("keydown", function (event) {
+    if (!event.key.match(/\d/) && event.key !== "Backspace") {
+      event.preventDefault();
+    }
+  });
+
+  const eventList = ["blur", "keyup"];
+
+  for (events of eventList) {
+    item.addEventListener(events, function (event) {
+      if (event.target.value === "" && event.key === "Enter") {
+        event.target.value = "1";
+      }
+      const previousProducts = JSON.parse(localStorage.getItem("shopping"));
+      const productName =
+        item.closest(".product__counter").previousElementSibling
+          .lastElementChild.firstElementChild.textContent;
+
+      const newProducts = previousProducts.map((item, index) => {
+        if (item.name === productName) {
+          const newPrice = (+event.target.value * item.price.slice(1)).toFixed(
+            2
+          );
+          newInnerPrice[index].textContent = `$${newPrice}`;
+          return {
+            ...item,
+            count: event.target.value,
+          };
+        }
+        return item;
+      });
+      localStorage.setItem("shopping", JSON.stringify(newProducts));
+      calculateSubtotalAmount(newProducts);
+    });
+  }
+});
+
+// remove product from shopping card
+const buttonsRemove = document.querySelectorAll(".button-remove");
+const buttonsRemoveProduct = [...buttonsRemove];
+console.log(buttonsRemoveProduct);
+
+buttonsRemoveProduct.forEach((item) => {
+  item.addEventListener("click", function () {
+    const previousProducts = JSON.parse(localStorage.getItem("shopping"));
+    const itemToRemove = item.closest(".product__counter").parentElement;
+    const itemToRemoveName =
+      itemToRemove.firstElementChild.lastElementChild.firstElementChild
+        .textContent;
+    console.log(itemToRemoveName);
+    itemToRemove.remove();
+    const filteredProductList = previousProducts.filter(
+      (product) => product.name !== itemToRemoveName
+    );
+
+    console.log(filteredProductList);
+    localStorage.setItem("shopping", JSON.stringify(filteredProductList));
+    calculateSubtotalAmount(filteredProductList);
+  });
+});
+
+const shoppingSum = document.querySelector(".shopping__sum");

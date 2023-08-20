@@ -731,7 +731,10 @@
                     <button type="button" class="btn btn-outline-primary buy">
                       <a class="price" href="">$ 659.55</a>
                     </button>
-                    <button type="button" class="btn btn-outline-primary buy">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary buy button-buy"
+                    >
                       Buy now
                     </button>
                   </div>
@@ -1478,7 +1481,7 @@
             <h2 class="sing-in__title" id="exampleModalLabel">Sign in</h2>
 
             <div class="modal-body">
-              <div class="">
+              <div>
                 <label for="exampleFormControlInput1" class="form-label"
                   >Email</label
                 >
@@ -1490,7 +1493,7 @@
                 />
               </div>
 
-              <div class="">
+              <div>
                 <div class="sing-in__align">
                   <label for="inputPassword" class="col-sm-2 col-form-label"
                     >Lato</label
@@ -1524,7 +1527,67 @@
           </div>
         </div>
       </div>
+
+      <!-- madol cookie -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#cookieModal"
+        id="openCookieModalButton"
+        style="visibility: hidden"
+      >
+        Launch demo modal
+      </button>
+
+      <div
+        class="modal fade"
+        id="cookieModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="false"
+      >
+        <div class="modal-dialog cookies__dialog">
+          <div class="modal-content cookies__content">
+            <div class="modal-header cookies__title">
+              <h5 class="modal-title" id="exampleModalLabel">
+                This website uses cookies
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="row">
+              <div class="modal-body col-10">
+                <p class="cookies__description">
+                  OSF uses its own and third-party cookies for statistical
+                  purposes, to know your preferences, for website performance
+                  and interaction with social media offering publicity tailored
+                  to your interests. If you continue browsing, we consider that
+                  you accept its use. You can expand this information consulting
+                  our
+                  <a href="#" class="cookies__link">Cookies Policy Page</a>.
+                </p>
+              </div>
+              <div class="modal-footer col-2">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                  id="accept-cookies"
+                >
+                  Accept
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

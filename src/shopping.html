@@ -546,94 +546,133 @@
       <!-- start main -->
       <main class="main wrap-internal">
         <div class="container-fluid">
-            <div class="row">
-              <ul class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="./index.html" class="link-home">Home</a>
-                </li>
-                <li class="breadcrumb-item active">Shopping Cart</li>
-              </ul>
+          <div class="row">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="./index.html" class="link-home">Home</a>
+              </li>
+              <li class="breadcrumb-item active">Shopping Cart</li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="not-found__wrap-title">
+              <div class="col-3 not-found__line"></div>
+              <div class="col-4 not-found__title">
+                <h1 class="not-found__title--404">SHOPPING CART</h1>
+              </div>
+              <div class="col-3 not-found__line"></div>
             </div>
-            <div class="row">
-              <div class="not-found__wrap-title">
-                <div class="col-3 not-found__line"></div>
-                <div class="col-4 not-found__title">
-                  <h1 class="not-found__title--404">SHOPPING CART</h1>
-                </div>
-                <div class="col-3 not-found__line"></div>
+          </div>
+        </div>
+        <div class="container container-main" id="products-wrapper"></div>
+
+        <div class="container container-main">
+          <div class="row row-justify">
+            <div class="col col-lg-4 col-md-7 col-sm-10 shopping__align">
+              <input
+                type="text"
+                value="Enter Coupon Code"
+                class="form-control shopping__input"
+              />
+              <button type="button" class="btn btn-outline-light">Apply</button>
+            </div>
+            <div class="col col-lg-5 col-md-7 col-sm-10 shopping__align">
+              <button type="button" class="btn btn-outline-light">
+                Update cart
+              </button>
+              <button type="button" class="btn btn-light">
+                Proceed To CHECKOUT
+              </button>
+            </div>
+          </div>
+
+          <div class="row justify-content-end">
+            <div class="col col-lg-3 col-md-4 col-sm-6 shopping__align">
+              <p class="shopping__subtotal">card subtotal:</p>
+            </div>
+            <div class="col col-lg-4 col-md-4 col-sm-5">
+              <p class="shopping__sum">
+                $<span class="shopping-sum-amount">0.00</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="row justify-content-end">
+            <div class="col col-lg-3 col-md-4 col-sm-6 shopping__align">
+              <p class="shopping__title">SHIPPIING AND HANDLING:</p>
+            </div>
+            <div class="col col-lg-4 col-md-4 col-sm-5">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Flat Rate: <span class="shopping-prise">$10.00</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                  checked
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Free Shipping
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  International: <span class="shopping-prise">$60.00</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                  checked
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Local Delivery: <span class="shopping-prise">$5.00</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Local Pickup (Free)
+                </label>
               </div>
             </div>
+          </div>
+
+          <div class="row justify-content-end">
+            <div
+              class="col col-lg-3 col-md-4 col-sm-6 shopping__align shopping__align--order"
+            >
+              <p class="shopping__title">Order total:</p>
+            </div>
+            <div class="col col-lg-4 col-md-4 col-sm-5">
+              <p class="shopping__amount">$<span class="">0</span></p>
+            </div>
+          </div>
         </div>
-        <div class="container"></div>
-        <div class="container">
-            <div class="row row-justify">
-                <div class="col-4 shopping__align">
-                    <input type="text" value="Enter Coupon Code" class="form-control shopping__input">
-                    <button type="button" class="btn btn-outline-light">Apply</button>
-                </div>
-                <div class="col-5 shopping__align">
-                    <button type="button" class="btn btn-outline-light">Update cart</button>
-                    <button type="button" class="btn btn-light">Proceed To CHECKOUT</button>
-                </div>
-            </div>
-
-            <div class="row justify-content-end">
-                <div class="col-3 shopping__align">
-                    <p class="shopping__subtotal">cart subtotal:</p>
-                </div>
-                <div class="col-4">
-                    <p class="shopping__sum">$<span>0</span></p>
-                </div>
-            </div>
-
-            <div class="row justify-content-end ">
-                <div class="col-3 shopping__align">
-                    <p class="shopping__title">SHIPPIING AND HANDLING:</p>
-                </div>
-                <div class="col-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Flat Rate: <span class="shopping-prise">$10.00</span>
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Free Shipping
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            International: <span class="shopping-prise">$60.00</span>
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Local Delivery: <span class="shopping-prise">$5.00</span>
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Local Pickup (Free)
-                        </label>
-                      </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-end">
-                <div class="col-3 shopping__align shopping__align--order">
-                    <p class="shopping__title">Order total:</p> 
-                </div>
-                <div class="col-4">
-                    <p class="shopping__amount">$<span>0</span></p>
-                </div>
-            </div>
-        </div>   
-          
       </main>
       <!-- end main -->
 

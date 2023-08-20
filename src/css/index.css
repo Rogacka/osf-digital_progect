@@ -849,6 +849,9 @@ body {
   background-color: white;
   color: #85bc23;
 }
+.popular .popular__item .card__info .buy:focus {
+  box-shadow: none;
+}
 .popular .popular__item .card__info .price {
   color: #45413e;
   text-decoration: none;
@@ -1261,6 +1264,45 @@ body {
   .modal-content {
     width: 450px;
   }
+}
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-body {
+  justify-content: flex-start;
+}
+
+.btn-close,
+.btn-primary,
+.btn {
+  box-shadow: none;
+}
+
+.cookies__dialog {
+  max-width: 90%;
+}
+.cookies__content {
+  width: 100%;
+  height: fit-content;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.cookies__title {
+  color: #85bc23;
+  padding-bottom: 0;
+}
+.cookies__link {
+  color: #45413e;
+  text-decoration: none;
+  color: #85bc23;
+}
+.cookies__link:hover {
+  color: inherit;
+  cursor: pointer;
+}
+.cookies__description {
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=index.css.map */

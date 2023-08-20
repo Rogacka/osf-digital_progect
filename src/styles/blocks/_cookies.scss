@@ -1,0 +1,42 @@
+@import "../utils/variables";
+@import "../utils/mixin.scss";
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-body {
+  justify-content: flex-start;
+}
+
+.btn-close,
+.btn-primary,
+.btn {
+  box-shadow: none;
+}
+
+.cookies {
+  &__dialog {
+    max-width: 90%;
+  }
+  &__content {
+    width: 100%;
+    height: fit-content;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__title {
+    color: $first-color;
+    padding-bottom: 0;
+  }
+
+  &__link {
+    @include for-link;
+    color: $first-color;
+  }
+
+  &__description {
+    font-size: 0.9rem;
+  }
+}

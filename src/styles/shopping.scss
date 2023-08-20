@@ -7,129 +7,191 @@
 @import "blocks/modal";
 
 main {
-    background-color: $background-not-found;
-    padding-bottom: 45px;
+  background-color: $background-not-found;
+  padding-bottom: 45px;
+}
+
+.breadcrumb {
+  justify-content: center;
+  padding: 45px 0 25px;
+  margin-bottom: 0;
+}
+
+.link-home {
+  @include for-link;
+  color: $first-color;
+  &:hover {
+    color: darken($first-color, 10%);
   }
-  
-  .breadcrumb {
-    justify-content: center;
-    padding: 45px 0 25px;
-    margin-bottom: 0;
-  }
-  
-  .link-home {
-    @include for-link;
-    color: $first-color;
-    &:hover {
-      color: darken($first-color, 10%);
-    }
-  }
+}
 
 .row-justify {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
-.container {
-    background-color: #fff;
-    padding: 50px 0;
-    margin-top: 2px;
+.container-main {
+  background-color: #fff;
+  padding: 50px 0;
+  margin-top: 2px;
 }
-
 .row {
-    padding: 20px 0;
+  padding-bottom: 20px;
 }
-.shopping {
-    &__align {
+
+.align-product {
+  justify-content: space-around;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    width: 96px;
+    height: 92px;
+    margin: 0 30px;
+  }
+
+  &__counter {
+    width: 450px;
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
 
-        &--order {
-            align-items: center;
-        }
-    }
-    &__input {
-        width: 240px;
-        padding-left: 10px;
-        border: 2px solid $color-btn;
-        border-radius: 20px;
-        margin-right: 20px;
+    .input-group {
+      flex-wrap: nowrap;
+      align-items: center;
+      width: 130px;
+      border: 2px solid $color-icon;
+      border-radius: 20px;
+
+      .btn {
+        width: fit-content;
+        font-size: 1rem;
+        font-weight: 800;
+        color: $color-icon;
+
         &:focus {
-            border: 2px solid $color-btn;
-            box-shadow: none;
+          box-shadow: none;
         }
+      }
     }
-    &__subtotal {
-        text-transform: uppercase;
-        color: $text-color-main;
+    .material-symbols-outlined {
+      font-size: 2rem;
+      color: $color-icon;
+      &:hover {
+        cursor: pointer;
+      }
     }
+  }
+  &__amount {
+    color: $text-color-main;
+    font-size: 2rem;
+    font-weight: 900;
+  }
 
-    &__sum {
-        font-weight: 600;
+  &__count {
+    border: none;
+    display: inline-block;
+    text-align: center;
+    width: 40%;
+    &:focus {
+      box-shadow: none;
     }
+  }
+}
 
-    &__title {
-        font-weight: 600;
-        text-transform: uppercase;
-    }
+.shopping {
+  &__align {
+    display: flex;
+    justify-content: space-evenly;
 
-    &__amount {
-        font-size: 3rem;
-        font-weight: 900;
+    &--order {
+      align-items: center;
     }
+  }
+  &__input {
+    width: 240px;
+    padding-left: 10px;
+    border: 2px solid $color-btn;
+    border-radius: 20px;
+    margin-right: 20px;
+    &:focus {
+      border: 2px solid $color-btn;
+      box-shadow: none;
+    }
+  }
+  &__subtotal {
+    text-transform: uppercase;
+    color: $text-color-main;
+  }
+
+  &__sum {
+    font-weight: 600;
+  }
+
+  &__title {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__amount {
+    font-size: 3rem;
+    font-weight: 900;
+  }
 }
 .btn-outline-light {
-    border-color: $first-color;
-    color: $first-color;
-    &:hover {
-        border-color: $color-btn;
-        background-color: $color-btn;
-        color: $text-color-main;
-    }
+  border-color: $first-color;
+  color: $first-color;
+  &:hover {
+    border-color: $color-btn;
+    background-color: $color-btn;
+    color: $text-color-main;
+  }
 }
 .btn-light {
-    width: 260px;
-    background-color: $first-color;
-    color: white;
-    border: 2px solid $first-color;
-    margin-left: 20px;
+  width: 260px;
+  background-color: $first-color;
+  color: white;
+  border: 2px solid $first-color;
+  margin-left: 20px;
 
-    &:hover {
-        background-color: darken($color: $first-color, $amount: 10%);
-        border-color: darken($color: $first-color, $amount: 10%);
-        color: white;
-    }
-    &:focus {
-        background-color: darken($color: $first-color, $amount: 10%);
-        border-color: darken($color: $first-color, $amount: 10%);
-        color: white;
-        box-shadow: none;
-    }
+  &:hover {
+    background-color: darken($color: $first-color, $amount: 10%);
+    border-color: darken($color: $first-color, $amount: 10%);
+    color: white;
+  }
+  &:focus {
+    background-color: darken($color: $first-color, $amount: 10%);
+    border-color: darken($color: $first-color, $amount: 10%);
+    color: white;
+    box-shadow: none;
+  }
 }
 
 .form-check-input {
-    &:checked {
-        background-color: $first-color;
-        border-color: $first-color;
-    }
-    &:focus {
-        box-shadow: none;
-    }
+  &:checked {
+    background-color: $first-color;
+    border-color: $first-color;
+  }
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 .shopping-prise {
-    font-weight: 700;
+  font-weight: 700;
+}
+
+.col {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 769px) {
-    .row-justify {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .shopping {
-        &__align {
-        display: flex;
-        justify-content: space-around;
-        }
-    }
+  .align-product {
+    flex-direction: column;
+  }
+  .product__counter {
+    justify-content: space-around;
+  }
 }
