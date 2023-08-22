@@ -583,15 +583,30 @@
                   src="./images/detailed-page/black-front.jpg"
                   alt="Ruffle Front V-Neck Cardigan"
                 />
+                <img
+                  class="detailed-page__image hide-img"
+                  src="./images/detailed-page/black-back.jpg"
+                  alt="Ruffle Front V-Neck Cardigan"
+                />
+                <img
+                  class="detailed-page__image hide-img"
+                  src="./images/detailed-page/blue-front.jpg"
+                  alt="Ruffle Front V-Neck Cardigan"
+                />
+                <img
+                  class="detailed-page__image hide-img"
+                  src="./images/detailed-page/blue-back.jpg"
+                  alt="Ruffle Front V-Neck Cardigan"
+                />
               </div>
               <div class="col col-lg-1 col-md-12 col-sm-12">
-                <div class="detailed-page__container">
+                <div class="detailed-page__container container-active">
                   <img
                     class="detailed-page__image-small"
                     src="./images/detailed-page/black-front-small.jpg"
                     alt="Ruffle Front V-Neck Cardigan"
                   />
-                  <div class="card-img-overlay"></div>
+                  <div class="card-img-overlay active-img"></div>
                 </div>
                 <div class="detailed-page__container">
                   <img
@@ -630,20 +645,20 @@
                 <div class="detailed-page__size-select">
                   <div class="input-group">
                     <span class="input-group-btn">
-                      <button class="btn btn-white btn-minuse" type="button">
+                      <button class="btn btn-white btn-decrease" type="button">
                         -
                       </button>
                     </span>
 
                     <input
                       type="text"
-                      class="form-control product__count no-padding add-color text-center height-25"
+                      class="form-control input-count no-padding add-color text-center height-25"
                       maxlength="3"
                       value="1"
                     />
 
                     <span class="input-group-btn">
-                      <button class="btn btn-red btn-plus" type="button">
+                      <button class="btn btn-red btn-increase" type="button">
                         +
                       </button>
                     </span>
@@ -708,6 +723,112 @@
                   >
                     <i class="fa fa-pinterest-p"></i>
                   </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row tab">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#home"
+                    type="button"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                  >
+                    Descriptions
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="profile-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#profile"
+                    type="button"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                  >
+                    Additional Information
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="contact-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#contact"
+                    type="button"
+                    role="tab"
+                    aria-controls="contact"
+                    aria-selected="false"
+                  >
+                    Reviews (3)
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="home"
+                  role="tabpanel"
+                  aria-labelledby="home-tab"
+                >
+                  <p>
+                    Descriptions: Aenean commodo ligula eget dolor. Aenean
+                    massa. Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet,
+                    consectetuer adipiscing elit.<br />
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                    natoque penatibus et magnis dis parturient montes, nascetur
+                    ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                    eu, pretium quis, sem. Vivamus elementum semper nisi. Aenean
+                    vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                    consequat vitae, eleifend ac, enim.
+                  </p>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab"
+                >
+                  <p>
+                    Additional Information: Cum sociis natoque penatibus et
+                    magnis dis parturient montes, nascetur ridiculus mus. Nulla
+                    consequat massa quis enim.<br />
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate
+                    eget, arcu. Aenean leo ligula, porttitor eu, consequat
+                    vitae, eleifend ac, enim.
+                    <br />Aliquam lorem ante, dapibus in, viverra quis, feugiat
+                    a, tellus. Phasellus viverra nulla ut metus varius laoreet.
+                    Quisque rutrum.
+                  </p>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="contact"
+                  role="tabpanel"
+                  aria-labelledby="contact-tab"
+                >
+                  <p>
+                    Reviews (3): Quisque rutrum. Aenean imperdiet. Etiam
+                    ultricies nisi vel augue. <br />
+                    Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam
+                    rhoncus. Maecenas nec odio et ante tincidunt tempus. Sed
+                    consequat, leo eget bibendum sodales, augue velit cursus
+                    nunc,Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus.<br />
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium
+                    quis, sem. Nulla consequat massa quis enim.
+                  </p>
                 </div>
               </div>
             </div>

@@ -24,13 +24,63 @@ const readLessButton = document.querySelector(".detailed-page__read-less");
   });
 });
 
-const detailedPageContainers = document.querySelectorAll(".card-img-overlay");
-const imageOverlay = [...detailedPageContainers];
-console.log(imageOverlay);
+const detailedImageOverlay = document.querySelectorAll(".card-img-overlay");
+const imageOverlay = [...detailedImageOverlay];
 
-imageOverlay.forEach((item) => {
+const detailedPageContainer = document.querySelectorAll(
+  ".detailed-page__container"
+);
+const pageContainers = [...detailedPageContainer];
+
+const detailedPageImage = document.querySelectorAll(".detailed-page__image");
+const pageImages = [...detailedPageImage];
+
+console.log(pageContainers);
+
+imageOverlay.forEach((item, index) => {
   item.addEventListener("click", () => {
-    console.log(item);
-    item.classList.toggle("active");
+    pageContainers.forEach((element) =>
+      element.classList.remove("container-active")
+    );
+    imageOverlay.forEach((element) => element.classList.remove("active-img"));
+    pageImages.forEach((element) => element.classList.add("hide-img"));
+
+    item.classList.toggle("active-img");
+    const parentItem = item.closest(".detailed-page__container");
+    parentItem.classList.toggle("container-active");
+    pageImages[index].classList.toggle("hide-img");
   });
 });
+
+const btnDecrease = document.querySelector(".btn-decrease");
+const btnIncrease = document.querySelector(".btn-increase");
+const inputValue = document.querySelector(".input-count");
+
+//decrease amount of the product
+btnDecrease.addEventListener("click", () => {
+  inputValue.value--;
+  if (inputValue.value < 1) {
+    inputValue.value = 1;
+  }
+}); // end btnDecrease
+
+//increase amount of the product
+btnIncrease.addEventListener("click", () => {
+  inputValue.value++;
+});
+
+//increase ar decrease amount of the product with input
+const eventList = ["keydown", "blur", "keyup"];
+for (events of eventList) {
+  inputValue.addEventListener(events, function (event) {
+    if (!event.key.match(/\d/) && event.key !== "Backspace") {
+      event.preventDefault();
+    }
+    if (
+      (event.target.value === "" || event.target.value === "0") &&
+      event.key === "Enter"
+    ) {
+      event.target.value = "1";
+    }
+  });
+}

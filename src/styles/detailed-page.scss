@@ -53,6 +53,8 @@
     height: fit-content;
     width: fit-content;
     margin-bottom: 20px;
+    display: inline-block;
+    margin-right: 20px;
 
     .card-img-overlay {
       background-color: white;
@@ -60,9 +62,8 @@
       border: 1px solid grey;
     }
 
-    .active {
+    .active-img {
       opacity: 0;
-      border: #84bc22 1px solid;
     }
   }
 
@@ -114,6 +115,13 @@
     }
   }
 }
+.container-active {
+  border: #84bc22 1px solid;
+}
+
+.hide-img {
+  display: none;
+}
 
 .toggle-hidden-text {
   color: #84bc22;
@@ -142,6 +150,14 @@
     }
   }
 }
+.input-count {
+  border: none;
+  display: inline-block;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
 
 .btn {
   &-success {
@@ -160,6 +176,68 @@
 }
 .col-md-12 {
   gap: 20px;
+}
+
+.nav {
+  justify-content: center;
+  border: none;
+
+  &-link {
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    color: #bdc3c7;
+    border-color: #262a33;
+    transition: none;
+    height: 70px;
+
+    .active {
+      &:focus {
+        border-color: #262a33 !important;
+      }
+    }
+
+    &:hover {
+      color: #bdc3c7;
+      border: none;
+    }
+  }
+  .active {
+    background-color: #262a33 !important;
+    color: #fff !important;
+    border-radius: 20px 20px 0 0 !important;
+
+    &:hover {
+      border-color: #262a33 !important;
+    }
+
+    &:focus {
+      border-color: #262a33 !important;
+    }
+  }
+}
+
+.tab-pane {
+  column-count: 2;
+  column-gap: 50px;
+  padding: 68px;
+  @media (max-width: 768px) {
+    column-count: 1;
+  }
+}
+.fade {
+  transition: none;
+  animation-duration: 0s;
+}
+
+.show {
+  color: white;
+  background-color: #262a33;
+}
+
+@media (max-width: 992px) {
+  .tab {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
