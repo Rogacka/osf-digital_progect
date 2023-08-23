@@ -4,22 +4,20 @@ const shoppingContainerShow = [...shoppingContainer];
 const heartContainer = document.querySelectorAll(".heart-container");
 const heartContainerShow = [...heartContainer];
 
+const formCheck = document.querySelectorAll(".form-check-input");
+const formCheckInput = [...formCheck];
+
 window.addEventListener("load", function () {
   if (this.localStorage.getItem("shopping") !== undefined) {
     addNumber("shopping", shoppingContainerShow);
-    // const subtotalFromLocalStorage = JSON.parse(
-    //   localStorage.getItem("shopping")
-    // );
-    // calculateSubtotalAmount(subtotalFromLocalStorage);
   }
 
-  if (this.localStorage.getItem("liked") != undefined) {
+  if (this.localStorage.getItem("liked") !== undefined) {
     addNumber("liked", heartContainerShow);
   }
 
   //check cookies
   const cookies = JSON.parse(this.localStorage.getItem("cookies"));
-  console.log(cookies);
   if (cookies === null) {
     this.localStorage.setItem("cookies", false);
   }
@@ -29,32 +27,79 @@ window.addEventListener("load", function () {
       document.getElementById("openCookieModalButton").click();
     }, 10000);
   }
+
+  //add handling to total amount
+  // chooseHandling(formCheckInput[0]);
+
+  //cart subtotal
+  if (this.localStorage.getItem("shopping") !== undefined) {
+    const subtotalFromLocalStorage = JSON.parse(
+      localStorage.getItem("shopping")
+    );
+    chooseHandling(formCheckInput[0]);
+    calculateSubtotalAmount(subtotalFromLocalStorage);
+    calculateFinalPurchaseAmount(subtotalFromLocalStorage);
+  }
 });
 
 //function add cookies to local storage
 const acceptCookies = document.getElementById("accept-cookies");
 acceptCookies?.addEventListener("click", function () {
   localStorage.setItem("cookies", true);
+});
 
-  //cart subtotal
-  if (localStorage.getItem) {
-    const subtotalFromLocalStorage = JSON.parse(
-      localStorage.getItem("shopping")
-    );
-    calculateSubtotalAmount(subtotalFromLocalStorage);
+//check email
+const formControlInput = document.getElementById("exampleFormControlInput1");
+
+formControlInput.addEventListener("blur", function () {
+  const email = formControlInput.value;
+  const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  if (emailRegEx.test(email)) {
+    formControlInput.classList.remove("is-invalid");
+    formControlInput.classList.add("is-valid");
+    document.getElementById("sing-in__submit").disabled = false;
+  } else {
+    formControlInput.classList.remove("is-valid");
+    formControlInput.classList.add("is-invalid");
+    document.getElementById("sing-in__submit").disabled = true;
   }
 });
 
-function calculateSubtotalAmount(allProduct) {
-  let subtotal = 0;
-  console.log(subtotal);
-  allProduct.forEach((item) => {
-    subtotal += +(item.count * item.price.slice(1));
-  });
-  const shoppingSumAmount = document.querySelector(".shopping-sum-amount");
-  shoppingSumAmount.textContent = `${subtotal.toFixed(2)}`;
-}
-const shoppingSumAmount = document.querySelector(".shopping-sum-amount");
+//check password
+const formControlPassword = document.getElementById("inputPassword");
+
+formControlPassword.addEventListener("blur", function () {
+  const password = formControlPassword.value;
+  console.log(password);
+  const passwordRegEx =
+    /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*])[0-9a-zA-Z!@#$%^&*]{6,}$/;
+  if (passwordRegEx.test(password)) {
+    formControlPassword.classList.remove("is-invalid");
+    formControlPassword.classList.add("is-valid");
+    document.getElementById("sing-in__submit").disabled = false;
+  } else {
+    formControlPassword.classList.remove("is-valid");
+    formControlPassword.classList.add("is-invalid");
+    document.getElementById("sing-in__submit").disabled = true;
+  }
+});
+
+//show and hide password
+const passwordIcon = document.querySelector(".password--icon");
+
+// console.log(passwordIcon);
+// console.log(formControlPassword);
+// passwordIcon.addEventListener("click", function () {
+//   if (formControlPassword.type === "password") {
+//     formControlPassword.type = "text";
+//     console.log("!!!!!!!!");
+//     // passwordIcon.style.opacity = "0";
+//   } else {
+//     formControlPassword.type = "password";
+//     console.log("????????");
+//     // passwordIcon.style.opacity = "1";
+//   }
+// });
 
 //function shows and hides header hidden menu
 const servises = document.getElementById("servises"); //button services on header desctop
@@ -174,10 +219,22 @@ const buttonBuy = [...buy];
 
 buttonBuy.forEach((item) => {
   item.addEventListener("click", function () {
-    let good = createPoductCard(item);
-    console.log("good", good);
-    addToLocalStorage("shopping", good);
-    addNumber("shopping", shoppingContainerShow);
+    if (item.getAttribute("id") === null) {
+      let good = createPoductCard(item);
+      console.log("good", good);
+      addToLocalStorage("shopping", good);
+      addNumber("shopping", shoppingContainerShow);
+    } else {
+      const btnBuyNow = document.getElementById("add-to-card");
+      const product = {
+        name: document.getElementById("img-2").getAttribute("alt"),
+        image: document.getElementById("img-2").getAttribute("src"),
+        price: btnBuyNow.previousElementSibling.innerText,
+        count: 1,
+      };
+      addToLocalStorage("shopping", product);
+      addNumber("shopping", shoppingContainerShow);
+    }
   });
 });
 
@@ -202,7 +259,6 @@ function addNumber(storageKey, containers) {
 //decreese number likes
 function removeNumber(storageKey, containers) {
   const previousProductsList = JSON.parse(localStorage.getItem(storageKey));
-  // let previousProductsListCount = 0;
   if (previousProductsList.length === 0) {
     containers.forEach((el) => {
       el.style.display = "none";
@@ -231,6 +287,7 @@ function createPoductCard(itemCart) {
 
 // add prodacts to local storage
 function addToLocalStorage(storageKey, storageProduct) {
+  console.log(storageProduct.count, "storageProduct.count");
   let previousProducts = JSON.parse(localStorage.getItem(storageKey));
   if (previousProducts && previousProducts.length) {
     const productAlreadyExistInStorage = previousProducts.some(
@@ -238,11 +295,21 @@ function addToLocalStorage(storageKey, storageProduct) {
     );
     if (productAlreadyExistInStorage) {
       const transformedProductsList = previousProducts.map((item) => {
-        if (item.name === storageProduct.name) {
+        if (item.name === storageProduct.name && +storageProduct.count === 1) {
+          console.log("!!!!!111111");
           const newCount = ++item.count;
           return {
             ...item,
             count: storageKey !== "liked" ? newCount : item.count,
+          };
+        } else if (
+          item.name === storageProduct.name &&
+          +storageProduct.count > 1
+        ) {
+          console.log("2!!!!2222");
+          return {
+            ...item,
+            count: +item.count + +storageProduct.count,
           };
         }
         return item;
@@ -342,6 +409,7 @@ increase.forEach((item) => {
     });
     localStorage.setItem("shopping", JSON.stringify(newProducts));
     calculateSubtotalAmount(newProducts);
+    calculateFinalPurchaseAmount(newProducts);
   });
 });
 
@@ -368,6 +436,7 @@ decreese.forEach((item) => {
     });
     localStorage.setItem("shopping", JSON.stringify(newProducts));
     calculateSubtotalAmount(newProducts);
+    calculateFinalPurchaseAmount(newProducts);
   });
 });
 
@@ -406,6 +475,7 @@ newInnerCount.forEach((item) => {
       });
       localStorage.setItem("shopping", JSON.stringify(newProducts));
       calculateSubtotalAmount(newProducts);
+      calculateFinalPurchaseAmount(newProducts);
     });
   }
 });
@@ -413,7 +483,6 @@ newInnerCount.forEach((item) => {
 // remove product from shopping card
 const buttonsRemove = document.querySelectorAll(".button-remove");
 const buttonsRemoveProduct = [...buttonsRemove];
-console.log(buttonsRemoveProduct);
 
 buttonsRemoveProduct.forEach((item) => {
   item.addEventListener("click", function () {
@@ -431,7 +500,54 @@ buttonsRemoveProduct.forEach((item) => {
     console.log(filteredProductList);
     localStorage.setItem("shopping", JSON.stringify(filteredProductList));
     calculateSubtotalAmount(filteredProductList);
+    calculateFinalPurchaseAmount(filteredProductList);
   });
 });
 
-const shoppingSum = document.querySelector(".shopping__sum");
+//function calculate sub total amount
+function calculateSubtotalAmount(allProduct) {
+  let subtotal = 0;
+  allProduct.forEach((item) => {
+    subtotal += +(item.count * item.price.slice(1));
+  });
+  const shoppingSumAmount = document.querySelector(".shopping-sum-amount");
+  shoppingSumAmount.textContent = `${subtotal.toFixed(2)}`;
+}
+
+//function calculate handling
+const finalPurchaseAmount = document.querySelector(".final-purchase-amount");
+let finalPurchaseAmountValue = finalPurchaseAmount?.textContent;
+console.log(finalPurchaseAmountValue);
+
+formCheckInput.forEach((item) => {
+  item.addEventListener("click", function () {
+    chooseHandling(item);
+    calculateFinalPurchaseAmount(JSON.parse(localStorage.getItem("shopping")));
+  });
+});
+
+let shippingAndHandling = 0;
+
+function chooseHandling(item) {
+  const handling = item?.nextElementSibling?.firstElementChild;
+  console.log(handling);
+  if (handling !== null) {
+    finalPurchaseAmount.textContent = handling?.textContent?.slice(1);
+    shippingAndHandling = +handling?.textContent?.slice(1);
+    console.log(shippingAndHandling);
+  } else {
+    finalPurchaseAmount.innerHTML = finalPurchaseAmountValue;
+    shippingAndHandling = 0;
+  }
+}
+console.log(shippingAndHandling, typeof shippingAndHandling);
+//function calculate final purchase amount
+function calculateFinalPurchaseAmount(allProducts) {
+  let subtotal = 0;
+  allProducts.forEach((item) => {
+    subtotal += +(item.count * item.price.slice(1));
+  });
+  console.log(subtotal, typeof subtotal);
+  finalPurchaseAmount.innerHTML = (subtotal + shippingAndHandling).toFixed(2);
+  console.log(finalPurchaseAmount.textContent);
+}

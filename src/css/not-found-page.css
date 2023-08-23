@@ -34,7 +34,7 @@ body {
   }
 }
 .main {
-  padding-top: 80px;
+  padding-top: 110px;
 }
 
 .btn {
@@ -44,30 +44,6 @@ body {
   height: 40px;
   border-radius: 20px;
   border-width: 2px;
-}
-
-.main {
-  background-color: #f1edea;
-  padding-bottom: 45px;
-}
-
-.breadcrumb {
-  justify-content: center;
-  padding: 45px 0 25px;
-  margin-bottom: 0;
-}
-
-.link-home {
-  color: #45413e;
-  text-decoration: none;
-  color: #85bc23;
-}
-.link-home:hover {
-  color: inherit;
-  cursor: pointer;
-}
-.link-home:hover {
-  color: #67911b;
 }
 
 .not-found__wrap-title {
@@ -254,6 +230,7 @@ body {
 }
 .menu .options {
   margin-bottom: 0;
+  padding-top: 16px;
 }
 .menu .options__item {
   padding: 0 15px 10px 15px;
@@ -639,7 +616,7 @@ body {
   }
 }
 .main {
-  padding-top: 80px;
+  padding-top: 110px;
 }
 
 .btn {
@@ -649,30 +626,6 @@ body {
   height: 40px;
   border-radius: 20px;
   border-width: 2px;
-}
-
-.main {
-  background-color: #f1edea;
-  padding-bottom: 45px;
-}
-
-.breadcrumb {
-  justify-content: center;
-  padding: 45px 0 25px;
-  margin-bottom: 0;
-}
-
-.link-home {
-  color: #45413e;
-  text-decoration: none;
-  color: #85bc23;
-}
-.link-home:hover {
-  color: inherit;
-  cursor: pointer;
-}
-.link-home:hover {
-  color: #67911b;
 }
 
 .not-found__wrap-title {
@@ -729,7 +682,7 @@ body {
 .modal-content .sing-in__password--icon {
   position: absolute;
   top: 8px;
-  right: 15px;
+  right: 30px;
   color: #b2b2b2;
   font-weight: 900;
 }
@@ -751,14 +704,22 @@ body {
   border-color: #67911b;
 }
 
-.modal-body {
+.modal-body-sing-in {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .modal-footer {
   border-top: none;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.icon--hide {
+  opacity: 0;
 }
 
 @media (max-width: 769px) {
@@ -770,6 +731,30 @@ body {
     width: 450px;
   }
 }
+.main {
+  background-color: #f1edea;
+  padding-bottom: 45px;
+}
+
+.breadcrumb {
+  justify-content: center;
+  padding: 45px 0 25px;
+  margin-bottom: 0;
+}
+
+.link-home {
+  color: #45413e;
+  text-decoration: none;
+  color: #85bc23;
+}
+.link-home:hover {
+  color: inherit;
+  cursor: pointer;
+}
+.link-home:hover {
+  color: #67911b;
+}
+
 .not-found__wrap-title {
   display: flex;
   justify-content: center;

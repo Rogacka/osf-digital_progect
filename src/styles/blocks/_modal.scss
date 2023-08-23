@@ -3,16 +3,16 @@
 
 @import "../blocks/basic";
 
-  .modal-content {
-    border: 1px solid $text-color-hover;
-    border-radius: $border-radius-px;
-    padding: 32px 36px;
-    width: 500px;
-    height: 468px;
-    background-color: white;
-    color: $text-color-main;
+.modal-content {
+  border: 1px solid $text-color-hover;
+  border-radius: $border-radius-px;
+  padding: 32px 36px;
+  width: 500px;
+  height: 468px;
+  background-color: white;
+  color: $text-color-main;
 
-    .sing-in {
+  .sing-in {
     &__title {
       text-align: center;
       font-weight: 600;
@@ -32,60 +32,67 @@
     }
 
     &__forgot {
-        font-weight: 600;
-        color: $first-color;
-        font-size: 0.7rem;
+      font-weight: 600;
+      color: $first-color;
+      font-size: 0.7rem;
     }
 
     &__password {
-        position: relative;
+      position: relative;
 
-        &--icon {
-            position: absolute;
-            top: 8px;
-            right: 15px;
-            color: $color-icon;
-            font-weight: 900;
-            
-            &:hover {
-                cursor: pointer;
-            }
+      &--icon {
+        position: absolute;
+        top: 8px;
+        right: 30px;
+        color: $color-icon;
+        font-weight: 900;
+
+        &:hover {
+          cursor: pointer;
         }
-    }
-  }
-  
-  .form-control {
-    border-radius: 20px;
-    margin-top: 10px;
-}
-    .btn-primary {
-      background-color:  $first-color;
-      border-color: $first-color;
-      margin-bottom: 24px;
-      &:hover {
-        cursor: pointer;
-        background: darken($first-color, 10%);
-        border-color: darken($color: $first-color, $amount: 10%);
       }
     }
   }
-  .modal-body {
+
+  .form-control {
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  .btn-primary {
+    background-color: $first-color;
+    border-color: $first-color;
+    margin-bottom: 24px;
+    &:hover {
+      cursor: pointer;
+      background: darken($first-color, 10%);
+      border-color: darken($color: $first-color, $amount: 10%);
+    }
+  }
+}
+.modal-body-sing-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.icon--hide {
+  opacity: 0;
+}
+
+@media (max-width: 769px) {
+  .modal-dialog {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
+    justify-content: center;
   }
-
-  .modal-footer {
-    border-top: none;
+  .modal-content {
+    width: 450px;
   }
-
-  @media (max-width: 769px) {
-    .modal-dialog {
-      display: flex;
-      justify-content: center;
-    }
-    .modal-content {
-      width: 450px;
-    }
-  }
+}

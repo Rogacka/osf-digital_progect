@@ -230,6 +230,7 @@ body {
 }
 .menu .options {
   margin-bottom: 0;
+  padding-top: 16px;
 }
 .menu .options__item {
   padding: 0 15px 10px 15px;
@@ -746,6 +747,10 @@ main {
   color: #67911b;
 }
 
+.not-found__title--404 {
+  text-align: center;
+}
+
 .row-justify {
   justify-content: space-evenly;
 }
@@ -902,6 +907,14 @@ main {
   }
   .product__counter {
     justify-content: space-around;
+  }
+}
+@media (max-width: 576px) {
+  .not-found__line {
+    display: none;
+  }
+  .not-found__title--404 {
+    font-size: 2rem;
   }
 }
 

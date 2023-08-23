@@ -82,7 +82,10 @@
               >
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined">
+                favorite
+                <span class="heart-container"></span>
+              </span>
             </li>
             <li class="options__item">
               <a href="./shopping.html" class="footer-options__item">
@@ -556,11 +559,13 @@
           </div>
           <div class="row">
             <div class="not-found__wrap-title">
-              <div class="col-3 not-found__line"></div>
-              <div class="col-4 not-found__title">
+              <div class="col col-lg-4 col-md-2 col-sm-1 not-found__line"></div>
+              <div
+                class="col col-lg-4 col-md-8 col-sm-10 not-found__title-lg-not-found__title"
+              >
                 <h1 class="not-found__title--404">SHOPPING CART</h1>
               </div>
-              <div class="col-3 not-found__line"></div>
+              <div class="col col-lg-4 col-md-2 col-sm-1 not-found__line"></div>
             </div>
           </div>
         </div>
@@ -608,6 +613,7 @@
                   type="radio"
                   name="flexRadioDefault"
                   id="flexRadioDefault1"
+                  checked
                 />
                 <label class="form-check-label" for="flexRadioDefault1">
                   Flat Rate: <span class="shopping-prise">$10.00</span>
@@ -619,7 +625,6 @@
                   type="radio"
                   name="flexRadioDefault"
                   id="flexRadioDefault2"
-                  checked
                 />
                 <label class="form-check-label" for="flexRadioDefault2">
                   Free Shipping
@@ -642,7 +647,6 @@
                   type="radio"
                   name="flexRadioDefault"
                   id="flexRadioDefault2"
-                  checked
                 />
                 <label class="form-check-label" for="flexRadioDefault2">
                   Local Delivery: <span class="shopping-prise">$5.00</span>
@@ -669,7 +673,9 @@
               <p class="shopping__title">Order total:</p>
             </div>
             <div class="col col-lg-4 col-md-4 col-sm-5">
-              <p class="shopping__amount">$<span class="">0</span></p>
+              <p class="shopping__amount">
+                $<span class="final-purchase-amount">0</span>
+              </p>
             </div>
           </div>
         </div>
@@ -992,7 +998,10 @@
               >
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined">
+                favorite
+                <span class="heart-container"></span>
+              </span>
             </li>
             <li class="footer-options__item">
               <a href="./shopping.html" class="footer-options__item">

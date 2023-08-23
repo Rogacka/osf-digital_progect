@@ -679,11 +679,15 @@
           <div class="container-fluid">
             <div class="row">
               <div class="popular__wrap-title">
-                <div class="col-5 popular__line"></div>
-                <div class="col-2 popular__title">
+                <div
+                  class="col col-lg-5 col-md-4 col-sm-2 popular__line"
+                ></div>
+                <div class="col col-lg-2 col-md-3 col-sm-5 popular__title">
                   <h1 class="popular__title--heading">Popular items</h1>
                 </div>
-                <div class="col-5 popular__line"></div>
+                <div
+                  class="col col-lg-5 col-md-4 col-sm-2 popular__line"
+                ></div>
               </div>
             </div>
           </div>
@@ -715,25 +719,32 @@
 
             <div class="card">
               <div class="card__main">
-                <img
-                  class="card__img"
-                  src="images/main/popular-item-2.png"
-                  alt="Hay - About A Lounge 
-                    Chair AAL 93"
-                />
+                <a href="detailed-page.html">
+                  <img
+                    id="img-2"
+                    class="card__img"
+                    src="images/main/popular-item-2.png"
+                    alt="Hay - About A Lounge Chair AAL 93"
+                  />
+                </a>
                 <div class="card__info">
-                  <p>Hay - About A Lounge Chair AAL 93</p>
+                  <a href="detailed-page.html" class="card__info--link">
+                    <p>Hay - About A Lounge Chair AAL 93</p>
+                  </a>
                   <div
                     class="btn-group"
                     role="group"
                     aria-label="Basic outlined example"
                   >
                     <button type="button" class="btn btn-outline-primary buy">
-                      <a class="price" href="">$ 659.55</a>
+                      <a class="price" id="price-2" href="detailed-page.html"
+                        >$ 659.55</a
+                      >
                     </button>
                     <button
                       type="button"
                       class="btn btn-outline-primary buy button-buy"
+                      id="add-to-card"
                     >
                       Buy now
                     </button>
@@ -1480,7 +1491,7 @@
           <div class="modal-content sing-in">
             <h2 class="sing-in__title" id="exampleModalLabel">Sign in</h2>
 
-            <div class="modal-body">
+            <div class="modal-body modal-body-sing-in">
               <div>
                 <label for="exampleFormControlInput1" class="form-label"
                   >Email</label
@@ -1507,9 +1518,14 @@
                     id="inputPassword"
                   />
                   <span
-                    class="material-symbols-outlined sing-in__password--icon"
+                    class="material-symbols-outlined sing-in__password--icon password--icon"
                   >
                     visibility_off
+                  </span>
+                  <span
+                    class="material-symbols-outlined sing-in__password--icon"
+                  >
+                    visibility
                   </span>
                 </div>
               </div>
@@ -1519,6 +1535,7 @@
                 type="button"
                 class="btn btn-primary"
                 data-bs-dismiss="modal"
+                id="sing-in__submit"
               >
                 LOGIN
               </button>
@@ -1561,7 +1578,7 @@
               ></button>
             </div>
             <div class="row">
-              <div class="modal-body col-10">
+              <div class="modal-body modal-body-cookies col-10">
                 <p class="cookies__description">
                   OSF uses its own and third-party cookies for statistical
                   purposes, to know your preferences, for website performance

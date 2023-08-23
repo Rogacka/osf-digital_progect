@@ -6,24 +6,24 @@
 @import "blocks/footer";
 @import "blocks/modal";
 
-// .main {
-//   background-color: $background-not-found;
-//   padding-bottom: 45px;
-// }
+.main {
+  background-color: $background-not-found;
+  padding-bottom: 45px;
+}
 
-// .breadcrumb {
-//   justify-content: center;
-//   padding: 45px 0 25px;
-//   margin-bottom: 0;
-// }
+.breadcrumb {
+  justify-content: center;
+  padding: 45px 0 25px;
+  margin-bottom: 0;
+}
 
-// .link-home {
-//   @include for-link;
-//   color: $first-color;
-//   &:hover {
-//     color: darken($first-color, 10%);
-//   }
-// }
+.link-home {
+  @include for-link;
+  color: $first-color;
+  &:hover {
+    color: darken($first-color, 10%);
+  }
+}
 
 .not-found {
   &__wrap-title {

@@ -34,9 +34,9 @@
   }
 
   .popular__item {
-    width: 1172px;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     grid-gap: 30px;
 
@@ -191,12 +191,29 @@
     padding-left: 10px;
   }
 
-  @media (max-width: 1279px) {
-    .popular {
-      padding: 0;
-      &__item {
-        width: 100%;
-      }
+  .card__info--link {
+    @include for-link;
+    color: $text-color-main;
+    &:hover {
+      color: $first-color;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .popular {
+    padding: 0;
+
+    &__line {
+      display: none;
+    }
+
+    &__title {
+      width: 100%;
+    }
+
+    &__item {
+      width: 100%;
     }
   }
 }

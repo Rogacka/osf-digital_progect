@@ -28,10 +28,10 @@
     <div class="wrap_external">
       <!-- start header -->
       <header class="wrap_internal main-header">
-        <a href="./index.html" class="logo">
+        <a href="index.html" class="logo">
           <img
             class="logo__image"
-            src="./images/header/logo.png"
+            src="images/header/logo.png"
             alt="OSF logo"
           />
           <div class="logo__name">
@@ -62,7 +62,7 @@
             <select class="settings__item form-select" name="language">
               <option value="value1" selected>EN</option>
               <option value="value2">UA</option>
-              <option value="value3"></option>
+              <option value="value3">RO</option>
             </select>
             <select class="settings__item form-select" name="currency">
               <option value="value1" selected>$US</option>
@@ -76,18 +76,24 @@
             </li>
             <li class="options__item">
               <span
-                class="material-symbols-outlined"
+                class="material-symbols-outlined login"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 >person</span
               >
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined">
+                favorite
+                <span class="heart-container"></span>
+              </span>
             </li>
             <li class="options__item">
-              <a href="./shopping.html" class="footer-options__item">
-                <span class="material-symbols-outlined">shopping_bag</span>
+              <a href="./shopping.html">
+                <span class="material-symbols-outlined">
+                  shopping_bag
+                  <span class="shopping-container"></span>
+                </span>
               </a>
             </li>
           </ul>
@@ -315,7 +321,7 @@
             </span>
           </div>
           <div>
-            <a href="./index.html" class="logo">
+            <a href="#" class="logo">
               <img
                 class="mobile-header__img"
                 src="./images/header/logo.png"
@@ -566,7 +572,7 @@
               <div
                 class="col col-xl-7 col-lg-8 col-md-12 col-sm-12 not-found__title"
               >
-                <h1 class="not-found__title--404">
+                <h1 class="not-found__title--404" id="product-name">
                   Ruffle Front V-Neck Cardigan
                 </h1>
               </div>
@@ -580,6 +586,7 @@
               <div class="col col-lg-6 col-md-12 col-sm-12">
                 <img
                   class="detailed-page__image"
+                  id="main-img"
                   src="./images/detailed-page/black-front.jpg"
                   alt="Ruffle Front V-Neck Cardigan"
                 />
@@ -663,7 +670,7 @@
                       </button>
                     </span>
                   </div>
-                  <button type="button" class="btn btn-success">
+                  <button type="button" class="btn btn-success btn-add-to-card">
                     Add to cart
                   </button>
                 </div>
@@ -830,6 +837,163 @@
                     quis, sem. Nulla consequat massa quis enim.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- popular item -->
+        <div class="popular wrap-internal">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="popular__wrap-title">
+                <div class="col col-lg-4 col-md-3 col-sm-2 popular__line"></div>
+                <div class="col col-lg-4 col-md-4 col-sm-7 popular__title">
+                  <h1 class="popular__title--heading">Popular items</h1>
+                </div>
+                <div class="col col-lg-4 col-md-3 col-sm-2 popular__line"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="popular__item">
+            <div class="card">
+              <div class="card__main">
+                <img
+                  class="card__img"
+                  src="images/main/popular-item-3.jpg"
+                  alt="Activate Facial Mask and Charcoal Soap"
+                />
+                <div class="card__info">
+                  <p>Activate Facial Mask and<br />Charcoal Soap</p>
+                  <p>$ 129.55</p>
+                </div>
+              </div>
+              <div class="card__overlay">
+                <div class="card__buttons">
+                  <div class="card__button button-buy">
+                    <i class="fa fa-plus plus"></i>
+                  </div>
+                  <div class="card__button button-heart">
+                    <i class="fa fa-heart heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__main">
+                <img
+                  class="card__img"
+                  src="images/main/popular-item-1.png"
+                  alt="Kristina Dam Oak Table With White Marble Top"
+                />
+                <div class="card__info">
+                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p>$ 410.99</p>
+                </div>
+              </div>
+              <div class="card__overlay">
+                <div class="card__buttons">
+                  <div class="card__button button-buy">
+                    <i class="fa fa-plus plus"></i>
+                  </div>
+                  <div class="card__button button-heart">
+                    <i class="fa fa-heart heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__main">
+                <img
+                  class="card__img"
+                  src="images/main/popular-item-4.png"
+                  alt="Cocktail Table Walnut 
+                    | YES"
+                />
+                <div class="card__info">
+                  <p>Cocktail Table Walnut <br />| YES</p>
+                  <p>$ 299.99</p>
+                </div>
+              </div>
+              <div class="card__overlay">
+                <div class="card__buttons">
+                  <div class="card__button button-buy">
+                    <i class="fa fa-plus plus"></i>
+                  </div>
+                  <div class="card__button button-heart">
+                    <i class="fa fa-heart heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__main">
+                <img
+                  class="card__img"
+                  src="images/main/popular-item-5.png"
+                  alt="Hay - About A Lounge 
+                  Chair AAL 93"
+                />
+                <div class="card__info">
+                  <p>Hay - About A Lounge<br />Chair AAL 93</p>
+                  <p>$ 659.55</p>
+                </div>
+              </div>
+              <div class="card__overlay">
+                <div class="card__buttons">
+                  <div class="card__button button-buy">
+                    <i class="fa fa-plus plus"></i>
+                  </div>
+                  <div class="card__button button-heart">
+                    <i class="fa fa-heart heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advantages -->
+        <div class="container-fluid advantages wrap-internal">
+          <div class="advantages__wrap">
+            <div class="advantages__item">
+              <div class="col-4 advantages__img">
+                <img src="images/main/packages.png" alt="packages" />
+              </div>
+              <div class="col-6">
+                <h5 class="advantages__title">Focus</h5>
+                <p class="advantages__text">
+                  Our unwavering focus on superior service delivery and building
+                  next generation competencies
+                </p>
+              </div>
+            </div>
+            <div class="advantages__item reverse">
+              <div class="col-4 advantages__img">
+                <img src="images/main/triangular.png" alt="triangular" />
+              </div>
+              <div class="col-6">
+                <h5 class="advantages__title">method</h5>
+                <p class="advantages__text">
+                  A standardized methodology designed to deliver measurable
+                  business results and predictable costs
+                </p>
+              </div>
+            </div>
+            <div class="advantages__item">
+              <div class="col-4 advantages__img">
+                <img src="images/main/clipboard.png" alt="clipboard" />
+              </div>
+              <div class="col-6">
+                <h5 class="advantages__title">Knowledge</h5>
+                <p class="advantages__text">
+                  A highly skilled, proactive workforce that reliably improves
+                  each client’s ROI while mitigating their business risk
+                </p>
               </div>
             </div>
           </div>
@@ -1146,18 +1310,24 @@
             </li>
             <li class="footer-options__item">
               <span
-                class="material-symbols-outlined"
+                class="material-symbols-outlined login"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 >person</span
               >
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined heart-position">
+                favorite
+                <span class="heart-container"></span>
+              </span>
             </li>
             <li class="footer-options__item">
               <a href="./shopping.html" class="footer-options__item">
-                <span class="material-symbols-outlined">shopping_bag</span>
+                <span class="material-symbols-outlined bag-position">
+                  shopping_bag
+                  <span class="shopping-container"></span>
+                </span>
               </a>
             </li>
           </ul>

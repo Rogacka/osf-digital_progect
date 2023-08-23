@@ -35,8 +35,6 @@ const pageContainers = [...detailedPageContainer];
 const detailedPageImage = document.querySelectorAll(".detailed-page__image");
 const pageImages = [...detailedPageImage];
 
-console.log(pageContainers);
-
 imageOverlay.forEach((item, index) => {
   item.addEventListener("click", () => {
     pageContainers.forEach((element) =>
@@ -84,3 +82,19 @@ for (events of eventList) {
     }
   });
 }
+
+//created this product and add it to local storage
+const addToCart = document.querySelector(".btn-success");
+
+addToCart.addEventListener("click", () => {
+  const product = {
+    name: document.getElementById("product-name").innerText,
+    image: document.getElementById("main-img").getAttribute("src"),
+    price: document.querySelector(".detailed-page__price").textContent,
+    count: parseInt(inputValue.value),
+  };
+  addToLocalStorage("shopping", product);
+  addNumber("shopping", shoppingContainerShow);
+  console.log(inputValue.value);
+  console.log(product);
+});
