@@ -679,15 +679,11 @@
           <div class="container-fluid">
             <div class="row">
               <div class="popular__wrap-title">
-                <div
-                  class="col col-lg-5 col-md-4 col-sm-2 popular__line"
-                ></div>
+                <div class="col col-lg-5 col-md-4 col-sm-2 popular__line"></div>
                 <div class="col col-lg-2 col-md-3 col-sm-5 popular__title">
                   <h1 class="popular__title--heading">Popular items</h1>
                 </div>
-                <div
-                  class="col col-lg-5 col-md-4 col-sm-2 popular__line"
-                ></div>
+                <div class="col col-lg-5 col-md-4 col-sm-2 popular__line"></div>
               </div>
             </div>
           </div>
@@ -821,7 +817,7 @@
                   Chair AAL 93"
                 />
                 <div class="card__info">
-                  <p>Hay - About A Lounge<br />Chair AAL 93</p>
+                  <p>Hay - About A Lounge<br />Chair 93</p>
                   <p>$ 659.55</p>
                 </div>
               </div>
@@ -901,7 +897,7 @@
             </div>
           </div>
           <div>
-            <button class="btn btn-outline-light btn__more">
+            <button class="btn btn-outline-light btn__more" id="show-more-card">
               Load more
               <span class="btn__circle-arrow">&circlearrowright;</span>
             </button>
@@ -1517,16 +1513,18 @@
                     class="form-control sing-in__password--input"
                     id="inputPassword"
                   />
-                  <span
-                    class="material-symbols-outlined sing-in__password--icon password--icon"
-                  >
-                    visibility_off
-                  </span>
-                  <span
-                    class="material-symbols-outlined sing-in__password--icon"
-                  >
-                    visibility
-                  </span>
+                  <div class="password--icon">
+                    <span
+                      class="material-symbols-outlined sing-in__password--icon"
+                    >
+                      visibility_off
+                    </span>
+                    <span
+                      class="material-symbols-outlined sing-in__password--icon"
+                    >
+                      visibility
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

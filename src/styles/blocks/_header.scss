@@ -182,6 +182,11 @@
     }
   }
 
+  .form-select:focus {
+    border: none;
+    box-shadow: none;
+  }
+
   .options {
     margin-bottom: 0;
     padding-top: 16px;

@@ -25,8 +25,33 @@ main {
   }
 }
 
-.not-found__title--404 {
-  text-align: center;
+.not-found {
+  &__wrap-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+
+    &--404 {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+
+  &__line {
+    margin: 10px 0 20px;
+    height: 2px;
+    background-color: #e8e4e1;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    &--404 {
+      font-size: 3rem;
+      font-weight: 900;
+    }
+  }
 }
 
 .row-justify {
@@ -201,10 +226,9 @@ main {
 }
 @media (max-width: 576px) {
   .not-found__line {
-  display: none;
-}
-.not-found__title--404 {
-  font-size: 2rem;
-}
-
+    display: none;
+  }
+  .not-found__title--404 {
+    font-size: 2rem;
+  }
 }

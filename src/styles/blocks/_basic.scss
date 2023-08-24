@@ -1,80 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
 }
 
 .wrap {
-    &_external {
-        width: 1280px;
-        margin: 0 auto;
-    }
+  &_external {
+    width: 1280px;
+    margin: 0 auto;
+  }
 
-    &_internal {
-        padding: 0 55px;
-    }
+  &_internal {
+    padding: 0 55px;
+  }
+}
+
+.main {
+  padding-top: 110px;
 }
 
 @media (min-width: 320px) and (max-width: 1279px) {
-    .wrap {
-      &_external {
-        width: 100%;
-      }
-  
-      &_internal {
-        padding: 0 5%;
-      }
+  .wrap {
+    &_external {
+      width: 100%;
     }
-  
-  
-@media (max-width: 769px) {
-  .main {
-    padding-top: 60px;
-  }
-}}
 
-.main {
-    padding-top: 110px;
+    &_internal {
+      padding: 0 5%;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .main {
+    padding-top: 65px;
+  }
 }
 
 .btn {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    width: 150px;
-    height: 40px;
-    border-radius: 20px;
-    border-width: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  border-width: 2px;
 
-}
-
-.not-found {
-  &__wrap-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__line {
-    margin: 10px 0 20px;
-    height: 2px;
-    background-color: #e8e4e1;
-  }
-
-  &__title {
-    display: flex;
-    justify-content: center;
-    &--404 {
-      font-size: 3rem;
-      font-weight: 900;
-    }
+  &:focus {
+    box-shadow: none;
   }
 }
-

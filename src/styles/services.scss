@@ -93,7 +93,6 @@ main {
   height: 32px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .color__item {
@@ -109,27 +108,27 @@ main {
     background-color: #43c0cf;
   }
 
-  &--black{
+  &--black {
     background-color: #3d402f;
   }
 
-  &--green{
+  &--green {
     background-color: #4aaf00;
   }
 
-  &--blue{
+  &--blue {
     background-color: #315bbd;
   }
 
-  &--orange{
+  &--orange {
     background-color: #ec6115;
   }
 
-  &--red{
+  &--red {
     background-color: #dc041d;
   }
 
-  &--grey{
+  &--grey {
     background-color: #efead7;
   }
 }
@@ -148,7 +147,8 @@ main {
     padding-bottom: 40px;
 
     .card {
-      background-color: inherit;
+      background-color: transparent;
+      border: none;
     }
   }
   .btn__more {
@@ -159,17 +159,16 @@ main {
     opacity: 1;
 
     &:hover {
-      background-color: darken($color: (#84bc22), $amount: 10%);
-      border-color: darken($color: (#84bc22), $amount: 10%);
+      background-color: darken($color: #84bc22, $amount: 10%);
+      border-color: darken($color: #84bc22, $amount: 10%);
       color: white;
     }
   }
- 
 }
 
 @media (max-width: 769px) {
   .breadcrumb {
-    padding: 24px 
+    padding: 24px;
   }
 
   .wrap-settings {

@@ -932,7 +932,6 @@
                 favorite
                 <span class="heart-container"></span>
               </span>
-              
             </li>
             <li class="footer-options__item">
               <a href="./shopping.html" class="footer-options__item">
@@ -959,8 +958,8 @@
           <div class="modal-content sing-in">
             <h2 class="sing-in__title" id="exampleModalLabel">Sign in</h2>
 
-            <div class="modal-body">
-              <div class="">
+            <div class="modal-body modal-body-sing-in">
+              <div>
                 <label for="exampleFormControlInput1" class="form-label"
                   >Email</label
                 >
@@ -985,11 +984,18 @@
                     class="form-control sing-in__password--input"
                     id="inputPassword"
                   />
-                  <span
-                    class="material-symbols-outlined sing-in__password--icon"
-                  >
-                    visibility_off
-                  </span>
+                  <div class="password--icon">
+                    <span
+                      class="material-symbols-outlined sing-in__password--icon"
+                    >
+                      visibility_off
+                    </span>
+                    <span
+                      class="material-symbols-outlined sing-in__password--icon"
+                    >
+                      visibility
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -998,6 +1004,7 @@
                 type="button"
                 class="btn btn-primary"
                 data-bs-dismiss="modal"
+                id="sing-in__submit"
               >
                 LOGIN
               </button>

@@ -34,6 +34,7 @@ const pageContainers = [...detailedPageContainer];
 
 const detailedPageImage = document.querySelectorAll(".detailed-page__image");
 const pageImages = [...detailedPageImage];
+console.log(pageImages);
 
 imageOverlay.forEach((item, index) => {
   item.addEventListener("click", () => {
@@ -50,6 +51,27 @@ imageOverlay.forEach((item, index) => {
   });
 });
 
+//resize image
+const resizeButton = document.querySelector(".detailed-page__resize-container");
+console.log(resizeButton);
+const biggestContainer = document.querySelector(".biggest-container");
+console.log(biggestContainer);
+
+resizeButton.addEventListener("click", () => {
+  pageImages.forEach((element) => {
+    if (!element.classList.contains("hide-img")) {
+      biggestContainer.classList.toggle("biggest-container__hide");
+      biggestContainer.firstElementChild.style.backgroundImage = `url(${element.getAttribute(
+        "src"
+      )})`;
+    }
+  });
+});
+
+biggestContainer.addEventListener("click", () => {
+  biggestContainer.classList.toggle("biggest-container__hide");
+});
+
 const btnDecrease = document.querySelector(".btn-decrease");
 const btnIncrease = document.querySelector(".btn-increase");
 const inputValue = document.querySelector(".input-count");
@@ -60,14 +82,14 @@ btnDecrease.addEventListener("click", () => {
   if (inputValue.value < 1) {
     inputValue.value = 1;
   }
-}); // end btnDecrease
+});
 
 //increase amount of the product
 btnIncrease.addEventListener("click", () => {
   inputValue.value++;
 });
 
-//increase ar decrease amount of the product with input
+//increase or decrease amount of the product with input
 const eventList = ["keydown", "blur", "keyup"];
 for (events of eventList) {
   inputValue.addEventListener(events, function (event) {
@@ -98,3 +120,10 @@ addToCart.addEventListener("click", () => {
   console.log(inputValue.value);
   console.log(product);
 });
+
+//print page
+function printPage() {
+  detailedPageText.innerHTML = visibleDetailedPageText + hiddenDetailedPageText;
+  window.print();
+  detailedPageText.innerHTML = visibleDetailedPageText;
+}

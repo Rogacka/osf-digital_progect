@@ -27,7 +27,7 @@
   <body>
     <div class="wrap_external">
       <!-- start header -->
-      <header class="wrap_internal main-header">
+      <header class="wrap_internal main-header print-hide">
         <a href="index.html" class="logo">
           <img
             class="logo__image"
@@ -101,7 +101,7 @@
       </header>
 
       <div
-        class="header hidden-menu wrap_external hide"
+        class="header hidden-menu wrap_external hide print-hide"
         id="hidden-menu-desctop"
       >
         <div class="container">
@@ -304,7 +304,7 @@
       </div>
 
       <!-- header for mobile -->
-      <header class="mobile-header wrap_internal">
+      <header class="mobile-header wrap_internal print-hide">
         <div class="mobile-header__position">
           <div onclick="toggle(2)">
             <span
@@ -321,7 +321,7 @@
             </span>
           </div>
           <div>
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
               <img
                 class="mobile-header__img"
                 src="./images/header/logo.png"
@@ -333,7 +333,7 @@
       </header>
 
       <div
-        class="mobile hidden-menu wrap_internal hide"
+        class="mobile hidden-menu wrap_internal hide print-hide"
         id="hidden-menu-mobile"
       >
         <div class="container-fluid">
@@ -583,7 +583,16 @@
         <div class="container container-main">
           <div class="container-fluid">
             <div class="row">
-              <div class="col col-lg-6 col-md-12 col-sm-12">
+              <div
+                class="col col-lg-6 col-md-12 col-sm-12 detailed-page__wrap-img"
+              >
+                <div
+                  data-toggle="modal"
+                  data-target="#imageModal"
+                  class="detailed-page__resize-container"
+                >
+                  <img src="./images/detailed-page/resize.png" alt="resize" />
+                </div>
                 <img
                   class="detailed-page__image"
                   id="main-img"
@@ -674,6 +683,17 @@
                     Add to cart
                   </button>
                 </div>
+                <div
+                  class="detailed-page__print print-hide"
+                  onclick="printPage()"
+                >
+                  <span
+                    class="material-symbols-outlined detailed-page__print--icon"
+                  >
+                    print
+                  </span>
+                  <p class="detailed-page__print--text">Print page</p>
+                </div>
                 <div>
                   <p class="detailed-page__text" id="visible-text">
                     Sed ut perspiciatis unde omnis iste natus error sit
@@ -692,14 +712,16 @@
                     esse quam nihil molestiae consequatur, vel illum qui dolorem
                     eum fugiat quo voluptas nulla pariatur?
                   </p>
-                  <span class="detailed-page__read-more toggle-hidden-text"
+                  <span
+                    class="detailed-page__read-more toggle-hidden-text print-hide"
                     >Read more</span
                   >
-                  <span class="detailed-page__read-less toggle-hidden-text"
+                  <span
+                    class="detailed-page__read-less toggle-hidden-text print-hide"
                     >Read less</span
                   >
                 </div>
-                <div class="detailed-page__share">
+                <div class="detailed-page__share print-hide">
                   <span class="detailed-page__share-title">Share</span>
 
                   <a
@@ -735,7 +757,7 @@
             </div>
           </div>
 
-          <div class="container-fluid">
+          <div class="container-fluid print-hide">
             <div class="row tab">
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -843,7 +865,7 @@
         </div>
 
         <!-- popular item -->
-        <div class="popular wrap-internal">
+        <div class="popular wrap-internal print-hide">
           <div class="container-fluid">
             <div class="row">
               <div class="popular__wrap-title">
@@ -865,7 +887,7 @@
                   alt="Activate Facial Mask and Charcoal Soap"
                 />
                 <div class="card__info">
-                  <p>Activate Facial Mask and<br />Charcoal Soap</p>
+                  <p>Facial Mask and<br />Charcoal Soap</p>
                   <p>$ 129.55</p>
                 </div>
               </div>
@@ -889,7 +911,7 @@
                   alt="Kristina Dam Oak Table With White Marble Top"
                 />
                 <div class="card__info">
-                  <p>Kristina Dam Oak Table With White Marble Top</p>
+                  <p>Kristina Dam Oak Table With Marble Top</p>
                   <p>$ 410.99</p>
                 </div>
               </div>
@@ -914,7 +936,7 @@
                     | YES"
                 />
                 <div class="card__info">
-                  <p>Cocktail Table Walnut <br />| YES</p>
+                  <p>Cocktail Table Broun <br />| YES</p>
                   <p>$ 299.99</p>
                 </div>
               </div>
@@ -939,7 +961,7 @@
                   Chair AAL 93"
                 />
                 <div class="card__info">
-                  <p>Hay - About A Lounge<br />Chair AAL 93</p>
+                  <p>Hay - About A Lounge<br />Chair AAL 56</p>
                   <p>$ 659.55</p>
                 </div>
               </div>
@@ -958,7 +980,7 @@
         </div>
 
         <!-- Advantages -->
-        <div class="container-fluid advantages wrap-internal">
+        <div class="container-fluid advantages wrap-internal print-hide">
           <div class="advantages__wrap">
             <div class="advantages__item">
               <div class="col-4 advantages__img">
@@ -1002,7 +1024,7 @@
       <!-- end main -->
 
       <!-- start footer -->
-      <footer class="footer wrap_internal">
+      <footer class="footer wrap_internal print-hide">
         <div class="footer__info">
           <div class="footer__copyright">
             <p>
@@ -1347,8 +1369,8 @@
           <div class="modal-content sing-in">
             <h2 class="sing-in__title" id="exampleModalLabel">Sign in</h2>
 
-            <div class="modal-body">
-              <div class="">
+            <div class="modal-body modal-body-sing-in">
+              <div>
                 <label for="exampleFormControlInput1" class="form-label"
                   >Email</label
                 >
@@ -1360,7 +1382,7 @@
                 />
               </div>
 
-              <div class="">
+              <div>
                 <div class="sing-in__align">
                   <label for="inputPassword" class="col-sm-2 col-form-label"
                     >Lato</label
@@ -1373,11 +1395,18 @@
                     class="form-control sing-in__password--input"
                     id="inputPassword"
                   />
-                  <span
-                    class="material-symbols-outlined sing-in__password--icon"
-                  >
-                    visibility_off
-                  </span>
+                  <div class="password--icon">
+                    <span
+                      class="material-symbols-outlined sing-in__password--icon"
+                    >
+                      visibility_off
+                    </span>
+                    <span
+                      class="material-symbols-outlined sing-in__password--icon"
+                    >
+                      visibility
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1386,6 +1415,7 @@
                 type="button"
                 class="btn btn-primary"
                 data-bs-dismiss="modal"
+                id="sing-in__submit"
               >
                 LOGIN
               </button>
@@ -1393,6 +1423,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="biggest-container biggest-container__hide">
+        <div class="biggest-image"></div>
       </div>
     </div>
 

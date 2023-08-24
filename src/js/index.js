@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector("#carouselExampleControls");
+  const carouselInstance = new bootstrap.Carousel(carousel, {
+    interval: 3000,
+    wrap: true,
+  });
+});
+
 const shoppingContainer = document.querySelectorAll(".shopping-container");
 const shoppingContainerShow = [...shoppingContainer];
 
@@ -28,11 +36,23 @@ window.addEventListener("load", function () {
     }, 10000);
   }
 
-  //add handling to total amount
-  // chooseHandling(formCheckInput[0]);
-
   //cart subtotal
-  if (this.localStorage.getItem("shopping") !== undefined) {
+  const checkLocalStorage = JSON.parse(this.localStorage.getItem("shopping"));
+  if (
+    checkLocalStorage !== null &&
+    checkLocalStorage !== undefined &&
+    checkLocalStorage !== "[]"
+  ) {
+    chooseHandling(formCheckInput[0]);
+    calculateSubtotalAmount(checkLocalStorage);
+    calculateFinalPurchaseAmount(checkLocalStorage);
+  }
+
+  if (
+    this.localStorage.getItem("shopping") !== undefined &&
+    this.localStorage.getItem("shopping") !== null &&
+    this.localStorage.getItem("shopping") !== "[]"
+  ) {
     const subtotalFromLocalStorage = JSON.parse(
       localStorage.getItem("shopping")
     );
@@ -87,19 +107,17 @@ formControlPassword.addEventListener("blur", function () {
 //show and hide password
 const passwordIcon = document.querySelector(".password--icon");
 
-// console.log(passwordIcon);
-// console.log(formControlPassword);
-// passwordIcon.addEventListener("click", function () {
-//   if (formControlPassword.type === "password") {
-//     formControlPassword.type = "text";
-//     console.log("!!!!!!!!");
-//     // passwordIcon.style.opacity = "0";
-//   } else {
-//     formControlPassword.type = "password";
-//     console.log("????????");
-//     // passwordIcon.style.opacity = "1";
-//   }
-// });
+passwordIcon?.addEventListener("click", function () {
+  if (formControlPassword.type === "password") {
+    formControlPassword.type = "text";
+    console.log("!!!!!!!!");
+    passwordIcon.firstElementChild.style.opacity = "0";
+  } else {
+    formControlPassword.type = "password";
+    console.log("????????");
+    passwordIcon.firstElementChild.style.opacity = "1";
+  }
+});
 
 //function shows and hides header hidden menu
 const servises = document.getElementById("servises"); //button services on header desctop
@@ -211,6 +229,17 @@ buttonsHeart.forEach((item) => {
       removeNumber("liked", heartContainerShow);
     }
   });
+  // Restore addedToHeartsList state on page reload
+  const itemName =
+    item.closest(".card").firstElementChild.lastElementChild.firstElementChild
+      .textContent;
+  const previousHeartsList = JSON.parse(localStorage.getItem("liked"));
+  if (previousHeartsList) {
+    const isLiked = previousHeartsList.some((item) => item.name === itemName);
+    if (isLiked) {
+      item.firstElementChild?.classList.add("addedToHeartsList");
+    }
+  }
 });
 
 //increse the number of the goods
@@ -511,13 +540,15 @@ function calculateSubtotalAmount(allProduct) {
     subtotal += +(item.count * item.price.slice(1));
   });
   const shoppingSumAmount = document.querySelector(".shopping-sum-amount");
-  shoppingSumAmount.textContent = `${subtotal.toFixed(2)}`;
+  if (shoppingSumAmount) {
+    shoppingSumAmount.textContent = `${subtotal.toFixed(2)}`;
+  }
 }
 
 //function calculate handling
 const finalPurchaseAmount = document.querySelector(".final-purchase-amount");
+
 let finalPurchaseAmountValue = finalPurchaseAmount?.textContent;
-console.log(finalPurchaseAmountValue);
 
 formCheckInput.forEach((item) => {
   item.addEventListener("click", function () {
@@ -530,24 +561,67 @@ let shippingAndHandling = 0;
 
 function chooseHandling(item) {
   const handling = item?.nextElementSibling?.firstElementChild;
-  console.log(handling);
-  if (handling !== null) {
+  if (handling !== null && finalPurchaseAmount) {
     finalPurchaseAmount.textContent = handling?.textContent?.slice(1);
     shippingAndHandling = +handling?.textContent?.slice(1);
-    console.log(shippingAndHandling);
-  } else {
+  } else if (finalPurchaseAmount) {
     finalPurchaseAmount.innerHTML = finalPurchaseAmountValue;
     shippingAndHandling = 0;
   }
 }
-console.log(shippingAndHandling, typeof shippingAndHandling);
+
 //function calculate final purchase amount
 function calculateFinalPurchaseAmount(allProducts) {
   let subtotal = 0;
   allProducts.forEach((item) => {
     subtotal += +(item.count * item.price.slice(1));
   });
-  console.log(subtotal, typeof subtotal);
-  finalPurchaseAmount.innerHTML = (subtotal + shippingAndHandling).toFixed(2);
-  console.log(finalPurchaseAmount.textContent);
+  if (finalPurchaseAmount) {
+    finalPurchaseAmount.innerHTML = (subtotal + shippingAndHandling).toFixed(2);
+  }
 }
+
+const showMoreCard = document.getElementById("show-more-card");
+console.log(showMoreCard);
+showMoreCard?.addEventListener("click", function () {
+  fetch("products.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const popularItem = document.querySelector(".popular__item");
+      console.log(popularItem);
+      data.products.forEach((item) => {
+        popularItem.insertAdjacentHTML(
+          "beforeend",
+          `
+        <div class="card">
+              <div class="card__main">
+                <img
+                  class="card__img"
+                  src="${item.image_src}"
+                  alt="Kristina Dam Oak Table With White Marble Top"
+                />
+                <div class="card__info">
+                  <p>${item.name}</p>
+                  <p>${item.price}</p>
+                </div>
+              </div>
+              <div class="card__overlay">
+                <div class="card__buttons">
+                  <div class="card__button button-buy">
+                    <i class="fa fa-plus plus"></i>
+                  </div>
+                  <div class="card__button button-heart">
+                    <i class="fa fa-heart heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+        `
+        );
+      });
+    })
+    .catch((error) => {
+      // Обробка помилки
+      console.error("Помилка:", error);
+    });
+});

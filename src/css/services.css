@@ -20,6 +20,10 @@ body {
   padding: 0 55px;
 }
 
+.main {
+  padding-top: 110px;
+}
+
 @media (min-width: 320px) and (max-width: 1279px) {
   .wrap_external {
     width: 100%;
@@ -28,15 +32,11 @@ body {
     padding: 0 5%;
   }
 }
-@media (min-width: 320px) and (max-width: 1279px) and (max-width: 769px) {
+@media (max-width: 1200px) {
   .main {
-    padding-top: 60px;
+    padding-top: 65px;
   }
 }
-.main {
-  padding-top: 110px;
-}
-
 .btn {
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -44,25 +44,6 @@ body {
   height: 40px;
   border-radius: 20px;
   border-width: 2px;
-}
-
-.not-found__wrap-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.not-found__line {
-  margin: 10px 0 20px;
-  height: 2px;
-  background-color: #e8e4e1;
-}
-.not-found__title {
-  display: flex;
-  justify-content: center;
-}
-.not-found__title--404 {
-  font-size: 3rem;
-  font-weight: 900;
 }
 
 .main-header {
@@ -227,6 +208,10 @@ body {
 }
 .menu .settings__item:hover {
   color: #7f7f7f;
+}
+.menu .form-select:focus {
+  border: none;
+  box-shadow: none;
 }
 .menu .options {
   margin-bottom: 0;
@@ -900,6 +885,10 @@ body {
   padding: 0 55px;
 }
 
+.main {
+  padding-top: 110px;
+}
+
 @media (min-width: 320px) and (max-width: 1279px) {
   .wrap_external {
     width: 100%;
@@ -908,15 +897,11 @@ body {
     padding: 0 5%;
   }
 }
-@media (min-width: 320px) and (max-width: 1279px) and (max-width: 769px) {
+@media (max-width: 1200px) {
   .main {
-    padding-top: 60px;
+    padding-top: 65px;
   }
 }
-.main {
-  padding-top: 110px;
-}
-
 .btn {
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -924,25 +909,6 @@ body {
   height: 40px;
   border-radius: 20px;
   border-width: 2px;
-}
-
-.not-found__wrap-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.not-found__line {
-  margin: 10px 0 20px;
-  height: 2px;
-  background-color: #e8e4e1;
-}
-.not-found__title {
-  display: flex;
-  justify-content: center;
-}
-.not-found__title--404 {
-  font-size: 3rem;
-  font-weight: 900;
 }
 
 .modal-content {
@@ -1158,7 +1124,8 @@ main {
   padding-bottom: 40px;
 }
 .popular .popular__item .card {
-  background-color: inherit;
+  background-color: transparent;
+  border: none;
 }
 .popular .btn__more {
   color: white;
