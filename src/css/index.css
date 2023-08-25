@@ -805,6 +805,7 @@ body {
 }
 .popular .popular__item .card__main {
   position: relative;
+  background-color: #262a32;
 }
 .popular .popular__item .card__overlay {
   width: 268px;
@@ -938,6 +939,22 @@ body {
 .popular .card__info--link:hover {
   color: #85bc23;
 }
+.popular .carousel {
+  display: none;
+}
+.popular .carousel-indicators {
+  bottom: 20px;
+}
+.popular .carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.popular .carousel-inner {
+  display: flex;
+  width: auto;
+}
 
 @media (max-width: 576px) {
   .popular {
@@ -951,6 +968,13 @@ body {
   }
   .popular__item {
     width: 100%;
+  }
+  .popular .hide-card {
+    display: none;
+  }
+  .popular .carousel {
+    display: flex;
+    padding-bottom: 100px;
   }
 }
 .banner {

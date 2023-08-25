@@ -42,7 +42,7 @@
         <nav class="menu">
           <ul class="nav-list">
             <li
-              class="nav-list__item additional-menu"
+              class="nav-list__item additional-menu en-language"
               id="servises"
               onclick="toggle(1)"
             >
@@ -59,10 +59,14 @@
             </li>
           </ul>
           <div class="settings">
-            <select class="settings__item form-select" name="language">
-              <option value="value1" selected>EN</option>
-              <option value="value2">UA</option>
-              <option value="value3">RO</option>
+            <select
+              class="settings__item form-select"
+              id="language-select"
+              name="language"
+            >
+              <option value="en" selected>EN</option>
+              <option value="ua">UA</option>
+              <option value="ro">RO</option>
             </select>
             <select class="settings__item form-select" name="currency">
               <option value="value1" selected>$US</option>
@@ -688,7 +692,7 @@
             </div>
           </div>
 
-          <div class="popular__item">
+          <div class="popular__item hide-card">
             <div class="card">
               <div class="card__main">
                 <img
@@ -897,10 +901,272 @@
             </div>
           </div>
           <div>
-            <button class="btn btn-outline-light btn__more" id="show-more-card">
+            <button
+              class="btn btn-outline-light btn__more hide-card"
+              id="show-more-card"
+            >
               Load more
               <span class="btn__circle-arrow">&circlearrowright;</span>
             </button>
+          </div>
+
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide popular__item"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active carousel-indicator"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="4"
+                aria-label="Slide 5"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="5"
+                aria-label="Slide 6"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="6"
+                aria-label="Slide 7"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-1.png"
+                      alt="Kristina Dam Oak Table With White Marble Top"
+                    />
+                    <div class="card__info">
+                      <p>Kristina Dam Oak Table With White Marble Top</p>
+                      <p>$ 410.99</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <a href="detailed-page.html">
+                      <img
+                        id="img-2"
+                        class="card__img"
+                        src="images/main/popular-item-2.png"
+                        alt="Hay - About A Lounge Chair AAL 93"
+                      />
+                    </a>
+                    <div class="card__info">
+                      <a href="detailed-page.html" class="card__info--link">
+                        <p>Hay - About A Lounge Chair AAL 93</p>
+                      </a>
+                      <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic outlined example"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary buy"
+                        >
+                          <a
+                            class="price"
+                            id="price-2"
+                            href="detailed-page.html"
+                            >$ 659.55</a
+                          >
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary buy button-buy"
+                          id="add-to-card"
+                        >
+                          Buy now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-6.png"
+                      alt="TORY DESK CALENDAR"
+                    />
+                    <div class="card__info">
+                      <p><br />TORY DESK CALENDAR</p>
+                      <p>$ 410.99</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-7.png"
+                      alt="CH445 Wing Chair on 
+                      SUITE NY"
+                    />
+                    <div class="card__info">
+                      <p class="card__title">
+                        CH445 Wing Chair on <br />SUITE NY
+                      </p>
+                      <p class="card__price">$ 330.55</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-3.jpg"
+                      alt="Activate Facial Mask and Charcoal Soap"
+                    />
+                    <div class="card__info">
+                      <p>Activate Facial Mask and<br />Charcoal Soap</p>
+                      <p>$ 129.55</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-4.png"
+                      alt="Cocktail Table Walnut 
+                        | YES"
+                    />
+                    <div class="card__info">
+                      <p>Cocktail Table Walnut <br />| YES</p>
+                      <p>$ 299.99</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-5.png"
+                      alt="Hay - About A Lounge 
+                      Chair AAL 93"
+                    />
+                    <div class="card__info">
+                      <p>Hay - About A Lounge<br />Chair 93</p>
+                      <p>$ 659.55</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

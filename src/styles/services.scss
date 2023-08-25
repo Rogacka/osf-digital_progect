@@ -15,7 +15,6 @@ main {
 
 .breadcrumb {
   justify-content: center;
-  padding: 45px 0 25px;
   margin-bottom: 0;
 }
 
@@ -149,6 +148,18 @@ main {
     .card {
       background-color: transparent;
       border: none;
+
+      &__main {
+        background-color: inherit;
+      }
+    }
+
+    .carousel-indicators {
+      bottom: -20px;
+    }
+
+    .carousel-indicator {
+      background-color: $background-color;
     }
   }
   .btn__more {
@@ -195,5 +206,11 @@ main {
 
   .settings {
     width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .apparel {
+    padding-top: 35px;
   }
 }

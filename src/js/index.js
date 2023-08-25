@@ -581,6 +581,7 @@ function calculateFinalPurchaseAmount(allProducts) {
   }
 }
 
+// show more products
 const showMoreCard = document.getElementById("show-more-card");
 console.log(showMoreCard);
 showMoreCard?.addEventListener("click", function () {
@@ -621,7 +622,27 @@ showMoreCard?.addEventListener("click", function () {
       });
     })
     .catch((error) => {
-      // Обробка помилки
       console.error("Помилка:", error);
     });
 });
+
+const closeModalSingIn = document.getElementById("exampleModal");
+
+closeModalSingIn.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeModalSingIn.classList.remove("show");
+  }
+});
+
+const hideFilterServices = document.querySelector(".hide-filter");
+console.log(hideFilterServices);
+
+if (hideFilterServices) {
+  hideFilterServices.addEventListener("click", function () {
+    const filterServices = document.querySelector(".filter-services");
+    filterServices.classList.toggle("hide");
+    hideFilterServices.firstElementChild.classList.toggle("hide");
+    hideFilterServices.lastElementChild.classList.toggle("hide");
+    hideFilterServices.style.marginBottom = "0";
+  });
+}

@@ -45,6 +45,9 @@ body {
   border-radius: 20px;
   border-width: 2px;
 }
+.btn:focus {
+  box-shadow: none;
+}
 
 .main-header {
   position: fixed;
@@ -616,6 +619,7 @@ body {
 }
 .popular .popular__item .card__main {
   position: relative;
+  background-color: #262a32;
 }
 .popular .popular__item .card__overlay {
   width: 268px;
@@ -749,6 +753,22 @@ body {
 .popular .card__info--link:hover {
   color: #85bc23;
 }
+.popular .carousel {
+  display: none;
+}
+.popular .carousel-indicators {
+  bottom: 20px;
+}
+.popular .carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.popular .carousel-inner {
+  display: flex;
+  width: auto;
+}
 
 @media (max-width: 576px) {
   .popular {
@@ -762,6 +782,13 @@ body {
   }
   .popular__item {
     width: 100%;
+  }
+  .popular .hide-card {
+    display: none;
+  }
+  .popular .carousel {
+    display: flex;
+    padding-bottom: 100px;
   }
 }
 .featured {
@@ -910,6 +937,9 @@ body {
   border-radius: 20px;
   border-width: 2px;
 }
+.btn:focus {
+  box-shadow: none;
+}
 
 .modal-content {
   border: 1px solid #999999;
@@ -1002,7 +1032,6 @@ main {
 
 .breadcrumb {
   justify-content: center;
-  padding: 45px 0 25px;
   margin-bottom: 0;
 }
 
@@ -1127,6 +1156,15 @@ main {
   background-color: transparent;
   border: none;
 }
+.popular .popular__item .card__main {
+  background-color: inherit;
+}
+.popular .popular__item .carousel-indicators {
+  bottom: -20px;
+}
+.popular .popular__item .carousel-indicator {
+  background-color: #262a32;
+}
 .popular .btn__more {
   color: white;
   width: 164px;
@@ -1160,6 +1198,11 @@ main {
   }
   .settings {
     width: 90%;
+  }
+}
+@media (max-width: 576px) {
+  .apparel {
+    padding-top: 35px;
   }
 }
 
