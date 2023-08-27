@@ -19,14 +19,14 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="styles/not-found-page.scss" /> -->
+   
     <link rel="stylesheet" href="css/shopping.css" />
     <link rel="stylesheet" href="css/detailed-page.css" />
+
     <title>OSF | Detailed page</title>
   </head>
   <body>
     <div class="wrap_external">
-      <!-- start header -->
       <header class="wrap_internal main-header print-hide">
         <a href="index.html" class="logo">
           <img
@@ -303,7 +303,6 @@
         <!-- <div class="hidden-menu__image"></div> -->
       </div>
 
-      <!-- header for mobile -->
       <header class="mobile-header wrap_internal print-hide">
         <div class="mobile-header__position">
           <div onclick="toggle(2)">
@@ -336,7 +335,7 @@
         class="mobile hidden-menu wrap_internal hide print-hide"
         id="hidden-menu-mobile"
       >
-        <div class="container-fluid">
+        <div class="container-fluid hidden-menu__wrap">
           <div class="row">
             <div class="click" onclick="toggle()">
               <div class="col-11">
@@ -548,9 +547,6 @@
         </div>
       </div>
 
-      <!-- end header -->
-
-      <!-- start main -->
       <main class="main wrap-internal">
         <div class="container-fluid">
           <div class="row">
@@ -570,10 +566,11 @@
             <div class="not-found__wrap-title">
               <div class="col col-xl-2 col-lg-1 not-found__line"></div>
               <div
-                class="col col-xl-7 col-lg-8 col-md-12 col-sm-12 not-found__title"
+                class="col col-xl-7 col-lg-9 col-md-12 col-sm-12 not-found__title"
               >
                 <h1 class="not-found__title--404" id="product-name">
-                  Ruffle Front V-Neck Cardigan
+                  <span class="hide-on-small">Ruffle Front</span> V-Neck
+                  Cardigan
                 </h1>
               </div>
               <div class="col col-xl-2 col-lg-1 not-found__line"></div>
@@ -864,7 +861,6 @@
           </div>
         </div>
 
-        <!-- popular item -->
         <div class="popular wrap-internal print-hide">
           <div class="container-fluid">
             <div class="row">
@@ -878,7 +874,7 @@
             </div>
           </div>
 
-          <div class="popular__item">
+          <div class="popular__item hide-card">
             <div class="card">
               <div class="card__main">
                 <img
@@ -977,9 +973,152 @@
               </div>
             </div>
           </div>
+
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide popular__item"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active carousel-indicator"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                class="carousel-indicator"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-1.png"
+                      alt="Kristina Dam Oak Table With White Marble Top"
+                    />
+                    <div class="card__info">
+                      <p>Kristina Dam Oak Table With White Marble Top</p>
+                      <p>$ 410.99</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/header/hidden-img.png"
+                      alt="CH445 Wing Chair on 
+                      SUITE NY"
+                    />
+                    <div class="card__info">
+                      <p>EAMES x Cast + Crew - Custom Powder Coated</p>
+                      <p>$ 330.55</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-6.png"
+                      alt="TORY DESK CALENDAR"
+                    />
+                    <div class="card__info">
+                      <p><br />TORY DESK CALENDAR</p>
+                      <p>$ 410.99</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img
+                      class="card__img"
+                      src="images/main/popular-item-7.png"
+                      alt="CH445 Wing Chair on 
+                  SUITE NY"
+                    />
+                    <div class="card__info">
+                      <p class="card__title">
+                        CH445 Wing Chair on <br />SUITE NY
+                      </p>
+                      <p class="card__price">$ 330.55</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Advantages -->
         <div class="container-fluid advantages wrap-internal print-hide">
           <div class="advantages__wrap">
             <div class="advantages__item">
@@ -1021,9 +1160,7 @@
           </div>
         </div>
       </main>
-      <!-- end main -->
 
-      <!-- start footer -->
       <footer class="footer wrap_internal print-hide">
         <div class="footer__info">
           <div class="footer__copyright">
@@ -1355,9 +1492,7 @@
           </ul>
         </div>
       </footer>
-      <!-- end footer -->
 
-      <!-- modal sing in -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -1436,7 +1571,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- my script -->
     <script src="./js/index.js"></script>
     <script src="./js/detailed.js"></script>
   </body>

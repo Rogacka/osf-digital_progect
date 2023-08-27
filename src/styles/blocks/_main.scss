@@ -204,3 +204,9 @@
     align-self: center;
   }
 }
+
+@media (max-width: 576px) {
+  .carousel-indicators {
+    bottom: 45px;
+  }
+}

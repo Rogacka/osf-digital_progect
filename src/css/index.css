@@ -326,8 +326,8 @@ body {
   .mobile .rotate-arrow {
     transform: rotate(180deg);
   }
-  .mobile .hidden-menu {
-    padding-top: 0;
+  .mobile .hidden-menu__wrap {
+    padding-top: 20px;
   }
   .mobile .hidden-menu__sub-title {
     padding-left: 20px;
@@ -524,6 +524,11 @@ body {
   }
   .btn {
     align-self: center;
+  }
+}
+@media (max-width: 576px) {
+  .carousel-indicators {
+    bottom: 45px;
   }
 }
 .footer {
@@ -975,6 +980,9 @@ body {
   .popular .carousel {
     display: flex;
     padding-bottom: 100px;
+  }
+  .popular .carousel .card:hover > .card__overlay {
+    display: block;
   }
 }
 .banner {

@@ -326,8 +326,8 @@ body {
   .mobile .rotate-arrow {
     transform: rotate(180deg);
   }
-  .mobile .hidden-menu {
-    padding-top: 0;
+  .mobile .hidden-menu__wrap {
+    padding-top: 20px;
   }
   .mobile .hidden-menu__sub-title {
     padding-left: 20px;
@@ -711,6 +711,7 @@ main {
 .breadcrumb {
   justify-content: center;
   margin-bottom: 0;
+  padding: 20px 0;
 }
 
 .link-home {
@@ -758,10 +759,6 @@ main {
   background-color: #fff;
   padding: 50px 0;
   margin-top: 2px;
-}
-
-.row {
-  padding-bottom: 20px;
 }
 
 .align-product {
@@ -914,6 +911,9 @@ main {
   }
   .not-found__title--404 {
     font-size: 2rem;
+  }
+  .container-main {
+    padding: 30px;
   }
 }
 

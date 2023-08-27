@@ -326,8 +326,8 @@ body {
   .mobile .rotate-arrow {
     transform: rotate(180deg);
   }
-  .mobile .hidden-menu {
-    padding-top: 0;
+  .mobile .hidden-menu__wrap {
+    padding-top: 20px;
   }
   .mobile .hidden-menu__sub-title {
     padding-left: 20px;
@@ -389,6 +389,7 @@ body {
 }
 .popular .popular__item .card__main {
   position: relative;
+  background-color: #262a32;
 }
 .popular .popular__item .card__overlay {
   width: 268px;
@@ -522,6 +523,22 @@ body {
 .popular .card__info--link:hover {
   color: #85bc23;
 }
+.popular .carousel {
+  display: none;
+}
+.popular .carousel-indicators {
+  bottom: 20px;
+}
+.popular .carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.popular .carousel-inner {
+  display: flex;
+  width: auto;
+}
 
 @media (max-width: 576px) {
   .popular {
@@ -535,6 +552,16 @@ body {
   }
   .popular__item {
     width: 100%;
+  }
+  .popular .hide-card {
+    display: none;
+  }
+  .popular .carousel {
+    display: flex;
+    padding-bottom: 100px;
+  }
+  .popular .carousel .card:hover > .card__overlay {
+    display: block;
   }
 }
 .advantages {
@@ -1205,6 +1232,9 @@ body {
   background-color: transparent;
   border: none;
 }
+.popular .popular__item .card__main {
+  background-color: transparent;
+}
 
 .biggest-container {
   position: fixed;
@@ -1253,6 +1283,9 @@ body {
   .not-found__line {
     display: none;
   }
+  .hide-on-small {
+    display: none;
+  }
   .popular__line {
     display: none;
   }
@@ -1266,6 +1299,7 @@ body {
   }
   .detailed-page__text {
     display: block;
+    padding-top: 20px;
   }
 }
 

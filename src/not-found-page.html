@@ -19,13 +19,11 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="styles/not-found-page.scss" /> -->
     <link rel="stylesheet" href="css/not-found-page.css" />
     <title>OSF | Page not found</title>
   </head>
   <body>
     <div class="wrap_external">
-      <!-- start header -->
       <header class="wrap_internal main-header">
         <a href="index.html" class="logo">
           <img
@@ -298,11 +296,8 @@
             alt="hidden menu image"
           />
         </div>
-
-        <!-- <div class="hidden-menu__image"></div> -->
       </div>
 
-      <!-- header for mobile -->
       <header class="mobile-header wrap_internal">
         <div class="mobile-header__position">
           <div onclick="toggle(2)">
@@ -335,7 +330,7 @@
         class="mobile hidden-menu wrap_internal hide"
         id="hidden-menu-mobile"
       >
-        <div class="container-fluid">
+        <div class="container-fluid hidden-menu__wrap">
           <div class="row">
             <div class="click" onclick="toggle()">
               <div class="col-11">
@@ -547,9 +542,6 @@
         </div>
       </div>
 
-      <!-- end header -->
-
-      <!-- start main -->
       <main class="main wrap-internal">
         <div class="container-fluid">
           <div class="row">
@@ -610,9 +602,7 @@
           </div>
         </div>
       </main>
-      <!-- end main -->
 
-      <!-- start footer -->
       <footer class="footer wrap_internal">
         <div class="footer__info">
           <div class="footer__copyright">
@@ -721,8 +711,6 @@
             </div>
           </div>
         </div>
-
-        <!-- mobile footer -->
 
         <div class="container-fluid">
           <div class="row">
@@ -944,9 +932,7 @@
           </ul>
         </div>
       </footer>
-      <!-- end footer -->
 
-      <!-- modal sing in -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -1027,7 +1013,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- my script -->
     <script src="./js/index.js"></script>
   </body>
 </html>

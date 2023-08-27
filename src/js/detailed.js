@@ -34,7 +34,6 @@ const pageContainers = [...detailedPageContainer];
 
 const detailedPageImage = document.querySelectorAll(".detailed-page__image");
 const pageImages = [...detailedPageImage];
-console.log(pageImages);
 
 imageOverlay.forEach((item, index) => {
   item.addEventListener("click", () => {
@@ -53,9 +52,7 @@ imageOverlay.forEach((item, index) => {
 
 //resize image
 const resizeButton = document.querySelector(".detailed-page__resize-container");
-console.log(resizeButton);
 const biggestContainer = document.querySelector(".biggest-container");
-console.log(biggestContainer);
 
 resizeButton.addEventListener("click", () => {
   pageImages.forEach((element) => {
@@ -117,8 +114,6 @@ addToCart.addEventListener("click", () => {
   };
   addToLocalStorage("shopping", product);
   addNumber("shopping", shoppingContainerShow);
-  console.log(inputValue.value);
-  console.log(product);
 });
 
 //print page

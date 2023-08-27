@@ -242,6 +242,10 @@
     .carousel {
       display: flex;
       padding-bottom: 100px;
+
+      .card:hover > .card__overlay {
+        display: block;
+      }
     }
   }
 }

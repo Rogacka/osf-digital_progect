@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/shopping.2fbd304b.css">
+    <title>OSF | Shopping cart</title>
+  </head>
+  <body>
+    <div class="wrap_external">
+      <header class="wrap_internal main-header">
+        <a href="/index.html" class="logo">
+          <img class="logo__image" src="/logo.4b4e80a6.png" alt="OSF logo">
+          <div class="logo__name">
+            <span class="logo__name_abbreviation">OSF</span>
+            <span class="logo__name_second">Academy</span>
+          </div>
+        </a>
+        <nav class="menu">
+          <ul class="nav-list">
+            <li class="nav-list__item additional-menu" id="servises" onclick="toggle(1)">
+              Services
+            </li>
+            <li class="nav-list__item">
+              <a class="nav__link" href="#">Company</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav__link" href="#">Library</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav__link" href="#">Contact us</a>
+            </li>
+          </ul>
+          <div class="settings">
+            <select class="settings__item form-select" name="language">
+              <option value="value1" selected="">EN</option>
+              <option value="value2">UA</option>
+              <option value="value3"></option>
+            </select>
+            <select class="settings__item form-select" name="currency">
+              <option value="value1" selected="">$US</option>
+              <option value="value2">₴UA</option>
+              <option value="value3">€eu</option>
+            </select>
+          </div>
+          <ul class="options">
+            <li class="options__item">
+              <span class="material-symbols-outlined">search</span>
+            </li>
+            <li class="options__item">
+              <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#exampleModal">person</span>
+            </li>
+            <li class="options__item">
+              <span class="material-symbols-outlined">
+                favorite
+                <span class="heart-container"></span>
+              </span>
+            </li>
+            <li class="options__item">
+              <a href="/shopping.html" class="footer-options__item">
+                <span class="material-symbols-outlined">shopping_bag</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="header hidden-menu wrap_external hide" id="hidden-menu-desctop">
+        <div class="container">
+          <div class="row">
+            <div class="col-9">
+              <h5 class="hidden-menu__title">PRODUCT CATEGORIES</h5>
+            </div>
+            <div class="col-3">
+              <h5 class="hidden-menu__title">Sale</h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <ul class="hidden-menu__list">
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Accessories</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Alcohol</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Art</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Books</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Drink</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Electronics</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Flowers & Plants</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Food</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <ul class="hidden-menu__list">
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Gadgets</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Garden</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Grocery</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Home</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Jewelry</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Kids & Baby</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Men's Fashion</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Mobile</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <ul class="hidden-menu__list">
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Movies</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Motorcycles</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Music</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Office</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Pets</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Romantic</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Sport</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Toys</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <ul class="hidden-menu__list">
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Accessories</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Alcohol</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Art</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Books</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Drink</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Electronics</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Flowers & Plants</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Food</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="hidden-menu__container">
+          <img class="hidden-menu__image" src="/hidden-img.cd8d9ad2.png" alt="hidden menu image">
+        </div>
+
+        <!-- <div class="hidden-menu__image"></div> -->
+      </div>
+
+      <header class="mobile-header wrap_internal">
+        <div class="mobile-header__position">
+          <div onclick="toggle(2)">
+            <span class="mobile-header__menu material-symbols-outlined" id="button-open">
+              menu
+            </span>
+            <span class="mobile-header__menu material-symbols-outlined hide" id="button-close">
+              close
+            </span>
+          </div>
+          <div>
+            <a href="/index.html" class="logo">
+              <img class="mobile-header__img" src="/logo.4b4e80a6.png" alt="OSF logo">
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="mobile hidden-menu wrap_internal hide" id="hidden-menu-mobile">
+        <div class="container-fluid hidden-menu__wrap">
+          <div class="row">
+            <div class="click" onclick="toggle()">
+              <div class="col-11">
+                <h4 class="hidden-menu__title">Services</h4>
+              </div>
+              <div class="col-1">
+                <span class="material-symbols-outlined" id="arrow-services">
+                  arrow_drop_down
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="click click-service hide" onclick="toggle(3)">
+              <span class="hidden-menu__sub-title">Categories</span>
+              <span class="material-symbols-outlined" id="arrow-categories">
+                arrow_drop_down
+              </span>
+            </div>
+
+            <div class="col-12">
+              <ul class="hidden-menu__list hide" id="categories-menu">
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Alcohol</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Art</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Books</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Drink</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Electronics</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Home</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Jewelry</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Kids & Baby</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Men's Fashion</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Mobile</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Motorcycles</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Movies</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Music</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Sport</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Toys</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Travel</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Women's Fashion</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="click click-service hide" onclick="toggle(4)">
+              <span class="hidden-menu__sub-title">Sale</span>
+              <span class="material-symbols-outlined" id="arrow-sale">
+                arrow_drop_down
+              </span>
+            </div>
+            <div class="col-12">
+              <ul class="hidden-menu__list hide" id="sale-menu">
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Accessories</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Alcohol</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Art</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Books</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Drink</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Electronics</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Flowers & Plants</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="hidden-menu__item">Food</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="click">
+              <div class="col-11">
+                <h4 class="hidden-menu__title">company</h4>
+              </div>
+              <div class="col-1">
+                <span class="material-symbols-outlined" id="arrow-services">
+                  arrow_drop_down
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="click">
+              <div class="col-11">
+                <h4 class="hidden-menu__title">library</h4>
+              </div>
+              <div class="col-1">
+                <span class="material-symbols-outlined" id="arrow-services">
+                  arrow_drop_down
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="click">
+              <div class="col-11">
+                <h4 class="hidden-menu__title">contactus</h4>
+              </div>
+              <div class="col-1">
+                <span class="material-symbols-outlined" id="arrow-services">
+                  arrow_drop_down
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <img class="hidden-menu__image" src="/hidden-img.cd8d9ad2.png" alt="hidden menu image">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="main wrap-internal">
+        <div class="container-fluid">
+          <div class="row">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/index.html" class="link-home">Home</a>
+              </li>
+              <li class="breadcrumb-item active">Shopping Cart</li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="not-found__wrap-title">
+              <div class="col col-lg-4 col-md-2 col-sm-1 not-found__line"></div>
+              <div class="col col-lg-4 col-md-8 col-sm-10 not-found__title">
+                <h1 class="not-found__title--404">SHOPPING CART</h1>
+              </div>
+              <div class="col col-lg-4 col-md-2 col-sm-1 not-found__line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="container container-main" id="products-wrapper"></div>
+
+        <div class="container container-main">
+          <div class="row row-justify">
+            <div class="col col-lg-4 col-md-7 col-sm-10 shopping__align">
+              <input type="text" value="Enter Coupon Code" class="form-control shopping__input">
+              <button type="button" class="btn btn-outline-light">Apply</button>
+            </div>
+            <div class="col col-lg-5 col-md-7 col-sm-10 shopping__align">
+              <button type="button" class="btn btn-outline-light">
+                Update cart
+              </button>
+              <button type="button" class="btn btn-light">
+                Proceed To CHECKOUT
+              </button>
+            </div>
+          </div>
+
+          <div class="row justify-content-end">
+            <div class="col col-lg-3 col-md-4 col-sm-6 shopping__align">
+              <p class="shopping__subtotal">card subtotal:</p>
+            </div>
+            <div class="col col-lg-4 col-md-4 col-sm-5">
+              <p class="shopping__sum">
+                $<span class="shopping-sum-amount">0.00</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="row justify-content-end">
+            <div class="col col-lg-3 col-md-4 col-sm-6 shopping__align">
+              <p class="shopping__title">SHIPPIING AND HANDLING:</p>
+            </div>
+            <div class="col col-lg-4 col-md-4 col-sm-5">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked="">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Flat Rate: <span class="shopping-prise">$10.00</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Free Shipping
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  International: <span class="shopping-prise">$60.00</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Local Delivery: <span class="shopping-prise">$5.00</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Local Pickup (Free)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-end">
+            <div class="col col-lg-3 col-md-4 col-sm-6 shopping__align shopping__align--order">
+              <p class="shopping__title">Order total:</p>
+            </div>
+            <div class="col col-lg-4 col-md-4 col-sm-5">
+              <p class="shopping__amount">
+                $<span class="final-purchase-amount">0</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer wrap_internal">
+        <div class="footer__info">
+          <div class="footer__copyright">
+            <p>
+              © Copyright <span id="year"></span>.<br>All Rights Reserved.
+            </p>
+          </div>
+          <address class="footer__contact">
+            <h3 class="footer__title">Contact</h3>
+            <p class="address-item">
+              Headquarters:<br>
+              5600, Blvd. des Galeries, Bur 530<br>Québec G2K 2H6
+            </p>
+            <p class="address-item">
+              <a class="mail-to" href="mailto:contact@osf-global.com">contact@osf-global.com</a>
+            </p>
+            <p class="address-item">
+              <a class="call-to" href="tel:+1(888)548-4344">+1 (888) 548-4344</a>
+            </p>
+          </address>
+        </div>
+        <div class="footer__menu">
+          <div>
+            <h3 class="footer__title">Categoriest</h3>
+            <div class="categoriest">
+              <div class="categoriest__column">
+                <a class="categoriest__element" href="/not-found-page.html">Alcohol</a>
+                <a class="categoriest__element" href="/not-found-page.html">Art</a>
+                <a class="categoriest__element" href="/not-found-page.html">Books</a>
+                <a class="categoriest__element" href="/not-found-page.html">Drink</a>
+                <a class="categoriest__element" href="/not-found-page.html">Electronics</a>
+              </div>
+              <div class="categoriest__column">
+                <a class="categoriest__element" href="/not-found-page.html">Home</a>
+                <a class="categoriest__element" href="/not-found-page.html">Jewelry</a>
+                <a class="categoriest__element" href="/not-found-page.html">Kids & Baby</a>
+                <a class="categoriest__element" href="/not-found-page.html">Men's Fashion</a>
+                <a class="categoriest__element" href="/not-found-page.html">Mobile</a>
+                <a class="categoriest__element" href="/not-found-page.html">Motorcycles</a>
+                <a class="categoriest__element" href="/not-found-page.html">Movies</a>
+                <a class="categoriest__element" href="/not-found-page.html">Music</a>
+              </div>
+              <div class="categoriest__column">
+                <a class="categoriest__element" href="/not-found-page.html">Sport</a>
+                <a class="categoriest__element" href="/not-found-page.html">Toys</a>
+                <a class="categoriest__element" href="/not-found-page.html">Travel</a>
+                <a class="categoriest__element" href="/not-found-page.html">Women's Fashion</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__about">
+            <h3 class="footer__title">About</h3>
+            <div class="categoriest">
+              <div class="categoriest__column">
+                <a class="categoriest__element" href="/not-found-page.html">About us</a>
+                <a class="categoriest__element" href="/not-found-page.html">Delivery</a>
+                <a class="categoriest__element" href="/not-found-page.html">Testimonials</a>
+                <a class="categoriest__element" href="/not-found-page.html">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="click" onclick="footerToggle(1)">
+              <span class="footer__title">Contact</span>
+              <span class="material-symbols-outlined" id="footer-arrow-contact">
+                arrow_drop_down
+              </span>
+            </div>
+            <div class="col-12 hide" id="footer-address">
+              <address>
+                <p class="address-item">
+                  Headquarters:<br>
+                  5600, Blvd. des Galeries, Bur 530<br>Québec G2K 2H6
+                </p>
+                <p class="address-item">
+                  <a class="mail-to" href="mailto:contact@osf-global.com">contact@osf-global.com</a>
+                </p>
+                <p class="address-item">
+                  <a class="call-to" href="tel:+1(888)548-4344">+1 (888) 548-4344</a>
+                </p>
+              </address>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="click" onclick="footerToggle(2)">
+              <span class="footer__title">Categories</span>
+              <span class="material-symbols-outlined" id="footer-arrow-categories">
+                arrow_drop_down
+              </span>
+            </div>
+            <div class="col-12">
+              <ul class="hidden-menu__list hide" id="footer-categories-list">
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Alcohol</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Art</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Books</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Drink</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Electronics</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Home</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Jewelry</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Kids & Baby</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Men's Fashion</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Mobile</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Motorcycles</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Movies</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Music</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Sport</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Toys</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Travel</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Women's Fashion</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="click" onclick="footerToggle()">
+              <span class="footer__title">About</span>
+              <span class="material-symbols-outlined" id="footer-arrow-about">
+                arrow_drop_down
+              </span>
+            </div>
+            <div col-12="">
+              <ul class="hidden-menu__list hide" id="footer-about">
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Alcohol</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Art</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Books</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Drink</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__social-link">
+          <a class="footer__link" href="https://www.facebook.com" target="_blank">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a class="footer__link" href="https://plus.google.com" target="_blank">
+            <i class="fa fa-google-plus"></i>
+          </a>
+          <a class="footer__link" href="https://twitter.com" target="_blank">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a class="footer__link" href="https://www.pinterest.com/" target="_blank">
+            <i class="fa fa-pinterest-p"></i>
+          </a>
+        </div>
+
+        <div class="wrap-options">
+          <ul class="footer-options">
+            <li class="footer-options__item">
+              <span class="material-symbols-outlined">search</span>
+            </li>
+            <li class="footer-options__item">
+              <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#exampleModal">person</span>
+            </li>
+            <li class="footer-options__item">
+              <span class="material-symbols-outlined heart-position">
+                favorite
+                <span class="heart-container"></span>
+              </span>
+            </li>
+            <li class="footer-options__item">
+              <a href="/shopping.html" class="footer-options__item">
+                <span class="material-symbols-outlined">shopping_bag</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content sing-in">
+            <h2 class="sing-in__title" id="exampleModalLabel">Sign in</h2>
+
+            <div class="modal-body modal-body-sing-in">
+              <div>
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control sing-in__input" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+
+              <div>
+                <div class="sing-in__align">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Lato</label>
+                  <span class="sing-in__forgot">forgot password</span>
+                </div>
+                <div class="sing-in__password">
+                  <input type="password" class="form-control sing-in__password--input" id="inputPassword">
+                  <div class="password--icon">
+                    <span class="material-symbols-outlined sing-in__password--icon">
+                      visibility_off
+                    </span>
+                    <span class="material-symbols-outlined sing-in__password--icon">
+                      visibility
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer sing-in__align--submit">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="sing-in__submit">
+                LOGIN
+              </button>
+              <span class="sing-in__forgot">I don’t have an account</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="/index.de5c0784.js"></script>
+  <script src="/shopping.c81385db.js"></script></body>
+</html>

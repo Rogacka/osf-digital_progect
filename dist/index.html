@@ -8,16 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="styles/index.scss" /> -->
+
     <link rel="stylesheet" href="/index.3092e1e0.css">
 
     <title>OSF Academy</title>
   </head>
   <body>
     <div class="wrap_external">
-      <!-- start header -->
       <header class="wrap_internal main-header">
-        <a href="#" class="logo">
+        <a href="/index.html" class="logo">
           <img class="logo__image" src="/logo.4b4e80a6.png" alt="OSF logo">
           <div class="logo__name">
             <span class="logo__name_abbreviation">OSF</span>
@@ -26,7 +25,7 @@
         </a>
         <nav class="menu">
           <ul class="nav-list">
-            <li class="nav-list__item additional-menu" id="servises" onclick="toggle(1)">
+            <li class="nav-list__item additional-menu en-language" id="servises" onclick="toggle(1)">
               Services
             </li>
             <li class="nav-list__item">
@@ -40,10 +39,10 @@
             </li>
           </ul>
           <div class="settings">
-            <select class="settings__item form-select" name="language">
-              <option value="value1" selected="">EN</option>
-              <option value="value2">UA</option>
-              <option value="value3"></option>
+            <select class="settings__item form-select" id="language-select" name="language">
+              <option value="en" selected="">EN</option>
+              <option value="ua">UA</option>
+              <option value="ro">RO</option>
             </select>
             <select class="settings__item form-select" name="currency">
               <option value="value1" selected="">$US</option>
@@ -56,13 +55,21 @@
               <span class="material-symbols-outlined">search</span>
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined login" data-bs-toggle="modal" data-bs-target="#exampleModal">person</span>
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined">
+                favorite
+                <span class="heart-container"></span>
+              </span>
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">shopping_bag</span>
+              <a href="/shopping.html">
+                <span class="material-symbols-outlined">
+                  shopping_bag
+                  <span class="shopping-container"></span>
+                </span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -196,11 +203,8 @@
         <div class="hidden-menu__container">
           <img class="hidden-menu__image" src="/hidden-img.cd8d9ad2.png" alt="hidden menu image">
         </div>
-
-        <!-- <div class="hidden-menu__image"></div> -->
       </div>
 
-      <!-- header for mobile -->
       <header class="mobile-header wrap_internal">
         <div class="mobile-header__position">
           <div onclick="toggle(2)">
@@ -220,7 +224,7 @@
       </header>
 
       <div class="mobile hidden-menu wrap_internal hide" id="hidden-menu-mobile">
-        <div class="container-fluid">
+        <div class="container-fluid hidden-menu__wrap">
           <div class="row">
             <div class="click" onclick="toggle()">
               <div class="col-11">
@@ -378,11 +382,7 @@
         </div>
       </div>
 
-      <!-- end header -->
-
-      <!-- start main -->
       <main class="main">
-        <!-- carousel -->
         <div class="intro wrap_internal">
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -458,21 +458,20 @@
           </div>
         </div>
 
-        <!-- popular item -->
         <div class="popular wrap-internal">
           <div class="container-fluid">
             <div class="row">
               <div class="popular__wrap-title">
-                <div class="col-5 popular__line"></div>
-                <div class="col-2 popular__title">
+                <div class="col col-lg-5 col-md-4 col-sm-2 popular__line"></div>
+                <div class="col col-lg-2 col-md-3 col-sm-5 popular__title">
                   <h1 class="popular__title--heading">Popular items</h1>
                 </div>
-                <div class="col-5 popular__line"></div>
+                <div class="col col-lg-5 col-md-4 col-sm-2 popular__line"></div>
               </div>
             </div>
           </div>
 
-          <div class="popular__item">
+          <div class="popular__item hide-card">
             <div class="card">
               <div class="card__main">
                 <img class="card__img" src="/popular-item-1.2daf44a3.png" alt="Kristina Dam Oak Table With White Marble Top">
@@ -483,10 +482,10 @@
               </div>
               <div class="card__overlay">
                 <div class="card__buttons">
-                  <div class="card__button">
+                  <div class="card__button button-buy">
                     <i class="fa fa-plus plus"></i>
                   </div>
-                  <div class="card__button">
+                  <div class="card__button button-heart">
                     <i class="fa fa-heart heart"></i>
                   </div>
                 </div>
@@ -495,15 +494,18 @@
 
             <div class="card">
               <div class="card__main">
-                <img class="card__img" src="/popular-item-2.70fb9533.png" alt="Hay - About A Lounge 
-                    Chair AAL 93">
+                <a href="/detailed-page.html">
+                  <img id="img-2" class="card__img" src="/popular-item-2.70fb9533.png" alt="Hay - About A Lounge Chair AAL 93">
+                </a>
                 <div class="card__info">
-                  <p>Hay - About A Lounge Chair AAL 93</p>
+                  <a href="/detailed-page.html" class="card__info--link">
+                    <p>Hay - About A Lounge Chair AAL 93</p>
+                  </a>
                   <div class="btn-group" role="group" aria-label="Basic outlined example">
                     <button type="button" class="btn btn-outline-primary buy">
-                      <a class="price" href="">$ 659.55</a>
+                      <a class="price" id="price-2" href="/detailed-page.html">$ 659.55</a>
                     </button>
-                    <button type="button" class="btn btn-outline-primary buy">
+                    <button type="button" class="btn btn-outline-primary buy button-buy" id="add-to-card">
                       Buy now
                     </button>
                   </div>
@@ -531,10 +533,10 @@
               </div>
               <div class="card__overlay">
                 <div class="card__buttons">
-                  <div class="card__button">
+                  <div class="card__button button-buy">
                     <i class="fa fa-plus plus"></i>
                   </div>
-                  <div class="card__button">
+                  <div class="card__button button-heart">
                     <i class="fa fa-heart heart"></i>
                   </div>
                 </div>
@@ -552,10 +554,10 @@
               </div>
               <div class="card__overlay">
                 <div class="card__buttons">
-                  <div class="card__button">
+                  <div class="card__button button-buy">
                     <i class="fa fa-plus plus"></i>
                   </div>
-                  <div class="card__button">
+                  <div class="card__button button-heart">
                     <i class="fa fa-heart heart"></i>
                   </div>
                 </div>
@@ -567,16 +569,16 @@
                 <img class="card__img" src="/popular-item-5.1b6d20d8.png" alt="Hay - About A Lounge 
                   Chair AAL 93">
                 <div class="card__info">
-                  <p>Hay - About A Lounge<br>Chair AAL 93</p>
+                  <p>Hay - About A Lounge<br>Chair 93</p>
                   <p>$ 659.55</p>
                 </div>
               </div>
               <div class="card__overlay">
                 <div class="card__buttons">
-                  <div class="card__button">
+                  <div class="card__button button-buy">
                     <i class="fa fa-plus plus"></i>
                   </div>
-                  <div class="card__button">
+                  <div class="card__button button-heart">
                     <i class="fa fa-heart heart"></i>
                   </div>
                 </div>
@@ -593,10 +595,10 @@
               </div>
               <div class="card__overlay">
                 <div class="card__buttons">
-                  <div class="card__button">
+                  <div class="card__button button-buy">
                     <i class="fa fa-plus plus"></i>
                   </div>
-                  <div class="card__button">
+                  <div class="card__button button-heart">
                     <i class="fa fa-heart heart"></i>
                   </div>
                 </div>
@@ -608,16 +610,16 @@
                 <img class="card__img" src="/popular-item-7.050bf4a9.png" alt="CH445 Wing Chair on 
                   SUITE NY">
                 <div class="card__info">
-                  <p>CH445 Wing Chair on <br>SUITE NY</p>
-                  <p>$ 330.55</p>
+                  <p class="card__title">CH445 Wing Chair on <br>SUITE NY</p>
+                  <p class="card__price">$ 330.55</p>
                 </div>
               </div>
               <div class="card__overlay">
                 <div class="card__buttons">
-                  <div class="card__button">
+                  <div class="card__button button-buy">
                     <i class="fa fa-plus plus"></i>
                   </div>
-                  <div class="card__button">
+                  <div class="card__button button-heart">
                     <i class="fa fa-heart heart"></i>
                   </div>
                 </div>
@@ -635,15 +637,181 @@
             </div>
           </div>
           <div>
-            <button class="btn btn-outline-primary btn__more">
+            <button class="btn btn-outline-light btn__more hide-card" id="show-more-card">
               Load more
               <span class="btn__circle-arrow">&circlearrowright;</span>
             </button>
           </div>
+
+          <div id="carouselExampleIndicators" class="carousel slide popular__item" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active carousel-indicator" aria-current="true" aria-label="Slide 1"></button>
+              <button class="carousel-indicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button class="carousel-indicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button class="carousel-indicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button class="carousel-indicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button class="carousel-indicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              <button class="carousel-indicator" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card">
+                  <div class="card__main">
+                    <img class="card__img" src="/popular-item-1.2daf44a3.png" alt="Kristina Dam Oak Table With White Marble Top">
+                    <div class="card__info">
+                      <p>Kristina Dam Oak Table With White Marble Top</p>
+                      <p>$ 410.99</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <a href="/detailed-page.html">
+                      <img id="img-2" class="card__img" src="/popular-item-2.70fb9533.png" alt="Hay - About A Lounge Chair AAL 93">
+                    </a>
+                    <div class="card__info">
+                      <a href="/detailed-page.html" class="card__info--link">
+                        <p>Hay - About A Lounge Chair AAL 93</p>
+                      </a>
+                      <div class="btn-group" role="group" aria-label="Basic outlined example">
+                        <button type="button" class="btn btn-outline-primary buy">
+                          <a class="price" id="price-2" href="/detailed-page.html">$ 659.55</a>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary buy button-buy" id="add-to-card">
+                          Buy now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img class="card__img" src="/popular-item-6.c5282186.png" alt="TORY DESK CALENDAR">
+                    <div class="card__info">
+                      <p><br>TORY DESK CALENDAR</p>
+                      <p>$ 410.99</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img class="card__img" src="/popular-item-7.050bf4a9.png" alt="CH445 Wing Chair on 
+                      SUITE NY">
+                    <div class="card__info">
+                      <p class="card__title">
+                        CH445 Wing Chair on <br>SUITE NY
+                      </p>
+                      <p class="card__price">$ 330.55</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img class="card__img" src="/popular-item-3.4ecd2e97.jpg" alt="Activate Facial Mask and Charcoal Soap">
+                    <div class="card__info">
+                      <p>Activate Facial Mask and<br>Charcoal Soap</p>
+                      <p>$ 129.55</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img class="card__img" src="/popular-item-4.930f3e44.png" alt="Cocktail Table Walnut 
+                        | YES">
+                    <div class="card__info">
+                      <p>Cocktail Table Walnut <br>| YES</p>
+                      <p>$ 299.99</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card">
+                  <div class="card__main">
+                    <img class="card__img" src="/popular-item-5.1b6d20d8.png" alt="Hay - About A Lounge 
+                      Chair AAL 93">
+                    <div class="card__info">
+                      <p>Hay - About A Lounge<br>Chair 93</p>
+                      <p>$ 659.55</p>
+                    </div>
+                  </div>
+                  <div class="card__overlay">
+                    <div class="card__buttons">
+                      <div class="card__button button-buy">
+                        <i class="fa fa-plus plus"></i>
+                      </div>
+                      <div class="card__button button-heart">
+                        <i class="fa fa-heart heart"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Banner OSF Theme -->
-        <div class="container-fluid wrap-internal">
+        <div class="container-fluid wrap-internal" id="OSF-Theme">
           <div class="row banner">
             <h2 class="banner__title">Banner OSF Theme</h2>
             <p class="banner__text">
@@ -653,7 +821,6 @@
           </div>
         </div>
 
-        <!-- Featured Products-->
         <div class="container-fluid featured wrap-internal">
           <div class="row featured__wrap">
             <div class="col-4 featured__align align-self-center">
@@ -783,7 +950,6 @@
           </div>
         </div>
 
-        <!-- advantages -->
         <div class="container-fluid advantages wrap-internal">
           <div class="advantages__wrap">
             <div class="advantages__item">
@@ -825,9 +991,7 @@
           </div>
         </div>
       </main>
-      <!-- end main -->
 
-      <!-- start footer -->
       <footer class="footer wrap_internal">
         <div class="footer__info">
           <div class="footer__copyright">
@@ -890,8 +1054,6 @@
             </div>
           </div>
         </div>
-
-        <!-- mobile footer -->
 
         <div class="container-fluid">
           <div class="row">
@@ -1028,45 +1190,105 @@
               <span class="material-symbols-outlined">search</span>
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined login" data-bs-toggle="modal" data-bs-target="#exampleModal">person</span>
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined heart-position">
+                favorite
+                <span class="heart-container"></span>
+              </span>
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">shopping_bag</span>
+              <a href="/shopping.html" class="footer-options__item">
+                <span class="material-symbols-outlined bag-position">
+                  shopping_bag
+                  <span class="shopping-container"></span>
+                </span>
+              </a>
             </li>
           </ul>
         </div>
       </footer>
-      <!-- end footer -->
 
-      <!-- modal sing in -->
-      <div class="container-fluid wrap-modal">
-        <div class="row row-cols-1 sing-in">
-          <div class="col align-self-center">
-            <h2 class="sing-in__title">Sign in</h2>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content sing-in">
+            <h2 class="sing-in__title" id="exampleModalLabel">Sign in</h2>
+
+            <div class="modal-body modal-body-sing-in">
+              <div>
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control sing-in__input" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+
+              <div>
+                <div class="sing-in__align">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Lato</label>
+                  <span class="sing-in__forgot">forgot password</span>
+                </div>
+                <div class="sing-in__password">
+                  <input type="password" class="form-control sing-in__password--input" id="inputPassword">
+                  <div class="password--icon">
+                    <span class="material-symbols-outlined sing-in__password--icon">
+                      visibility_off
+                    </span>
+                    <span class="material-symbols-outlined sing-in__password--icon">
+                      visibility
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer sing-in__align--submit">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="sing-in__submit">
+                LOGIN
+              </button>
+              <span class="sing-in__forgot">I don’t have an account</span>
+            </div>
           </div>
-          <div class="col align-self-center">
-            <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-          <div class="col align-self-center">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-            <span>forgot password</span>
-            <input type="password" class="form-control" id="inputPassword">
-          </div>
-          <div class="col align-self-center">
-            <input class="btn btn-primary" type="submit" value="Submit">
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cookieModal" id="openCookieModalButton" style="visibility: hidden">
+        Launch demo modal
+      </button>
+
+      <div class="modal fade" id="cookieModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog cookies__dialog">
+          <div class="modal-content cookies__content">
+            <div class="modal-header cookies__title">
+              <h5 class="modal-title" id="exampleModalLabel">
+                This website uses cookies
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row">
+              <div class="modal-body modal-body-cookies col-10">
+                <p class="cookies__description">
+                  OSF uses its own and third-party cookies for statistical
+                  purposes, to know your preferences, for website performance
+                  and interaction with social media offering publicity tailored
+                  to your interests. If you continue browsing, we consider that
+                  you accept its use. You can expand this information consulting
+                  our
+                  <a href="#" class="cookies__link">Cookies Policy Page</a>.
+                </p>
+              </div>
+              <div class="modal-footer col-2">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="accept-cookies">
+                  Accept
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <!-- my script -->
     <script src="/index.de5c0784.js"></script>
   <script src="/osf-digital_progect.59712999.js"></script></body>
 </html>

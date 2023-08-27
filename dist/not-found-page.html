@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="styles/not-found-page.scss" /> -->
     <link rel="stylesheet" href="/not-found-page.56b97ad6.css">
     <title>OSF | Page not found</title>
   </head>
   <body>
     <div class="wrap_external">
-      <!-- start header -->
       <header class="wrap_internal main-header">
         <a href="/index.html" class="logo">
           <img class="logo__image" src="/logo.4b4e80a6.png" alt="OSF logo">
@@ -42,7 +40,7 @@
             <select class="settings__item form-select" name="language">
               <option value="value1" selected="">EN</option>
               <option value="value2">UA</option>
-              <option value="value3"></option>
+              <option value="value3">RO</option>
             </select>
             <select class="settings__item form-select" name="currency">
               <option value="value1" selected="">$US</option>
@@ -55,13 +53,21 @@
               <span class="material-symbols-outlined">search</span>
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined login" data-bs-toggle="modal" data-bs-target="#exampleModal">person</span>
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined">
+                favorite
+                <span class="heart-container"></span>
+              </span>
             </li>
             <li class="options__item">
-              <span class="material-symbols-outlined">shopping_bag</span>
+              <a href="/shopping.html">
+                <span class="material-symbols-outlined">
+                  shopping_bag
+                  <span class="shopping-container"></span>
+                </span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -195,11 +201,8 @@
         <div class="hidden-menu__container">
           <img class="hidden-menu__image" src="/hidden-img.cd8d9ad2.png" alt="hidden menu image">
         </div>
-
-        <!-- <div class="hidden-menu__image"></div> -->
       </div>
 
-      <!-- header for mobile -->
       <header class="mobile-header wrap_internal">
         <div class="mobile-header__position">
           <div onclick="toggle(2)">
@@ -212,14 +215,14 @@
           </div>
           <div>
             <a href="/index.html" class="logo">
-            <img class="mobile-header__img" src="/logo.4b4e80a6.png" alt="OSF logo">
-          </a>
+              <img class="mobile-header__img" src="/logo.4b4e80a6.png" alt="OSF logo">
+            </a>
           </div>
         </div>
       </header>
 
       <div class="mobile hidden-menu wrap_internal hide" id="hidden-menu-mobile">
-        <div class="container-fluid">
+        <div class="container-fluid hidden-menu__wrap">
           <div class="row">
             <div class="click" onclick="toggle()">
               <div class="col-11">
@@ -377,9 +380,6 @@
         </div>
       </div>
 
-      <!-- end header -->
-
-      <!-- start main -->
       <main class="main wrap-internal">
         <div class="container-fluid">
           <div class="row">
@@ -431,9 +431,7 @@
           </div>
         </div>
       </main>
-      <!-- end main -->
 
-      <!-- start footer -->
       <footer class="footer wrap_internal">
         <div class="footer__info">
           <div class="footer__copyright">
@@ -497,8 +495,6 @@
           </div>
         </div>
 
-        <!-- mobile footer -->
-
         <div class="container-fluid">
           <div class="row">
             <div class="click" onclick="footerToggle(1)">
@@ -532,23 +528,57 @@
             </div>
             <div class="col-12">
               <ul class="hidden-menu__list hide" id="footer-categories-list">
-                <li><a href="/not-found-page.html" class="categoriest__element">Alcohol</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Art</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Books</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Drink</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Electronics</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Home</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Jewelry</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Kids & Baby</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Men's Fashion</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Mobile</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Motorcycles</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Movies</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Music</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Sport</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Toys</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Travel</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Women's Fashion</a></li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Alcohol</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Art</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Books</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Drink</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Electronics</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Home</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Jewelry</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Kids & Baby</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Men's Fashion</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Mobile</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Motorcycles</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Movies</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Music</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Sport</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Toys</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Travel</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Women's Fashion</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -562,10 +592,18 @@
             </div>
             <div col-12="">
               <ul class="hidden-menu__list hide" id="footer-about">
-                <li><a href="/not-found-page.html" class="categoriest__element">Alcohol</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Art</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Books</a></li>
-                <li><a href="/not-found-page.html" class="categoriest__element">Drink</a></li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Alcohol</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Art</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Books</a>
+                </li>
+                <li>
+                  <a href="/not-found-page.html" class="categoriest__element">Drink</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -592,28 +630,70 @@
               <span class="material-symbols-outlined">search</span>
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined login" data-bs-toggle="modal" data-bs-target="#exampleModal">person</span>
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">favorite</span>
+              <span class="material-symbols-outlined heart-position">
+                favorite
+                <span class="heart-container"></span>
+              </span>
             </li>
             <li class="footer-options__item">
-              <span class="material-symbols-outlined">shopping_bag</span>
+              <a href="/shopping.html" class="footer-options__item">
+                <span class="material-symbols-outlined bag-position">
+                  shopping_bag
+                  <span class="shopping-container"></span>
+                </span>
+              </a>
             </li>
           </ul>
         </div>
       </footer>
-      <!-- end footer -->
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content sing-in">
+            <h2 class="sing-in__title" id="exampleModalLabel">Sign in</h2>
+
+            <div class="modal-body modal-body-sing-in">
+              <div>
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control sing-in__input" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+
+              <div>
+                <div class="sing-in__align">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Lato</label>
+                  <span class="sing-in__forgot">forgot password</span>
+                </div>
+                <div class="sing-in__password">
+                  <input type="password" class="form-control sing-in__password--input" id="inputPassword">
+                  <div class="password--icon">
+                    <span class="material-symbols-outlined sing-in__password--icon">
+                      visibility_off
+                    </span>
+                    <span class="material-symbols-outlined sing-in__password--icon">
+                      visibility
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer sing-in__align--submit">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="sing-in__submit">
+                LOGIN
+              </button>
+              <span class="sing-in__forgot">I don’t have an account</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <!-- my script -->
     <script src="/index.de5c0784.js"></script>
   <script src="/not-found-page.63dc94e7.js"></script></body>
 </html>

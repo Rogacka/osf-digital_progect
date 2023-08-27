@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.querySelector("#carouselExampleControls");
-  const carouselInstance = new bootstrap.Carousel(carousel, {
-    interval: 3000,
-    wrap: true,
-  });
+  if (carousel) {
+    const carouselInstance = new bootstrap.Carousel(carousel, {
+      interval: 2000,
+      wrap: true,
+    });
+  }
 });
 
 const shoppingContainer = document.querySelectorAll(".shopping-container");
@@ -31,7 +33,6 @@ window.addEventListener("load", function () {
   }
   if (cookies === false) {
     this.setTimeout(function () {
-      console.log(document.getElementById("openCookieModalButton"));
       document.getElementById("openCookieModalButton").click();
     }, 10000);
   }
@@ -90,7 +91,6 @@ const formControlPassword = document.getElementById("inputPassword");
 
 formControlPassword.addEventListener("blur", function () {
   const password = formControlPassword.value;
-  console.log(password);
   const passwordRegEx =
     /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*])[0-9a-zA-Z!@#$%^&*]{6,}$/;
   if (passwordRegEx.test(password)) {
@@ -110,11 +110,9 @@ const passwordIcon = document.querySelector(".password--icon");
 passwordIcon?.addEventListener("click", function () {
   if (formControlPassword.type === "password") {
     formControlPassword.type = "text";
-    console.log("!!!!!!!!");
     passwordIcon.firstElementChild.style.opacity = "0";
   } else {
     formControlPassword.type = "password";
-    console.log("????????");
     passwordIcon.firstElementChild.style.opacity = "1";
   }
 });
@@ -219,7 +217,6 @@ buttonsHeart.forEach((item) => {
       const itemName =
         item.closest(".card").firstElementChild.lastElementChild
           .firstElementChild.textContent;
-      console.log(itemName);
       let previousHeartsList = JSON.parse(localStorage.getItem("liked"));
       const filteredHeartslist = previousHeartsList.filter(
         (item) => item.name !== itemName
@@ -250,7 +247,6 @@ buttonBuy.forEach((item) => {
   item.addEventListener("click", function () {
     if (item.getAttribute("id") === null) {
       let good = createPoductCard(item);
-      console.log("good", good);
       addToLocalStorage("shopping", good);
       addNumber("shopping", shoppingContainerShow);
     } else {
@@ -316,7 +312,6 @@ function createPoductCard(itemCart) {
 
 // add prodacts to local storage
 function addToLocalStorage(storageKey, storageProduct) {
-  console.log(storageProduct.count, "storageProduct.count");
   let previousProducts = JSON.parse(localStorage.getItem(storageKey));
   if (previousProducts && previousProducts.length) {
     const productAlreadyExistInStorage = previousProducts.some(
@@ -325,7 +320,6 @@ function addToLocalStorage(storageKey, storageProduct) {
     if (productAlreadyExistInStorage) {
       const transformedProductsList = previousProducts.map((item) => {
         if (item.name === storageProduct.name && +storageProduct.count === 1) {
-          console.log("!!!!!111111");
           const newCount = ++item.count;
           return {
             ...item,
@@ -335,7 +329,6 @@ function addToLocalStorage(storageKey, storageProduct) {
           item.name === storageProduct.name &&
           +storageProduct.count > 1
         ) {
-          console.log("2!!!!2222");
           return {
             ...item,
             count: +item.count + +storageProduct.count,
@@ -410,7 +403,7 @@ const buttonMinus = document.querySelectorAll(".btn-minuse"); //minus buttons sh
 const decreese = [...buttonMinus];
 const innerCount = document.querySelectorAll(".product__count"); //increese number of goods
 const newInnerCount = [...innerCount];
-const innerPrice = document.querySelectorAll(".product-price"); //increese prise count
+const innerPrice = document.querySelectorAll(".product-price"); //increese price count
 const newInnerPrice = [...innerPrice];
 
 // increese product count
@@ -420,7 +413,6 @@ increase.forEach((item) => {
     const productName =
       item.closest(".product__counter").previousElementSibling.lastElementChild
         .firstElementChild.textContent;
-    console.log(productName);
 
     const newProducts = previousProducts.map((item, index) => {
       if (item.name === productName) {
@@ -428,7 +420,6 @@ increase.forEach((item) => {
         const newPrice = (newAmount * item.price.slice(1)).toFixed(2);
         newInnerPrice[index].textContent = `$${newPrice}`;
         newInnerCount[index].value = `${newAmount}`;
-        console.log(newInnerCount[index].value);
         return {
           ...item,
           count: newAmount,
@@ -520,13 +511,11 @@ buttonsRemoveProduct.forEach((item) => {
     const itemToRemoveName =
       itemToRemove.firstElementChild.lastElementChild.firstElementChild
         .textContent;
-    console.log(itemToRemoveName);
     itemToRemove.remove();
     const filteredProductList = previousProducts.filter(
       (product) => product.name !== itemToRemoveName
     );
 
-    console.log(filteredProductList);
     localStorage.setItem("shopping", JSON.stringify(filteredProductList));
     calculateSubtotalAmount(filteredProductList);
     calculateFinalPurchaseAmount(filteredProductList);
@@ -583,14 +572,16 @@ function calculateFinalPurchaseAmount(allProducts) {
 
 // show more products
 const showMoreCard = document.getElementById("show-more-card");
-console.log(showMoreCard);
 showMoreCard?.addEventListener("click", function () {
-  fetch("products.json")
-    .then((response) => response.json())
+  fetch("https://fakestoreapi.com/products?limit=4")
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
     .then((data) => {
+      console.log(data);
       const popularItem = document.querySelector(".popular__item");
-      console.log(popularItem);
-      data.products.forEach((item) => {
+      data.forEach((item) => {
         popularItem.insertAdjacentHTML(
           "beforeend",
           `
@@ -598,12 +589,12 @@ showMoreCard?.addEventListener("click", function () {
               <div class="card__main">
                 <img
                   class="card__img"
-                  src="${item.image_src}"
+                  src="${item.image}"
                   alt="Kristina Dam Oak Table With White Marble Top"
                 />
                 <div class="card__info">
-                  <p>${item.name}</p>
-                  <p>${item.price}</p>
+                  <p>${item.title}</p>
+                  <p>$${item.price}</p>
                 </div>
               </div>
               <div class="card__overlay">
@@ -622,7 +613,7 @@ showMoreCard?.addEventListener("click", function () {
       });
     })
     .catch((error) => {
-      console.error("Помилка:", error);
+      console.log(error);
     });
 });
 
@@ -635,11 +626,10 @@ closeModalSingIn.addEventListener("keydown", (event) => {
 });
 
 const hideFilterServices = document.querySelector(".hide-filter");
-console.log(hideFilterServices);
+const filterServices = document.querySelector(".filter-services");
 
 if (hideFilterServices) {
   hideFilterServices.addEventListener("click", function () {
-    const filterServices = document.querySelector(".filter-services");
     filterServices.classList.toggle("hide");
     hideFilterServices.firstElementChild.classList.toggle("hide");
     hideFilterServices.lastElementChild.classList.toggle("hide");

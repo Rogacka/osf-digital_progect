@@ -19,13 +19,11 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="styles/not-found-page.scss" /> -->
     <link rel="stylesheet" href="css/shopping.css" />
     <title>OSF | Shopping cart</title>
   </head>
   <body>
     <div class="wrap_external">
-      <!-- start header -->
       <header class="wrap_internal main-header">
         <a href="./index.html" class="logo">
           <img
@@ -299,7 +297,6 @@
         <!-- <div class="hidden-menu__image"></div> -->
       </div>
 
-      <!-- header for mobile -->
       <header class="mobile-header wrap_internal">
         <div class="mobile-header__position">
           <div onclick="toggle(2)">
@@ -332,7 +329,7 @@
         class="mobile hidden-menu wrap_internal hide"
         id="hidden-menu-mobile"
       >
-        <div class="container-fluid">
+        <div class="container-fluid hidden-menu__wrap">
           <div class="row">
             <div class="click" onclick="toggle()">
               <div class="col-11">
@@ -544,9 +541,6 @@
         </div>
       </div>
 
-      <!-- end header -->
-
-      <!-- start main -->
       <main class="main wrap-internal">
         <div class="container-fluid">
           <div class="row">
@@ -560,9 +554,7 @@
           <div class="row">
             <div class="not-found__wrap-title">
               <div class="col col-lg-4 col-md-2 col-sm-1 not-found__line"></div>
-              <div
-                class="col col-lg-4 col-md-8 col-sm-10 not-found__title-lg-not-found__title"
-              >
+              <div class="col col-lg-4 col-md-8 col-sm-10 not-found__title">
                 <h1 class="not-found__title--404">SHOPPING CART</h1>
               </div>
               <div class="col col-lg-4 col-md-2 col-sm-1 not-found__line"></div>
@@ -680,9 +672,7 @@
           </div>
         </div>
       </main>
-      <!-- end main -->
 
-      <!-- start footer -->
       <footer class="footer wrap_internal">
         <div class="footer__info">
           <div class="footer__copyright">
@@ -791,8 +781,6 @@
             </div>
           </div>
         </div>
-
-        <!-- mobile footer -->
 
         <div class="container-fluid">
           <div class="row">
@@ -1011,9 +999,7 @@
           </ul>
         </div>
       </footer>
-      <!-- end footer -->
 
-      <!-- modal sing in -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -1088,7 +1074,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- my script -->
     <script src="./js/index.js"></script>
   </body>
 </html>

@@ -326,8 +326,8 @@ body {
   .mobile .rotate-arrow {
     transform: rotate(180deg);
   }
-  .mobile .hidden-menu {
-    padding-top: 0;
+  .mobile .hidden-menu__wrap {
+    padding-top: 20px;
   }
   .mobile .hidden-menu__sub-title {
     padding-left: 20px;

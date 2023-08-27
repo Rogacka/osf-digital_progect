@@ -280,8 +280,9 @@
     }
 
     .hidden-menu {
-      padding-top: 0;
-
+      &__wrap {
+        padding-top: 20px;
+      }
       &__sub-title {
         padding-left: 20px;
         cursor: pointer;
@@ -295,4 +296,3 @@
     }
   }
 }
-

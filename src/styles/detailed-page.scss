@@ -296,6 +296,10 @@ body {
     .card {
       background-color: transparent;
       border: none;
+
+      &__main {
+        background-color: transparent;
+      }
     }
   }
 }
@@ -350,6 +354,9 @@ body {
   .not-found__line {
     display: none;
   }
+  .hide-on-small {
+    display: none;
+  }
   .popular__line {
     display: none;
   }
@@ -364,5 +371,6 @@ body {
   }
   .detailed-page__text {
     display: block;
+    padding-top: 20px;
   }
 }
