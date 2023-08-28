@@ -82,7 +82,6 @@ body {
   }
 
   &__info {
-    padding-left: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -359,6 +358,9 @@ body {
   }
   .popular__line {
     display: none;
+  }
+  .biggest-image {
+    width: 100%;
   }
 }
 
