@@ -571,7 +571,7 @@
 
   .footer .footer-options__item {
     color: #b2b2b2;
-    padding: 0 15px 10px;
+    padding: 0;
     font-size: 1.5rem;
     list-style: none;
   }
@@ -736,6 +736,12 @@ body {
 
   .modal-content {
     width: 450px;
+  }
+}
+
+@media (width <= 576px) {
+  .row {
+    flex-direction: column;
   }
 }
 
@@ -967,6 +973,10 @@ main {
 }
 
 @media (width <= 576px) {
+  .row {
+    flex-direction: row;
+  }
+
   .not-found__line {
     display: none;
   }

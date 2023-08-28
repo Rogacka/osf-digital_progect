@@ -558,6 +558,7 @@ body {
     padding: 0 15px 10px 15px;
     color: #b2b2b2;
     font-size: 1.5rem;
+    padding: 0;
     list-style: none;
   }
   .footer .footer-options__item:hover {
@@ -789,6 +790,9 @@ body {
   .popular .carousel {
     display: flex;
     padding-bottom: 100px;
+  }
+  .popular .carousel .card:hover > .card__overlay {
+    display: block;
   }
 }
 .featured {
@@ -1025,6 +1029,11 @@ body {
     width: 450px;
   }
 }
+@media (max-width: 576px) {
+  .row {
+    flex-direction: column;
+  }
+}
 main {
   background-color: #f1edea;
   padding-bottom: 45px;
@@ -1190,6 +1199,8 @@ main {
   }
   .hide-filter {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .wrap-order {
     display: flex;

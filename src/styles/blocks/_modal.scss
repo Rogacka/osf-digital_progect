@@ -96,3 +96,9 @@
     width: 450px;
   }
 }
+
+@media (max-width: 576px) {
+  .row {
+    flex-direction: column;
+  }
+}

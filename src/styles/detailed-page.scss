@@ -301,6 +301,10 @@ body {
       }
     }
   }
+
+  .carousel-indicator {
+    background-color: $text-color-main;
+  }
 }
 
 .biggest-container {

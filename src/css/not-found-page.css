@@ -558,6 +558,7 @@ body {
     padding: 0 15px 10px 15px;
     color: #b2b2b2;
     font-size: 1.5rem;
+    padding: 0;
     list-style: none;
   }
   .footer .footer-options__item:hover {
@@ -701,6 +702,11 @@ body {
   }
   .modal-content {
     width: 450px;
+  }
+}
+@media (max-width: 576px) {
+  .row {
+    flex-direction: column;
   }
 }
 .main {

@@ -35,12 +35,18 @@ window.addEventListener("load", function() {
         calculateSubtotalAmount(checkLocalStorage);
         calculateFinalPurchaseAmount(checkLocalStorage);
     }
-    if (this.localStorage.getItem("shopping") !== undefined && this.localStorage.getItem("shopping") !== null && this.localStorage.getItem("shopping") !== "[]") {
-        const subtotalFromLocalStorage = JSON.parse(localStorage.getItem("shopping"));
-        chooseHandling(formCheckInput[0]);
-        calculateSubtotalAmount(subtotalFromLocalStorage);
-        calculateFinalPurchaseAmount(subtotalFromLocalStorage);
-    }
+// if (
+//   this.localStorage.getItem("shopping") !== undefined &&
+//   this.localStorage.getItem("shopping") !== null &&
+//   this.localStorage.getItem("shopping") !== "[]"
+// ) {
+//   const subtotalFromLocalStorage = JSON.parse(
+//     localStorage.getItem("shopping")
+//   );
+//   chooseHandling(formCheckInput[0]);
+//   calculateSubtotalAmount(subtotalFromLocalStorage);
+//   calculateFinalPurchaseAmount(subtotalFromLocalStorage);
+// }
 });
 //function add cookies to local storage
 const acceptCookies = document.getElementById("accept-cookies");
@@ -204,12 +210,22 @@ buttonBuy.forEach((item)=>{
             let good = createPoductCard(item);
             addToLocalStorage("shopping", good);
             addNumber("shopping", shoppingContainerShow);
-        } else {
+        } else if (item.getAttribute("id") === "add-to-card") {
             const btnBuyNow = document.getElementById("add-to-card");
             const product = {
                 name: document.getElementById("img-2").getAttribute("alt"),
                 image: document.getElementById("img-2").getAttribute("src"),
                 price: btnBuyNow.previousElementSibling.innerText,
+                count: 1
+            };
+            addToLocalStorage("shopping", product);
+            addNumber("shopping", shoppingContainerShow);
+        } else {
+            const btnBuyNowSmallScreen = document.getElementById("add-to-card-small");
+            const product = {
+                name: document.getElementById("img-3").getAttribute("alt"),
+                image: document.getElementById("img-3").getAttribute("src"),
+                price: btnBuyNowSmallScreen.previousElementSibling.innerText,
                 count: 1
             };
             addToLocalStorage("shopping", product);
@@ -310,7 +326,7 @@ productToBuyList?.forEach((product)=>{
         </span>
       </div>
       <div class="product__amount">
-        <span class="product-price">$${+product.price.slice(1) * product.count}</span>
+        <span class="product-price">$${(+product.price.slice(1) * product.count).toFixed(2)}</span>
       </div>
       <div>
         <span class="material-symbols-outlined button-remove">
@@ -399,7 +415,7 @@ newInnerCount.forEach((item)=>{
         const newProducts = previousProducts.map((item, index)=>{
             if (item.name === productName) {
                 const newPrice = (+event.target.value * item.price.slice(1)).toFixed(2);
-                newInnerPrice[index].textContent = `$${newPrice}`;
+                newInnerPrice[index].textContent = `$${newPrice.toFixed(2)}`;
                 return {
                     ...item,
                     count: event.target.value

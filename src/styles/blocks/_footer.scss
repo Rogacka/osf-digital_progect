@@ -177,7 +177,7 @@
       padding: 10px 20% 0 20%;
       background-color: $background-color;
     }
-    
+
     .footer-options {
       padding: 0;
       display: flex;
@@ -186,8 +186,9 @@
 
       &__item {
         @include icons(1.5rem);
+        padding: 0;
         list-style: none;
-        
+
         .material-symbols-outlined {
           font-weight: bold;
         }

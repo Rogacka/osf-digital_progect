@@ -222,6 +222,9 @@ main {
   }
 }
 @media (max-width: 576px) {
+  .row {
+    flex-direction: row;
+  }
   .not-found__line {
     display: none;
   }
