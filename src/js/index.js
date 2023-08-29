@@ -48,19 +48,6 @@ window.addEventListener("load", function () {
     calculateSubtotalAmount(checkLocalStorage);
     calculateFinalPurchaseAmount(checkLocalStorage);
   }
-
-  // if (
-  //   this.localStorage.getItem("shopping") !== undefined &&
-  //   this.localStorage.getItem("shopping") !== null &&
-  //   this.localStorage.getItem("shopping") !== "[]"
-  // ) {
-  //   const subtotalFromLocalStorage = JSON.parse(
-  //     localStorage.getItem("shopping")
-  //   );
-  //   chooseHandling(formCheckInput[0]);
-  //   calculateSubtotalAmount(subtotalFromLocalStorage);
-  //   calculateFinalPurchaseAmount(subtotalFromLocalStorage);
-  // }
 });
 
 //function add cookies to local storage
@@ -482,7 +469,10 @@ newInnerCount.forEach((item) => {
 
   for (events of eventList) {
     item.addEventListener(events, function (event) {
-      if (event.target.value === "" && event.key === "Enter") {
+      if (
+        (event.target.value === "" || event.target.value === "0") &&
+        event.key === "Enter"
+      ) {
         event.target.value = "1";
       }
       const previousProducts = JSON.parse(localStorage.getItem("shopping"));
@@ -495,10 +485,10 @@ newInnerCount.forEach((item) => {
           const newPrice = (+event.target.value * item.price.slice(1)).toFixed(
             2
           );
-          newInnerPrice[index].textContent = `$${newPrice.toFixed(2)}`;
+          newInnerPrice[index].textContent = `$${newPrice}`;
           return {
             ...item,
-            count: event.target.value,
+            count: +event.target.value,
           };
         }
         return item;
