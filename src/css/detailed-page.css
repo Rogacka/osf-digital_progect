@@ -1040,6 +1040,7 @@ body {
   opacity: 0;
 }
 .detailed-page__info {
+  padding-left: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1098,6 +1099,7 @@ body {
 }
 .detailed-page__link:hover {
   text-decoration: underline;
+  color: #45413e;
 }
 
 .container-active {
@@ -1282,11 +1284,17 @@ body {
   }
 }
 @media (max-width: 576px) {
+  .row {
+    flex-direction: column;
+  }
   .col-sm-12 {
     width: 100%;
   }
   .not-found__line {
     display: none;
+  }
+  .detailed-page__info {
+    padding: 0;
   }
   .hide-on-small {
     display: none;

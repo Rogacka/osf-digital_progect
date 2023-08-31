@@ -82,6 +82,7 @@ body {
   }
 
   &__info {
+    padding-left: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -147,6 +148,7 @@ body {
     text-decoration: none;
     &:hover {
       text-decoration: underline;
+      color: $text-color-main;
     }
   }
 }
@@ -356,6 +358,9 @@ body {
   }
   .not-found__line {
     display: none;
+  }
+  .detailed-page__info {
+    padding: 0;
   }
   .hide-on-small {
     display: none;

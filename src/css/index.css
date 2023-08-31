@@ -1346,4 +1346,11 @@ body {
   font-size: 0.9rem;
 }
 
+@media (max-width: 576px) {
+  .cookies__dialog {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

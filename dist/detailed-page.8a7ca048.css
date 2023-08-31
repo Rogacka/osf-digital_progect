@@ -1130,6 +1130,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  padding-left: 50px;
   display: flex;
 }
 
@@ -1196,6 +1197,7 @@ body {
 }
 
 .detailed-page__link:hover {
+  color: #45413e;
   text-decoration: underline;
 }
 
@@ -1398,11 +1400,23 @@ body {
 }
 
 @media (width <= 576px) {
+  .row {
+    flex-direction: column;
+  }
+
   .col-sm-12 {
     width: 100%;
   }
 
-  .not-found__line, .hide-on-small, .popular__line {
+  .not-found__line {
+    display: none;
+  }
+
+  .detailed-page__info {
+    padding: 0;
+  }
+
+  .hide-on-small, .popular__line {
     display: none;
   }
 
