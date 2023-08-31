@@ -1,4 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
+/**
+ * Initializes the carousel when the DOM is loaded
+ * @param {Element} carousel - the carousel element
+ * @param {Object} options - the options for the carousel
+ * @param {number} options.interval - the interval of the carousel in milliseconds
+ * @param {boolean} options.wrap - whether the carousel should wrap around
+ */ document.addEventListener("DOMContentLoaded", function() {
     const carousel = document.querySelector("#carouselExampleControls");
     if (carousel) {
         const carouselInstance = new bootstrap.Carousel(carousel, {
@@ -19,7 +25,14 @@ const formCheck = document.querySelectorAll(".form-check-input");
 const formCheckInput = [
     ...formCheck
 ];
-window.addEventListener("load", function() {
+/**
+ * Event listener for window load
+ * @param {string} shopping - shopping container show
+ * @param {string} liked - heart container show
+ * @param {boolean} cookies - cookies status
+ * @param {string} checkLocalStorage - local storage item
+ * @param {string} formCheckInput - form check input
+ */ window.addEventListener("load", function() {
     if (this.localStorage.getItem("shopping") !== undefined) addNumber("shopping", shoppingContainerShow);
     if (this.localStorage.getItem("liked") !== undefined) addNumber("liked", heartContainerShow);
     //check cookies
@@ -36,14 +49,21 @@ window.addEventListener("load", function() {
         calculateFinalPurchaseAmount(checkLocalStorage);
     }
 });
-//function add cookies to local storage
-const acceptCookies = document.getElementById("accept-cookies");
+/**
+ * Adds an event listener to the accept cookies button
+ * @param {HTMLElement} acceptCookies - the accept cookies button element
+ * @returns {void}
+ */ const acceptCookies = document.getElementById("accept-cookies");
 acceptCookies?.addEventListener("click", function() {
     localStorage.setItem("cookies", true);
 });
-//check email
 const formControlInput = document.getElementById("exampleFormControlInput1");
-formControlInput.addEventListener("blur", function() {
+/**
+ * Checks the validity of an email address
+ * @param {string} formControlInput - The id of the form control input element
+ * @param {RegExp} emailRegEx - The regular expression used to validate the email address
+ * @returns {boolean} - Whether the email address is valid or not
+ */ formControlInput.addEventListener("blur", function() {
     const email = formControlInput.value;
     const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (emailRegEx.test(email)) {
@@ -56,9 +76,15 @@ formControlInput.addEventListener("blur", function() {
         document.getElementById("sing-in__submit").disabled = true;
     }
 });
-//check password
 const formControlPassword = document.getElementById("inputPassword");
-formControlPassword.addEventListener("blur", function() {
+/**
+ * Adds an event listener to the form control password element
+ * to validate the password against a regular expression and
+ * enable/disable the submit button accordingly.
+ *
+ * @param {HTMLElement} formControlPassword - the form control password element
+ * @param {RegExp} passwordRegEx - the regular expression to validate the password
+ */ formControlPassword.addEventListener("blur", function() {
     const password = formControlPassword.value;
     const passwordRegEx = /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*])[0-9a-zA-Z!@#$%^&*]{6,}$/;
     if (passwordRegEx.test(password)) {
@@ -71,9 +97,12 @@ formControlPassword.addEventListener("blur", function() {
         document.getElementById("sing-in__submit").disabled = true;
     }
 });
-//show and hide password
 const passwordIcon = document.querySelector(".password--icon");
-passwordIcon?.addEventListener("click", function() {
+/**
+ * Adds an event listener to the password icon to toggle the visibility of the password
+ * @param {HTMLElement} passwordIcon - the password icon element
+ * @param {HTMLInputElement} formControlPassword - the password input element
+ */ passwordIcon?.addEventListener("click", function() {
     if (formControlPassword.type === "password") {
         formControlPassword.type = "text";
         passwordIcon.firstElementChild.style.opacity = "0";
@@ -103,7 +132,10 @@ const elementsToAddClass = [
     categoriesMenu,
     saleMenu
 ];
-function toggle(num) {
+/**
+ * Toggles the visibility of various elements on the page
+ * @param {number} num - the number of the element to toggle
+ */ function toggle(num) {
     switch(num){
         case 1:
             hiddenMenuDesctop.classList.toggle("hide");
@@ -142,7 +174,10 @@ const footerArrowCategories = document.getElementById("footer-arrow-categories")
 const footerCategoriesList = document.getElementById("footer-categories-list");
 const footerArrowAbout = document.getElementById("footer-arrow-about"); //arrow shows and hide footer about
 const footerAbout = document.getElementById("footer-about");
-function footerToggle(num) {
+/**
+ * Toggles the visibility of the footer elements
+ * @param {number} num - the footer element to toggle (1: Contact, 2: Categories, other: About)
+ */ function footerToggle(num) {
     switch(num){
         case 1:
             footerArrowContact.classList.toggle("rotate-arrow");
@@ -157,12 +192,15 @@ function footerToggle(num) {
             footerAbout.classList.toggle("hide");
     }
 }
-//increase the number of the wish list
 const heart = document.querySelectorAll(".button-heart");
 const buttonsHeart = [
     ...heart
 ];
-buttonsHeart.forEach((item)=>{
+/**
+ * Adds and removes a product from the "liked" list when the heart button is clicked
+ * @param {HTMLElement} heart - the heart button element
+ * @param {HTMLElement} heartContainerShow - the element that shows the number of liked products
+ */ buttonsHeart.forEach((item)=>{
     item.addEventListener("click", function() {
         const elementChild = item.firstElementChild;
         if (!elementChild?.classList.contains("addedToHeartsList")) {
@@ -179,20 +217,29 @@ buttonsHeart.forEach((item)=>{
             removeNumber("liked", heartContainerShow);
         }
     });
-    // Restore addedToHeartsList state on page reload
-    const itemName = item.closest(".card").firstElementChild.lastElementChild.firstElementChild.textContent;
+    /**
+   * Restore addedToHeartsList state on page reload
+   * @param {HTMLElement} item - the target item element
+   */ const itemName = item.closest(".card").firstElementChild.lastElementChild.firstElementChild.textContent;
     const previousHeartsList = JSON.parse(localStorage.getItem("liked"));
     if (previousHeartsList) {
         const isLiked = previousHeartsList.some((item)=>item.name === itemName);
         if (isLiked) item.firstElementChild?.classList.add("addedToHeartsList");
     }
 });
-//increse the number of the goods
 const buy = document.querySelectorAll(".button-buy"); //index.html plus button
 const buttonBuy = [
     ...buy
 ];
-buttonBuy.forEach((item)=>{
+/**
+ * Adds the product to the local storage when the buy button is clicked
+ * @param {HTMLElement} item - The buy button element
+ * @param {Object} product - The product object to add to the local storage
+ * @param {string} product.name - The product name
+ * @param {string} product.image - The product image
+ * @param {string} product.price - The product price
+ * @param {number} product.count - The product count
+ */ buttonBuy.forEach((item)=>{
     item.addEventListener("click", function() {
         if (item.getAttribute("id") === null) {
             let good = createPoductCard(item);
@@ -221,8 +268,11 @@ buttonBuy.forEach((item)=>{
         }
     });
 });
-//increse number likes ang shoppings
-function addNumber(storageKey, containers) {
+/**
+ * Increase number of likes and shoppings
+ * @param {string} storageKey - the key of the local storage
+ * @param {Array} containers - array of elements to display the number
+ */ function addNumber(storageKey, containers) {
     let previousProductsList;
     if (localStorage.getItem(storageKey) !== undefined) previousProductsList = JSON.parse(localStorage.getItem(storageKey));
     let previousProductsListCount = 0;
@@ -236,8 +286,11 @@ function addNumber(storageKey, containers) {
         });
     }
 }
-//decreese number likes
-function removeNumber(storageKey, containers) {
+/**
+ * Removes the number of items from the local storage and updates the UI
+ * @param {string} storageKey - the key of the item in the local storage
+ * @param {Array} containers - an array of DOM elements to update
+ */ function removeNumber(storageKey, containers) {
     const previousProductsList = JSON.parse(localStorage.getItem(storageKey));
     if (previousProductsList.length === 0) containers.forEach((el)=>{
         el.style.display = "none";
@@ -247,8 +300,11 @@ function removeNumber(storageKey, containers) {
         el.textContent = `${previousProductsList.length}`;
     });
 }
-//create a new product object
-function createPoductCard(itemCart) {
+/**
+ * Creates a new product object from a given itemCart
+ * @param {Element} itemCart - the itemCart element
+ * @returns {Object} - a new product object with name, image, price and count
+ */ function createPoductCard(itemCart) {
     let card = itemCart.closest(".card").firstElementChild;
     let newProduct = {
         name: card.lastElementChild.firstElementChild.textContent,
@@ -258,8 +314,11 @@ function createPoductCard(itemCart) {
     };
     return newProduct;
 }
-// add prodacts to local storage
-function addToLocalStorage(storageKey, storageProduct) {
+/**
+ * Adds a product to the local storage
+ * @param {string} storageKey - the key of the local storage item
+ * @param {Object} storageProduct - the product to add to the local storage
+ */ function addToLocalStorage(storageKey, storageProduct) {
     let previousProducts = JSON.parse(localStorage.getItem(storageKey));
     if (previousProducts && previousProducts.length) {
         const productAlreadyExistInStorage = previousProducts.some((item)=>item.name === storageProduct.name);
@@ -286,11 +345,13 @@ function addToLocalStorage(storageKey, storageProduct) {
         storageProduct
     ]));
 }
-/**
- * shopping card
- */ const productToBuyList = JSON.parse(localStorage.getItem("shopping"));
+const productToBuyList = JSON.parse(localStorage.getItem("shopping"));
 const productsWrapper = document.getElementById("products-wrapper");
-productToBuyList?.forEach((product)=>{
+/**
+ * Creates HTML elements for each product in the shopping list
+ * @param {Object[]} productToBuyList - Array of objects containing product information
+ * @param {HTMLElement} productsWrapper - HTML element to append the created elements to
+ */ productToBuyList?.forEach((product)=>{
     productsWrapper?.insertAdjacentHTML("beforeend", `
   <div class="row align-product">
     <div class="col col-lg-5 product">
@@ -341,8 +402,11 @@ const innerPrice = document.querySelectorAll(".product-price"); //increese price
 const newInnerPrice = [
     ...innerPrice
 ];
-// increese product count
-increase.forEach((item)=>{
+/**
+ * Event listener for increasing the amount of a product in the shopping cart
+ * @param {array} increase - array of increase buttons
+ * @returns {void}
+ */ increase.forEach((item)=>{
     item.addEventListener("click", function() {
         const previousProducts = JSON.parse(localStorage.getItem("shopping"));
         const productName = item.closest(".product__counter").previousElementSibling.lastElementChild.firstElementChild.textContent;
@@ -364,8 +428,11 @@ increase.forEach((item)=>{
         calculateFinalPurchaseAmount(newProducts);
     });
 });
-//decreese product count
-decreese.forEach((item)=>{
+/**
+ * Decreases the count of the product in the localStorage
+ * @param {Array} decreese - Array of decrease buttons
+ * @returns {void}
+ */ decreese.forEach((item)=>{
     item.addEventListener("click", function() {
         const previousProducts = JSON.parse(localStorage.getItem("shopping"));
         const productName = item.closest(".product__counter").previousElementSibling.lastElementChild.firstElementChild.textContent;
@@ -387,8 +454,11 @@ decreese.forEach((item)=>{
         calculateFinalPurchaseAmount(newProducts);
     });
 });
-//input change
-newInnerCount.forEach((item)=>{
+/**
+ * Adds event listeners to the item count input field and updates the local storage with the new item count and prices
+ * @param {HTMLElement} item - The item count input field
+ * @param {string} eventList - List of events to add event listeners to
+ */ newInnerCount.forEach((item)=>{
     item.addEventListener("keydown", function(event) {
         if (!event.key.match(/\d/) && event.key !== "Backspace") event.preventDefault();
     });
@@ -416,8 +486,14 @@ newInnerCount.forEach((item)=>{
         calculateFinalPurchaseAmount(newProducts);
     });
 });
-// remove product from shopping card
-const buttonsRemove = document.querySelectorAll(".button-remove");
+/**
+ * Removes a product from the shopping list and updates the subtotal and final purchase amount
+ * @param {NodeList} buttonsRemove - All the remove buttons on the page
+ * @param {Array} buttonsRemoveProduct - Array of all the remove buttons
+ * @param {Object} itemToRemove - The item to remove from the shopping list
+ * @param {String} itemToRemoveName - The name of the item to remove from the shopping list
+ * @param {Array} filteredProductList - The filtered list of products after removing the item
+ */ const buttonsRemove = document.querySelectorAll(".button-remove");
 const buttonsRemoveProduct = [
     ...buttonsRemove
 ];
@@ -433,8 +509,11 @@ buttonsRemoveProduct.forEach((item)=>{
         calculateFinalPurchaseAmount(filteredProductList);
     });
 });
-//function calculate sub total amount
-function calculateSubtotalAmount(allProduct) {
+/**
+ * Calculates the subtotal amount of the shopping cart
+ * @param {Array} allProduct - array of products in the shopping cart
+ * @returns {Number} subtotal - the total amount of the shopping cart
+ */ function calculateSubtotalAmount(allProduct) {
     let subtotal = 0;
     allProduct.forEach((item)=>{
         subtotal += +(item.count * item.price.slice(1));
@@ -442,8 +521,10 @@ function calculateSubtotalAmount(allProduct) {
     const shoppingSumAmount = document.querySelector(".shopping-sum-amount");
     if (shoppingSumAmount) shoppingSumAmount.textContent = `${subtotal.toFixed(2)}`;
 }
-//function calculate handling
-const finalPurchaseAmount = document.querySelector(".final-purchase-amount");
+/**
+ * Handles the click event of the form check input and calculates the final purchase amount
+ * @param {HTMLElement} item - The form check input element
+ */ const finalPurchaseAmount = document.querySelector(".final-purchase-amount");
 let finalPurchaseAmountValue = finalPurchaseAmount?.textContent;
 formCheckInput.forEach((item)=>{
     item.addEventListener("click", function() {
@@ -451,7 +532,11 @@ formCheckInput.forEach((item)=>{
         calculateFinalPurchaseAmount(JSON.parse(localStorage.getItem("shopping")));
     });
 });
-let shippingAndHandling = 0;
+/**
+ * Sets the shipping and handling cost for an item
+ * @param {Element} item - the item element
+ * @returns {number} shippingAndHandling - the cost of shipping and handling for the item
+ */ let shippingAndHandling = 0;
 function chooseHandling(item) {
     const handling = item?.nextElementSibling?.firstElementChild;
     if (handling !== null && finalPurchaseAmount) {
@@ -462,16 +547,23 @@ function chooseHandling(item) {
         shippingAndHandling = 0;
     }
 }
-//function calculate final purchase amount
-function calculateFinalPurchaseAmount(allProducts) {
+/**
+ * Calculates the final purchase amount for a given set of products
+ * @param {Array} allProducts - Array of product objects
+ * @returns {Number} - the final purchase amount
+ */ function calculateFinalPurchaseAmount(allProducts) {
     let subtotal = 0;
     allProducts.forEach((item)=>{
         subtotal += +(item.count * item.price.slice(1));
     });
     if (finalPurchaseAmount) finalPurchaseAmount.innerHTML = (subtotal + shippingAndHandling).toFixed(2);
 }
-// show more products
-const showMoreCard = document.getElementById("show-more-card");
+/**
+ * Adds a click event listener to the show more card element to fetch and render product cards
+ * @param {HTMLElement} showMoreCard - the show more card element
+ * @param {string} url - the URL to fetch the product data from
+ * @param {HTMLElement} popularItem - the popular item element to insert the product cards into
+ */ const showMoreCard = document.getElementById("show-more-card");
 showMoreCard?.addEventListener("click", function() {
     fetch("https://fakestoreapi.com/products?limit=4").then((response)=>{
         console.log(response);
@@ -510,11 +602,19 @@ showMoreCard?.addEventListener("click", function() {
         console.log(error);
     });
 });
-const closeModalSingIn = document.getElementById("exampleModal");
+/**
+ * Adds an event listener to an element to close the modal when the Escape key is pressed
+ * @param {HTMLElement} closeModalSingIn - The element to attach the event listener to
+ * @param {Event} event - The event object
+ */ const closeModalSingIn = document.getElementById("exampleModal");
 closeModalSingIn.addEventListener("keydown", (event)=>{
     if (event.key === "Escape") closeModalSingIn.classList.remove("show");
 });
-const hideFilterServices = document.querySelector(".hide-filter");
+/**
+ * Toggles the visibility of the filter services section
+ * @param {HTMLElement} hideFilterServices - the element that triggers the toggle
+ * @param {HTMLElement} filterServices - the element to be toggled
+ */ const hideFilterServices = document.querySelector(".hide-filter");
 const filterServices = document.querySelector(".filter-services");
 if (hideFilterServices) hideFilterServices.addEventListener("click", function() {
     filterServices.classList.toggle("hide");
