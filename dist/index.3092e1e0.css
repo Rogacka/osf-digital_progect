@@ -1431,6 +1431,8 @@ body {
 
 .cookies__dialog {
   max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cookies__content {
